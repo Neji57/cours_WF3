@@ -31,7 +31,7 @@ $(function ()
 		$.post('src/postMessage.php', $form.serialize(), function(data)
 		// serialize() est une fonction propre à jQuery qui renvoie un objet = {$message: message.val(), ...}
 		{
-			console.log(data);
+			$form.find('[name="message"]').val('');
 		}, 'json');
 
 		return false;
@@ -44,6 +44,9 @@ $(function ()
 		$.getJSON('src/getMessage.php', { lastId: lastId}, function(data)
 		{
 			showMessages(data);
+			lastId = data.messages[data.messages.length -1].id; // Récupère l'id du dernier message
+			console.log(lastId);
+			
 		});
 	}
 
