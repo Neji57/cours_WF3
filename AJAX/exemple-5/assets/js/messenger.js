@@ -8,7 +8,7 @@ $(function ()
 
 	function showMessages(data)
 	{
-		$.each(data, function(index, value)
+		$.each(data.messages, function(index, value)
 		{
 			$message = (data.user.id == value.user.id? $messageMe.clone(): $messageNotMe.clone());
 			$message.find('.avatar img').attr('src', 'images/' + value.avatar);
