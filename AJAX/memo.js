@@ -16,5 +16,9 @@ xhr.send();
 $.ajax({
 	url : '', //Lien vers le script à appeler
 	method: 'POST', // Ou 'GET'
-	data: {}, // Objet ou chaîne
-});
+	data: {}, // Objet { username: 'BOB', password: 764768987' } ou chaîne ("username=Bob&password=875876")
+	dataType: 'html', // Ou 'json'
+}).done(function(data))
+{
+	console.log(data); // Affichage du contenu de la réponse
+}
