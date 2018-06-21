@@ -18,7 +18,25 @@ $.ajax({
 	method: 'POST', // Ou 'GET'
 	data: {}, // Objet { username: 'BOB', password: 764768987' } ou chaîne ("username=Bob&password=875876")
 	dataType: 'html', // Ou 'json'
-}).done(function(data))
+	beforeSend: function()
+	{
+
+	},
+}).done(function(data)
 {
 	console.log(data); // Affichage du contenu de la réponse
-}
+}).fail(function(xhr, textStatus)
+{
+	// Erreur
+});
+
+$.ajaxSetup({
+	url : 'script.php'
+});
+$.ajax({}).done(...);
+
+$.get(URL, DATA, function (data) {}, DATATYPE); // Requête GET
+$.post(URL, DATA, function (data) {}, DATATYPE); // Requête POST
+$.getJSON(URL, DATA, function (data) {}); // Requête GET type JSON
+$.post(URL, DATA, function (data) {}, 'json'); // Requête POST type JSON
+
