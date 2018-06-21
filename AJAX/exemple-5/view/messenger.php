@@ -15,7 +15,7 @@
 
 <ul class="messages list-unstyled d-none" id="messages">
 	<!-- Template mes messages -->
-	<li class="message me media">
+	<li class="message not-me media">
 		<div class="avatar float-left">
 			<img src="" alt="" class="avatar rounded-circle img-thumbnail">
 		</div>

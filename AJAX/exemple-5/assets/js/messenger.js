@@ -3,6 +3,8 @@ $(function ()
 {
 	var $form = $('#message-form');
 	var lastId = 0;
+	var $messageMe = $('#mesages .me');
+	var $messageNotMe = ('$messages .not-me');
 
 	function postMessage()
 	{
@@ -22,7 +24,7 @@ $(function ()
 	{
 		$.getJSON('src/getMessage.php', { lastId: lastId}, function(data)
 		{
-			console.log(data);
+			showMessages(data);
 		});
 	}
 
