@@ -1,4 +1,4 @@
-// Appel ajax en js natif
+// -- Appel ajax en js natif -- 
 var xhr = new XMLHttpRequest;
 xhr.open(METHOD, URL, ASYNC); // Prépare la requête
 xhr.send();
@@ -12,3 +12,9 @@ xhr.onreadystatechange = function()
 }
 xhr.send();
 
+// -- Appel ajax en jQuery --
+$.ajax({
+	url : '', //Lien vers le script à appeler
+	method: 'POST', // Ou 'GET'
+	data: {}, // Objet ou chaîne
+});
