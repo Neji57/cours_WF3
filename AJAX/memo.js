@@ -8,5 +8,7 @@ xhr.onreadystatechange = function()
 	this.readyState; // Etat de la requête 4 = requête finie, le serveur à répondu
 	this.responseText; // Contenu de la réponse
 	JSON.parse(STRING); // Transforme une string en objet JS
+	JSON.stringify(OBJECT); // Transforme un objet en chaîne JSON
 }
 xhr.send();
+
