@@ -12,7 +12,13 @@ function initMap()
 	{
 		geocoder.geocode({ 'address': $('#address').val()}, function(results, status)
 		{
-			console.log(status);
+			if (status == 'OK') {
+				map.setCenter(results[0].geometry.location);
+			}
+			else
+			{
+				console.log(status);
+			}
 			console.log(results);
 		});
 	}
