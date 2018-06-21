@@ -19,6 +19,12 @@ $(function ()
 		});
 	}
 
+	function formatDate(timestamp)
+	{
+		var date = new Date(timestamp * 1000);
+		return 
+	}
+
 	function postMessage()
 	{
 		// $.ajax({url: '...', method: 'POST, data: $form.serialize()}).done(function(data){});
