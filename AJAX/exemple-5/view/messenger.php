@@ -15,7 +15,7 @@
 
 <ul class="messages list-unstyled" id="messages">
 	<!-- Template mes messages -->
-	<li class="message not-me media d-none">
+	<li class="message me media d-none">
 		<div class="avatar float-left">
 			<img src="" alt="" class="avatar rounded-circle img-thumbnail">
 		</div>
@@ -26,7 +26,7 @@
 	</li>
 
 	<!-- Template les autres messages -->
-	<li class="message not-me-media">
+	<li class="message not-me media d-none">
 		<div class="media-body text-right">
 			<small class="infos"></small>
 			<div class="content bg-info text-right -text-light"></div>
