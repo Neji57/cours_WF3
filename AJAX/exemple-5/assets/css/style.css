@@ -14,3 +14,23 @@
 #message-form {
 	width: 100%;
 }
+
+.message .avatar img {
+	width: 80px;
+	height: 80px;
+}
+
+.message .media-body {
+	padding: 15px;
+	padding-top: 0px;
+}
+
+.message .infos {
+	color: #fefefe;
+	font-weight: bold;
+}
+
+.message .infos {
+	color: #fefefe;
+	font-weight: bold;
+}

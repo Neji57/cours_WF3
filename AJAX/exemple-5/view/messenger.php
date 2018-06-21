@@ -21,7 +21,7 @@
 		</div>
 		<div class="media-body">
 			<small class="infos"></small>
-			<div class="content bg-success text-right -text-light"></div>
+			<div class="content bg-warning text-right text-dark"></div>
 		</div>
 	</li>
 
@@ -29,7 +29,7 @@
 	<li class="message not-me media d-none">
 		<div class="media-body text-right">
 			<small class="infos"></small>
-			<div class="content bg-info text-right -text-light"></div>
+			<div class="content bg-danger text-right text-light"></div>
 		</div>
 		<div class="avatar float-right">
 			<img src="" alt="" class="avatar rounded-circle img-thumbnail">
