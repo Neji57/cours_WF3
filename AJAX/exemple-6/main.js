@@ -6,4 +6,14 @@ function initMap()
 		center : piennes,
 		zoom: 8,
 	});
+	var geocoder = new google.maps.Geocoder;
+
+	function codeAddress()
+	{
+		geocoder.geocode({ 'address': $('#address')}, function(result, status)
+		{
+			console.log(ststus);
+			console.log(results);
+		})
+	}
 }
