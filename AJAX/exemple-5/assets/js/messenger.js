@@ -11,7 +11,9 @@ $(function ()
 		$.each(data, function(index, value)
 		{
 			$message = (data.user.id == value.user.id? $messageMe.clone(): $messageNotMe.clone());
-			$message.find('.avatar img').attr('src', 'images/' . value.avatar);
+			$message.find('.avatar img').attr('src', 'images/' + value.avatar);
+			$message.find('.content').html(value.content);
+			$message.find('.infos').html(value.username + '-' + value.date);
 			$message.removeClass('d-none');
 			$('#messages').append($message);
 		});

@@ -13,9 +13,9 @@
 
 <!-- MESSAGES -->
 
-<ul class="messages list-unstyled d-none" id="messages">
+<ul class="messages list-unstyled" id="messages">
 	<!-- Template mes messages -->
-	<li class="message not-me media">
+	<li class="message not-me media d-none">
 		<div class="avatar float-left">
 			<img src="" alt="" class="avatar rounded-circle img-thumbnail">
 		</div>
