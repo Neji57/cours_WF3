@@ -10,9 +10,9 @@ function initMap()
 
 	function codeAddress()
 	{
-		geocoder.geocode({ 'address': $('#address')}, function(result, status)
+		geocoder.geocode({ 'address': $('#address').val()}, function(results, status)
 		{
-			console.log(ststus);
+			console.log(status);
 			console.log(results);
 		});
 	}
