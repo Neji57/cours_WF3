@@ -11,6 +11,14 @@
 
 <!-- MESSAGES -->
 
+<ul class="messages list-unstyled" id="messages">
+	<li class="messages me media">
+		<div class="avatar float-left">
+		<img src="" alt="" class="avatar rounded-circle img-thumbnail">
+		</div>
+	</li>
+</ul>
+
 <nav class="navbar bg-warning fixed-bottom navbar-dark">
 	<div class="container-fluid">
 		<form id="message-form" action="" method="post">
