@@ -14,6 +14,12 @@ function initMap()
 		{
 			console.log(ststus);
 			console.log(results);
-		})
+		});
 	}
+
+	$('#address').keyup(_.debounce(codeAddress, 1000));
+
+
+
+
 }
