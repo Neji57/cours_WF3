@@ -1,9 +1,11 @@
-
 <nav class="navbar bg-warning fixed-top navbar-dark">
 	<div class="col">
 		<span class="lead">Super Messenger</span>
 		<div class="float-right">
-			<span class="mr-4 btn btn-outline-dark"><i class="fas fa-user"></i> <?=$user['username'] ?></span>
+			<span class="mr-4 btn btn-outline-dark">
+				<i class="fas fa-user"></i>
+				<?=$user['username'] ?>
+			</span>
 			<a href="src/logout.php" class="btn btn-info">Se déconnecter</a>
 		</div>
 	</div>
@@ -11,10 +13,26 @@
 
 <!-- MESSAGES -->
 
-<ul class="messages list-unstyled" id="messages">
-	<li class="messages me media">
+<ul class="messages list-unstyled d-none" id="messages">
+	<!-- Template mes messages -->
+	<li class="message me media">
 		<div class="avatar float-left">
-		<img src="" alt="" class="avatar rounded-circle img-thumbnail">
+			<img src="" alt="" class="avatar rounded-circle img-thumbnail">
+		</div>
+		<div class="media-body">
+			<small class="infos"></small>
+			<div class="content bg-success text-right -text-light"></div>
+		</div>
+	</li>
+
+	<!-- Template les autres messages -->
+	<li class="message not-me-media">
+		<div class="media-body text-right">
+			<small class="infos"></small>
+			<div class="content bg-info text-right -text-light"></div>
+		</div>
+		<div class="avatar float-right">
+			<img src="" alt="" class="avatar rounded-circle img-thumbnail">
 		</div>
 	</li>
 </ul>
