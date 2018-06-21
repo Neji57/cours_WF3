@@ -158,7 +158,8 @@ function getLastMessages($pdo, $lastId)
 function postMessage($pdo, $user, $message)
 {
     $query = $pdo->prepare("INSERT INTO message (content, user, date) VALUES (:content, :userId, :date)");
-    $query->bindValue(':content', $message, PDO::PARAM_STR);
+    // La fonction strip_tags() supprime les balises qui sont entrées dans le formulaire pour éviter les injections XSS.
+    $query->bindValue(':content', strip_tags($message), PDO::PARAM_STR);
     $query->bindValue(':userId', $user['id'], PDO::PARAM_INT);
     $query->bindValue(':date', time('now'), PDO::PARAM_STR);
 
