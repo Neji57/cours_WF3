@@ -43,13 +43,18 @@ $(function ()
 	{
 		$.getJSON('src/getMessage.php', { lastId: lastId}, function(data)
 		{
+			if (data.messages.length == 0) {
+				return;
+			}
 			showMessages(data);
 			lastId = data.messages[data.messages.length -1].id; // Récupère l'id du dernier message
-			console.log(lastId);
+			// scroll en bas de la page
+			$('html').animate({scrollTop: $(document).height()}, 'slow');
 			
 		});
 	}
 
 	getMessage();
+	setInterval(getMessage, 1000);
 
 });
