@@ -40,3 +40,4 @@ $.post(URL, DATA, function (data) {}, DATATYPE); // Requête POST
 $.getJSON(URL, DATA, function (data) {}); // Requête GET type JSON
 $.post(URL, DATA, function (data) {}, 'json'); // Requête POST type JSON
 
+$('form').serialize(); // Retourne les données d'un formulaire sous forme de chaîne encodée pour les url
