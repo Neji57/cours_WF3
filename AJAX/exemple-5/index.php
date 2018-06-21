@@ -5,6 +5,8 @@ $pdo = dbConnect();
 
 $template = "login";
 $registrationError = "";
+$loginError = '';
+
 
 // inscription 
 if(isset($_POST['register'])) {
