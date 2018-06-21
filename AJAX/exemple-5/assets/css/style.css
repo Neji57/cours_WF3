@@ -15,6 +15,11 @@
 	width: 100%;
 }
 
+.message {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .message .avatar img {
 	width: 80px;
 	height: 80px;
@@ -30,7 +35,7 @@
 	font-weight: bold;
 }
 
-.message .infos {
-	color: #fefefe;
-	font-weight: bold;
+.message .content {
+	padding: 8px;
+	border-radius: 12px;
 }
