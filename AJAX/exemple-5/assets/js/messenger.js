@@ -6,6 +6,14 @@ $(function ()
 	var $messageMe = $('#mesages .me');
 	var $messageNotMe = ('$messages .not-me');
 
+	function showMessages(data)
+	{
+		$.each(data, function(index, value)
+		{
+
+		});
+	}
+
 	function postMessage()
 	{
 		// $.ajax({url: '...', method: 'POST, data: $form.serialize()}).done(function(data){});

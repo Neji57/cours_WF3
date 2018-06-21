@@ -138,7 +138,7 @@ function getLastMessages($pdo, $lastId)
     if($lastId == 0) // premier chargement de la page
     {
         $count = 5;
-        $query = $pdo->prepare("SELECT message.*, user.username, user.avatar FROM message JOIN user On user.id = message.user WHERE message.id > :lastId ORDER BY id DESC LIMIT :limit");
+        $query = $pdo->prepare("SELECT message.*, user.username, user.avatar FROM message JOIN user On user.id = message.user ORDER BY id DESC LIMIT :limit");
         $query->bindValue(':limit', $count, PDO::PARAM_INT);
         $query->execute();
 
