@@ -2,7 +2,7 @@
 
 require_once('supprimable.php');
 
-class Produit implements Supprimable
+class Produit extends Entity implements Supprimable
 {
 	public function supprimer()
 	{
