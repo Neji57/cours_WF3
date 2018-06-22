@@ -20,5 +20,4 @@ $monDVD->setActeurs(array(
 foreach ($monDVD->getActeurs() as $key => $acteur) 
 {
 	echo $acteur . '<br>';
-
 }
