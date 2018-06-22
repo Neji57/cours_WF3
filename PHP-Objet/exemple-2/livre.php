@@ -9,6 +9,8 @@ final class Livre extends Produit
 	public function __construct($prix, $poids, $isbn)
 	{
 		$this->setIsbn($isbn);
+
+		parent::__construct($prix, $poids);
 	}
 
 	public function getIsbn()
