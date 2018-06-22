@@ -86,4 +86,9 @@ class Form
 
 		return $html;
 	}
+
+	public function addItem(FormItem $item)
+	{
+		$this->items[] = $item;
+	}
 }
