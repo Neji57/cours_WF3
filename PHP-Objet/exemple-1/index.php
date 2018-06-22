@@ -32,3 +32,5 @@ echo $monArticle->getTitre();
 $monArticle->setTitre("Nouvel article");
 echo '</br>';
 echo $monArticle->getTitre();
+echo '</br>';
+echo $article2->getTitre();
