@@ -56,8 +56,9 @@ class Article // Création de la classe
 		return $this;
 	}
 
-	public function afficher()
+	public function getInfos()
 	{
+		// Retourne le titre et le contenu de l'article
 		return $this->getTitre() . ' ' . $this->getContenu();
 	}
 
@@ -85,4 +86,9 @@ echo '</br>';
 echo $article2->getTitre(); */
 
 
-$article1 = new Article("Titre");
+$article1 = new Article("Titre", "Contenu");
+echo $article1->getInfos();
+echo '</br>';
+$article1->setTitre("Nouveau titre");
+$article1->setContenu("Nouveau contenu");
+echo $article1->getInfos();
