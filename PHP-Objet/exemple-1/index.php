@@ -25,10 +25,12 @@ class Article // Création de la classe
 	const S_PRIVATE = 0;
 
 	// Constructeur
-	public function __construct($titre)
+	public function __construct($titre, $contenu, Auteur $auteur)
 	{
 		// Valeurs par défaut
 		$this->setTitre($titre);
+		$this->setContenu($contenu);
+		$this->auteur = $auteur;
 		$this->statut = self::S_PUBLIC;
 		self::$counter++;
 	}
@@ -107,14 +109,13 @@ echo $monArticle->getTitre();
 echo '</br>';
 echo $article2->getTitre(); */
 
-
-$article1 = new Article("Titre", "Contenu");
+$auteur = new Auteur;
+$article1 = new Article("Titre", "Contenu", $auteur);
 $auteur = new Auteur;
 //echo $article1->getInfos();
-echo '</br>';
+//echo '</br>';
 $article1->setTitre("Nouveau titre")
 	->setContenu("Nouveau contenu")
-	->setAuteur($auteur)
 ;
 
 echo $article1->getInfos();
