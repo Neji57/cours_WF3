@@ -4,7 +4,7 @@
 
 require_once('form/form.php'); 
 
-$myForm = new Form ("login");
+$myForm = new Form ("login", "POST", "", array("class" => "form"));
 echo $myForm->createView();
 
 

@@ -78,6 +78,8 @@ class Form
 			$html .= $key . '="' . $value . '" ';
 		}
 
+		$html.= '>';
+
 		$html.= '</form>';
 
 		return $html;
