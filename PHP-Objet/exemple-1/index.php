@@ -1,15 +1,18 @@
 <?php
 
 class Article // Création de la classe
+// Rassembler des fonctions et des attributs pour faire un comportement
 {
-	public $titre; // Création de la variable $titre dans la classe Article
+	// Propriétés
+	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article
 
+	// Méthodes
 	public function getTitre()
 	{
 		return $this->titre;
 	}
 
-	public function setTitre()
+	public function setTitre($titre)
 	{
 		echo $titre . '</br>';
 		echo $this->titre;
@@ -30,4 +33,7 @@ class Article // Création de la classe
 $monArticle = new Article;
 $article2 = new Article;
 
+echo $monArticle->getTitre();
 $monArticle = setTitre("Nouvel article");
+echo '</br>';
+echo $monArticle->getTitre();
