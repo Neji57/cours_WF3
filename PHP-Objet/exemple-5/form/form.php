@@ -65,13 +65,13 @@ class Form
 
 	public function createView()
 	{
-		$html = "<form name='" 
+		$html = '<form name="'
 		. $this->getName() 
-		. "' method='" 
+		. '" method="' 
 		. $this->getMethod() 
-		. "' action='" 
+		. '" action="'
 		. $this->getAction() 
-		. "'>";
+		. '">';
 
 		$html.= '</form>';
 
