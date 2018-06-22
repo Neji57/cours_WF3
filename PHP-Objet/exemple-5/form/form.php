@@ -7,9 +7,9 @@ class Form
 	private $action;
 	private $attr;
 
-	public function __construct($name, $method = 'POST', $action ="")
+	public function __construct($name, $method = 'POST', $action ='')
 	{
-		
+
 	}
 
 	public function getName()
