@@ -5,6 +5,11 @@ class Article // Création de la classe
 {
 	// Propriétés
 	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article et on ajoute une chaîne dans $titre
+	private $statut;
+
+	// Déclaration de constantes
+	const PUBLIC = 1;
+	const PRIVATE = 0;
 
 	// Constructeur
 	public function __construct($titre)
@@ -23,15 +28,22 @@ class Article // Création de la classe
 	{
 		$this->titre = $nouveauTitre;
 	}
+
+	public function isPublic()
+	{
+		return $this->statut == self::PUBLIC;
+	}
 }
+
+echo Article::PUBLIC;
 
 $monArticle = new Article("Article 1"); // création d'un objet
 $article2 = new Article("Article 2"); // Création d'un nouvel objet
 // La variable $titre de L'objet $article2 est indépendante de $monArticle
 
-echo $monArticle->getTitre();
+/* echo $monArticle->getTitre();
 $monArticle->setTitre("Nouvel article");
 echo '</br>';
 echo $monArticle->getTitre();
 echo '</br>';
-echo $article2->getTitre();
+echo $article2->getTitre(); */
