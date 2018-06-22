@@ -1,5 +1,15 @@
 <?php
 
+class Auteur
+{
+	private $nom = "Nom auteur";
+
+	public function getNom()
+		{
+			return $this->nom;
+		}
+}
+
 class Article // Création de la classe
 // Rassembler des fonctions et des attributs pour faire un comportement
 {
@@ -7,6 +17,7 @@ class Article // Création de la classe
 	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article et on ajoute une chaîne dans $titre
 	private $contenu;
 	private $statut;
+	private $auteur;
 	public static $counter = 0;
 
 	// Déclaration de constantes
@@ -27,32 +38,36 @@ class Article // Création de la classe
 	{
 		// $this fait référence à mon article (n'existe pas encore ici)
 		return $this->titre;
+		return $this;
 	}
 
 	public function setTitre($nouveauTitre)
 	{
 		$this->titre = $nouveauTitre;
+		return $this;
 	}
 
 	public function isPublic()
 	{
 		return $this->statut == self::S_PUBLIC;
+		return $this;
 	}
 
 	public static function getCounter()
 	{
 		return self::$counter;
+		return $this;
 	}
 
 	public function getContenu()
 	{
 		return $this->contenu;
+		return $this;
 	}
 
 	public function setContenu($contenu)
 	{
 		$this->contenu = $contenu;
-
 		return $this;
 	}
 
@@ -60,8 +75,15 @@ class Article // Création de la classe
 	{
 		// Retourne le titre et le contenu de l'article
 		return $this->getTitre() . ' ' . $this->getContenu();
+		return $this;
 	}
 
+
+	public function setAuteur(Auteur $auteur)
+	{
+		$this->auteur = $auteur;
+		return $this;
+	}
 }
 
 /* echo Article::$counter . ' ' .  'article(s) </br>';
@@ -87,8 +109,9 @@ echo $article2->getTitre(); */
 
 
 $article1 = new Article("Titre", "Contenu");
+$auteur = new Auteur;
 echo $article1->getInfos();
 echo '</br>';
-$article1->setTitre("Nouveau titre");
-$article1->setContenu("Nouveau contenu");
+$article1->setTitre("Nouveau titre")->setContenu("Nouveau contenu")->setAuteur($auteur);
+
 echo $article1->getInfos();
