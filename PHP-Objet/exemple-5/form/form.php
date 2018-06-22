@@ -9,6 +9,9 @@ class Form
 
 	public function __construct($name, $method = 'POST', $action ='')
 	{
+		$this->setName($name);
+		$this->setMethod($method);
+		$this->setAction($action);
 
 	}
 
