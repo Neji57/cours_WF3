@@ -29,4 +29,10 @@ class Produit
 
 		return $this;
 	}
+
+	public function __construct($prix, $poids)
+	{
+		$this->setPrix($prix);
+		$this->setPoids($poids);
+	}
 }
