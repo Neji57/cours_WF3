@@ -18,7 +18,7 @@ final class Livre extends Produit
 		return $this->isbn;
 	}
 
-	public function setIsbn($isbn)
+	public function setIsbn(string $isbn)
 	{
 		$this->isbn = $isbn;
 
