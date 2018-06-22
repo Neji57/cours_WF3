@@ -62,4 +62,19 @@ class Form
 
 		return $this;
 	}
+
+	public function createView()
+	{
+		$html = "<form name='" 
+		. $this->getName() 
+		. "' method='" 
+		. $this->getMethod() 
+		. "' action='" 
+		. $this->getAction() 
+		. "'>";
+
+		$html.= '</form>';
+
+		return $html;
+	}
 }
