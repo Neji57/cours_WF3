@@ -6,17 +6,19 @@ class Article // Création de la classe
 	// Propriétés
 	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article et on ajoute une chaîne dans $titre
 	private $statut;
+	public static $counter = 0;
 
 	// Déclaration de constantes
-	const PUBLIC = 1;
-	const PRIVATE = 0;
+	const S_PUBLIC = 1;
+	const S_PRIVATE = 0;
 
 	// Constructeur
 	public function __construct($titre)
 	{
 		// Valeurs par défaut
 		$this->setTitre($titre);
-		$this->statut = self::PUBLIC;
+		$this->statut = self::S_PUBLIC;
+		self::$counter++;
 	}
 
 	// Méthodes
@@ -33,15 +35,28 @@ class Article // Création de la classe
 
 	public function isPublic()
 	{
-		return $this->statut == self::PUBLIC;
+		return $this->statut == self::S_PUBLIC;
+	}
+
+	public static function getCounter()
+	{
+		return self::$counter;
 	}
 }
 
-echo Article::PUBLIC;
+echo Article::$counter . ' ' .  'article(s) </br>';
+//echo Article::S_PUBLIC;
 
 $monArticle = new Article("Article 1"); // création d'un objet
+echo Article::$counter . ' ' . 'article(s) </br>';
+
 $article2 = new Article("Article 2"); // Création d'un nouvel objet
 // La variable $titre de L'objet $article2 est indépendante de $monArticle
+
+echo Article::$counter . ' ' . 'article(s) </br>';
+
+echo $monArticle->getCounter();
+
 
 /* echo $monArticle->getTitre();
 $monArticle->setTitre("Nouvel article");
