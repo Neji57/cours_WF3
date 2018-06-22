@@ -8,6 +8,11 @@ class Auteur
 		{
 			return $this->nom;
 		}
+		
+	public function setNom($nouveauNom)
+		{
+			$this->nom = $nouveauNom;
+		}
 }
 
 class Article // Création de la classe
@@ -86,6 +91,11 @@ class Article // Création de la classe
 		$this->auteur = $auteur;
 		return $this;
 	}
+
+	public function getAuteur()
+	{
+		return $this->auteur;
+	}
 }
 
 /* echo Article::$counter . ' ' .  'article(s) </br>';
@@ -117,5 +127,7 @@ $auteur = new Auteur;
 $article1->setTitre("Nouveau titre")
 	->setContenu("Nouveau contenu")
 ;
+
+$article1->getAuteur()->setNom("Nouvel auteur");
 
 echo $article1->getInfos();
