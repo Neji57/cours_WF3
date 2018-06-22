@@ -22,4 +22,6 @@ foreach ($monDVD->getActeurs() as $key => $acteur)
 	echo $acteur . '<br>';
 }
 
-$livre = new Livre (9.99, 200, '67554568-1');
+$livre = new Livre (9.99, 200, '67554568-17');
+
+echo 'ISBN = ' . $livre->getIsbn();
