@@ -21,8 +21,20 @@ abstract class FormItem
 		return $this;
 	}
 
-	public abstract function createView()
+	public abstract function createView();
+	
+	protected function startView()
 	{
+		$html = '<div class="form-group">
+		<label></label>';
+
+		return $html;
+	}
+
+	protected function endView()
+	{
+		$html = '<div>';
 		
+		return $html;
 	}
 }
