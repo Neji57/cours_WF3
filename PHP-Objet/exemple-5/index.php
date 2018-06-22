@@ -5,7 +5,7 @@
 require_once('form/form.php'); 
 
 $myForm = new Form ("login");
-echo 
+echo $myForm->createView();
 
 
 
