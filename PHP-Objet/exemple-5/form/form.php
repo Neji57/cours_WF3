@@ -5,7 +5,8 @@ class Form
 	private $name;
 	private $method;
 	private $action;
-	private $attr;
+	private $attr; // array
+	private $items;
 
 	public function __construct($name, $method = 'POST', $action ='', $attr = array())
 	{
