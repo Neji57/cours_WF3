@@ -74,7 +74,7 @@ class Form
 		. '" '
 	;
 
-		foreach ($this->attr() as $key => $value) {
+		foreach ($this->getAttr() as $key => $value) {
 			$html .= $key . '="' . $value . '" ';
 		}
 

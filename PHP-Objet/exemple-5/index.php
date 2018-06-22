@@ -1,16 +1,10 @@
-<?php require_once('include/header.php'); ?>
-
-<?php 
+<?php require_once('include/header.php'); 
 
 require_once('form/form.php'); 
 
-$myForm = new Form ("login", "POST", "", array("class" => "form"));
+$myForm = new Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
 echo $myForm->createView();
 
 
 
-
-
-?>
-
-<?php require_once('include/footer.php'); ?>
+require_once('include/footer.php'); ?>
