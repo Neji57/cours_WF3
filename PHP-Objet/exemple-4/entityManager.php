@@ -5,7 +5,7 @@ require_once('produit.php');
 
 class EntityManager
 {
-	public static function supprimerEntity($entity)
+	public static function supprimerEntity(supprimable $entity)
 	{
 		$entity->supprimer();
 	}
