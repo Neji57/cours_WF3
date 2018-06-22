@@ -71,7 +71,12 @@ class Form
 		. $this->getMethod() 
 		. '" action="'
 		. $this->getAction() 
-		. '">';
+		. '" '
+	;
+
+		foreach ($this->attr() as $key => $value) {
+			$html .= $key . '="' . $value . '" ';
+		}
 
 		$html.= '</form>';
 
