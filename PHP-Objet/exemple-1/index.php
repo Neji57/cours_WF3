@@ -6,6 +6,11 @@ class Article // Création de la classe
 	// Propriétés
 	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article et on ajoute une chaîne dans $titre
 
+	public function __construct($titre)
+	{
+		$this->setTitre($titre);
+	}
+
 	// Méthodes
 	public function getTitre()
 	{
@@ -19,8 +24,8 @@ class Article // Création de la classe
 	}
 }
 
-$monArticle = new Article; // création d'un objet
-$article2 = new Article; // Création d'un nouvel objet
+$monArticle = new Article("Article 1"); // création d'un objet
+$article2 = new Article("Article 2"); // Création d'un nouvel objet
 // La variable $titre de L'objet $article2 est indépendante de $monArticle
 
 echo $monArticle->getTitre();
