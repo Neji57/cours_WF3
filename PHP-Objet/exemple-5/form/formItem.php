@@ -20,4 +20,9 @@ abstract class FormItem
 
 		return $this;
 	}
+
+	public abstract function createView()
+	{
+		
+	}
 }
