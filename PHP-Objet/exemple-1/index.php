@@ -74,7 +74,7 @@ class Article // Création de la classe
 	public function getInfos()
 	{
 		// Retourne le titre et le contenu de l'article
-		return $this->getTitre() . ' ' . $this->getContenu();
+		return $this->getTitre() . ' ' . $this->auteur->getNom() . ' ' . $this->getContenu();
 		return $this;
 	}
 
@@ -110,8 +110,11 @@ echo $article2->getTitre(); */
 
 $article1 = new Article("Titre", "Contenu");
 $auteur = new Auteur;
-echo $article1->getInfos();
+//echo $article1->getInfos();
 echo '</br>';
-$article1->setTitre("Nouveau titre")->setContenu("Nouveau contenu")->setAuteur($auteur);
+$article1->setTitre("Nouveau titre")
+	->setContenu("Nouveau contenu")
+	->setAuteur($auteur)
+;
 
 echo $article1->getInfos();
