@@ -131,3 +131,5 @@ $article1->setTitre("Nouveau titre")
 $article1->getAuteur()->setNom("Nouvel auteur");
 
 echo $article1->getInfos();
+echo $article1->getInfos();
+echo $article1->getInfos();
