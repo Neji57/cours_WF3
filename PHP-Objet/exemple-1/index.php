@@ -6,4 +6,11 @@ class Article
 }
 
 $monArticle = new Article;
-$monarticle->titre = "Mon super article";
+$monArticle->titre = "Mon super article";
+
+echo $monArticle->titre;
+
+$article2 = new Article;
+$article2->titre = "Encore un !";
+
+echo $article2->titre;
