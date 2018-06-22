@@ -5,6 +5,7 @@ class Article // Création de la classe
 {
 	// Propriétés
 	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article et on ajoute une chaîne dans $titre
+	private $contenu;
 	private $statut;
 	public static $counter = 0;
 
@@ -42,9 +43,27 @@ class Article // Création de la classe
 	{
 		return self::$counter;
 	}
+
+	public function getContenu()
+	{
+		return $this->contenu;
+	}
+
+	public function setContenu($contenu)
+	{
+		$this->contenu = $contenu;
+
+		return $this;
+	}
+
+	public function afficher()
+	{
+		return $this->getTitre() . ' ' . $this->getContenu();
+	}
+
 }
 
-echo Article::$counter . ' ' .  'article(s) </br>';
+/* echo Article::$counter . ' ' .  'article(s) </br>';
 //echo Article::S_PUBLIC;
 
 $monArticle = new Article("Article 1"); // création d'un objet
@@ -55,7 +74,7 @@ $article2 = new Article("Article 2"); // Création d'un nouvel objet
 
 echo Article::$counter . ' ' . 'article(s) </br>';
 
-echo $monArticle->getCounter();
+echo $monArticle->getCounter(); */
 
 
 /* echo $monArticle->getTitre();
@@ -65,3 +84,5 @@ echo $monArticle->getTitre();
 echo '</br>';
 echo $article2->getTitre(); */
 
+
+$article1 = new Article("Titre");
