@@ -6,6 +6,7 @@ class Article // Création de la classe
 	// Propriétés
 	private $titre = "Mon article"; // Création de la variable $titre dans la classe Article et on ajoute une chaîne dans $titre
 
+	// Constructeur
 	public function __construct($titre)
 	{
 		$this->setTitre($titre);
