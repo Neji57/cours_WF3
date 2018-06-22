@@ -1,6 +1,7 @@
 <?php
 
 require_once('DVD.php');
+require_once('livre.php');
 
 $monDVD = new DVD(12.99, 2);
 
@@ -20,3 +21,5 @@ foreach ($monDVD->getActeurs() as $key => $acteur)
 {
 	echo $acteur . '<br>';
 }
+
+$livre = new Livre (9.99, 200, '67554568-1')
