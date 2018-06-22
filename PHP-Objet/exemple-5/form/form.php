@@ -14,7 +14,7 @@ class Form
 		$this->setMethod($method);
 		$this->setAction($action);
 		$this->setAttr($attr);
-		$items->array();
+		$this->items = array();
 	}
 
 	public function getName()
@@ -82,6 +82,10 @@ class Form
 
 		$html.= '>';
 
+		foreach ($this->getItems() as $key => $value) {
+			$html .= $item->createView;
+		}
+
 		$html.= '</form>';
 
 		return $html;
@@ -90,5 +94,17 @@ class Form
 	public function addItem(FormItem $item)
 	{
 		$this->items[] = $item;
+	}
+
+	public function getItems()
+	{
+		return $this->items;
+	}
+
+	public function setItems($items)
+	{
+		$this->items = $items;
+
+		return $this;
 	}
 }
