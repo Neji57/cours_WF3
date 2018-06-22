@@ -14,7 +14,9 @@ class Article // Création de la classe
 	// Constructeur
 	public function __construct($titre)
 	{
+		// Valeurs par défaut
 		$this->setTitre($titre);
+		$this->statut = self::PUBLIC;
 	}
 
 	// Méthodes
@@ -47,3 +49,4 @@ echo '</br>';
 echo $monArticle->getTitre();
 echo '</br>';
 echo $article2->getTitre(); */
+
