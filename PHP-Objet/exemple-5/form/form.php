@@ -12,7 +12,6 @@ class Form
 		$this->setName($name);
 		$this->setMethod($method);
 		$this->setAction($action);
-
 	}
 
 	public function getName()
