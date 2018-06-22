@@ -14,7 +14,7 @@ class Form
 		$this->setMethod($method);
 		$this->setAction($action);
 		$this->setAttr($attr);
-		private $items->array();
+		$items->array();
 	}
 
 	public function getName()
