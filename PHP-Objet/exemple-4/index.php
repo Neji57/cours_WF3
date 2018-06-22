@@ -7,4 +7,4 @@ $produit = new Produit;
 $client = new Client;
 
 
-EntityManager
+EntityManager::supprimerEntity;
