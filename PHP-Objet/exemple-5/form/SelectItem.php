@@ -36,7 +36,7 @@ class SelectItem extends FormItem
 	public function createView()
     {
         $html = $this->startView();
-		$html .= '<select name="' . $this->getName() . '">';
+		$html .= '<select class="form-control" name="' . $this->getName() . '">';
 
 		foreach ($this->getOptions() as $key => $value) 
 		{
