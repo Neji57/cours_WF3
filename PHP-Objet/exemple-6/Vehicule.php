@@ -6,15 +6,17 @@ class Vehicule
 	protected $estMotorise;
 	protected $nombrePorte;
 	protected $couleur;
+	protected $dateCreation;
 
 	public function __construct($couleur)
 	{
 		$this->setCouleur($couleur);
+		$this->dateCreation = new DateTime;
 	}
 
 	public function setCouleur(string $couleur)
 	{
-		if(strlen($couleur))
+		if(strlen($couleur) == 7)
 		{
 			$this->couleur = $couleur;
 		}
