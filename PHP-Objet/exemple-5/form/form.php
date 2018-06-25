@@ -85,7 +85,11 @@ class Form
         $html .= '>';
 
         foreach ($this->getItems() as $key => $item) {
-            $item->setValue($this->data->getUsername());
+            $methode = "get" . ucfirst($item->getName());
+            if(method_exists($this->data, $methode))
+            {
+                $item->setValue($this->data->$methode());
+            }
             $html .= $item->createView();
         }
 
