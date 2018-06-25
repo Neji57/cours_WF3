@@ -20,13 +20,13 @@ spl_autoload_register( function($className)
 	echo "Classe appelée: ".$className."<br>";
 });
 
+use Entity\User;
 use Form\Form;
 use Form\TextItem;
-use Entity\User;
 use Form\SelectItem;
 
 $fauxArticle = new \Entity\Produit\Produit();
-$user = new \Entity\User ("Piote", "Azerty", "superemail@gmail.com", "IT");
+$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
 // echo $user->getPassword();
 
 $myform = new \Form\Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
@@ -35,7 +35,7 @@ $myform->addItem(new TextItem("username", "Nom d'utilisateur"));
 $myform->addItem(new TextItem("email", "Adresse email"));
 $myform->addItem(new TextItem("rien", "Rien"));
 $myform->addItem(new SelectItem("sexe", "Sexe", array("Homme" => "h", "Femme" => "f", "Autre" => "a")));
-$myform->addItem(new \Form\SelectItem("pays", "Pays", array("Pologne" => "PL", "France" => "FR", "Allemagne" => "DE", "Italie" => "IT")));
+$myform->addItem(new SelectItem("pays", "Pays", array("Pologne" => "PL", "France" => "FR", "Allemagne" => "DE", "Italie" => "IT")));
 
 echo $myform->createView();
 
