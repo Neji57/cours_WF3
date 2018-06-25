@@ -1,80 +1,78 @@
 <?php
 
-/* 
-id
-username
-password
-email 
-`*/
+/*
+    ID
+    Username
+    Password
+    Email
+*/
 
 class User
 {
-	// Attributs
-	private $username;
+    private $id;
+    private $username;
     private $password;
     private $email;
-    private $id;
 
-	public function __construct($username, $password, $email)
-	{
-		$this->setUsername($username);
-		$this->setPassword($password);
-		$his->setEail($email);
-		$this->id = uniqid();
-	}
-
-	// Methodes
-	public function getName()
-	{
-		return $this->name;
-	}
-
-	public function setName($name)
-	{
-		$this->name = $name;
-
-		return $this;
-	}
-
-    public function getPassword()
+    public function __construct($username, $password, $email)
     {
-        return $this->password;
+        $this -> setUsername($username);
+        $this -> setPassword($password);
+        $this -> setEmail($email);
+        $this -> id = uniqid();
     }
-
-    public function setPassword($password)
+    
+    public function getId()
     {
-        $this->password = $password;
+        return $this -> id;
+    }
+     
+    public function setId($id)
+    {
+        $this -> id = $id;
 
         return $this;
     }
+    
+    public function getUsername()
+    {
+        return $this -> username;
+    }
+     
+    public function setUsername($username)
+    {
+        $this -> username = $username;
 
+        return $this;
+    }
+     
+    public function getPassword()
+    {
+        return $this -> password;
+    }
+   
+    public function setPassword($password)
+    {
+        $this -> password = md5($password);
+
+        return $this;
+    }
+     
     public function getEmail()
     {
-        return $this->email;
+        return $this -> email;
     }
-
+    
     public function setEmail($email)
     {
         if(filter_var($email, FILTER_VALIDATE_EMAIL))
-		{
-			$this->email = $email;
-		}
-		else
-		{
-			trigger_error("L'adresse email n'est pas valide");
-		}
-
-        return $this;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
+        {
+            $this -> email = $email;
+        }
+        else
+        {
+            trigger_error("L'adresse email n'esty pas valide");
+        }
 
         return $this;
     }
