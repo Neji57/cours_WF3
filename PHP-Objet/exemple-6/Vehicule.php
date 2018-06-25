@@ -7,6 +7,11 @@ class Vehicule
 	protected $nombrePorte;
 	protected $couleur;
 
+	public function __construct($couleur)
+	{
+		$this->setCouleur($couleur);
+	}
+
 	public function setCouleur(string $couleur)
 	{
 		if(strlen($couleur))
