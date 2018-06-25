@@ -6,3 +6,6 @@ $vehicule = new Vehicule("#990000");
 // $vehicule->setCouleur("#990000");
 
 echo $vehicule->toString();
+
+$voiture = new Voiture();
+echo $voiture->toString();
