@@ -17,10 +17,10 @@ class User
 
 	public function __construct($username, $password, $email)
 	{
-		this->setUsername($username);
-		this->setPassword($password);
-		this->setEail($email);
-		this->id = (uniqid();
+		$this->setUsername($username);
+		$this->setPassword($password);
+		$his->setEail($email);
+		$this->id = uniqid();
 	}
 
 	// Methodes
