@@ -26,6 +26,6 @@ class Vehicule
 
 	public function toString()
 	{
-		
+		return "Vehicule couleur " . $this->getCouleur();
 	}
 }
