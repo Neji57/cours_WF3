@@ -2,6 +2,8 @@
 
 namespace Form;
 
+use Entity\User;
+
 class SelectItem extends FormItem
 {
 
@@ -11,6 +13,7 @@ class SelectItem extends FormItem
     {
         $this->setOptions($options);
         parent::__construct($name, $label);
+        $user = new User("username", "password", "email");
     }
     
     public function createView()

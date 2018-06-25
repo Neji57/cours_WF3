@@ -75,7 +75,7 @@ class User
         }
         else
         {
-            trigger_error("L'adresse email n'esty pas valide");
+            trigger_error("L'adresse email n'est pas valide");
         }
 
         return $this;
