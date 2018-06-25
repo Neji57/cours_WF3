@@ -1,49 +1,28 @@
-<?php
-
-
-/* class Select
-{
-	private $id;
-    private $username;
-    private $password;
-    private $email;
-} */
-/* 
-<select name="select" ...>
-	<option value="valid">Valide</option>
-	<option value="deleted">Supprimé</option>
-</select>
- */
-
-/* 
-array(
-	"Valide" => "valid",
-	"Supprimé" => "deleted",
-)
-*/
-
+<?php 
 
 class SelectItem extends FormItem
 {
 
-	private $options;
+    private $options;
 
-	public function __construct($name, $label, array $options)
-	{
-		$this->setOptions($options);
-	}
-
-	public function createView()
+    public function __construct($name, $label, $options)
+    {
+        $this->setOptions($options);
+        parent::__construct($name, $label);
+    }
+    
+    public function createView()
     {
         $html = $this->startView();
-		$html .= '<select class="form-control" name="' . $this->getName() . '">';
+        $html .= '<select class="form-control" name="' . $this->getName() . '" />';
 
-		foreach ($this->getOptions() as $key => $value) 
-		{
-			$html .= '<option value="' . $value . '">' . $key . '</option>';
-		}
-
-		
+        foreach ($this->getOptions() as $key => $value) {
+            /*
+                $value == "val" ? "OUI" : "NON"
+                if($value == "val"){$result = "OUI";} else {$result = "NON";}
+            */
+            $html .= '<option value="' . $value . '"' . (($value == $this->getValue())? 'selected': '') . '>' . $key . '</option>';
+        }
 
         $html .= '</select>';
         $html .= $this->endView();
@@ -51,23 +30,15 @@ class SelectItem extends FormItem
         return $html;
     }
 
-	/**
-	 * Get the value of options
-	 */ 
-	public function getOptions()
-	{
-		return $this->options;
-	}
+    public function getOptions()
+    {
+        return $this->options;
+    }
 
-	/**
-	 * Set the value of options
-	 *
-	 * @return  self
-	 */ 
-	public function setOptions($options)
-	{
-		$this->options = $options;
+    public function setOptions($options)
+    {
+        $this->options = $options;
 
-		return $this;
-	}
+        return $this;
+    }
 }

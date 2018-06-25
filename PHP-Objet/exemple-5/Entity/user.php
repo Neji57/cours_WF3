@@ -20,7 +20,7 @@ class User
         $this -> setUsername($username);
         $this -> setPassword($password);
         $this -> setEmail($email);
-        $this -> setPays($pays);
+        $this->setPays($pays);  
         $this -> id = uniqid();
     }
     

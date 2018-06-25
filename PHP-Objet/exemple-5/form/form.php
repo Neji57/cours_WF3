@@ -9,7 +9,7 @@ class Form
     private $action;
     private $attr; // ARRAY
     private $items;
-    private $data; // Objet
+    private $data; //
 
     public function __construct($name, $method = 'POST', $action = "", $attr = array())
     {
@@ -84,12 +84,14 @@ class Form
 
         $html .= '>';
 
+        // Créé le code HTML des items
         foreach ($this->getItems() as $key => $item) {
             $methode = "get" . ucfirst($item->getName());
             if(method_exists($this->data, $methode))
             {
                 $item->setValue($this->data->$methode());
             }
+            
             $html .= $item->createView();
         }
 
@@ -130,7 +132,6 @@ class Form
         {
             trigger_error("Data n'est pas un objet");
         }
-        
 
         return $this;
     }
