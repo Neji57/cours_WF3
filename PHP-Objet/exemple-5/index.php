@@ -11,28 +11,26 @@ require_once('Entity/User.php'); */
 // Ne plus utiliser les require_once
 spl_autoload_register( function($className)
 {
-	if(file_exists('Entity/'.$className.'.php'))
+	$className = str_replace('\\', '/', $className); // remplacer les \ par des /
+	if(file_exists($className.'.php'))
 	{
-		require_once('Entity/'.$className.'.php');
+		require_once($className.'.php');
 	}
-	elseif(file_exists('Form/'.$className.'.php'))
-	{
-		require_once('Form/'.$className.'.php');
-	}
-	echo "Classe appelée: ".$className;
+
+	echo "Classe appelée: ".$className."<br>";
 });
 
 
-$user = new User("Piote", "Azerty", "superemail@gmail.com", "IT");
+$user = new \Entity\User ("Piote", "Azerty", "superemail@gmail.com", "IT");
 // echo $user->getPassword();
 
-$myform = new Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
+$myform = new \Form\Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
 $myform->setData($user);
-$myform->addItem(new TextItem("username", "Nom d'utilisateur"));
-$myform->addItem(new TextItem("email", "Adresse email"));
-$myform->addItem(new TextItem("rien", "Rien"));
-$myform->addItem(new SelectItem("sexe", "Sexe", array("Homme" => "h", "Femme" => "f", "Autre" => "a")));
-$myform->addItem(new SelectItem("pays", "Pays", array("Pologne" => "PL", "France" => "FR", "Allemagne" => "DE", "Italie" => "IT")));
+$myform->addItem(new \Form\TextItem("username", "Nom d'utilisateur"));
+$myform->addItem(new \Form\TextItem("email", "Adresse email"));
+$myform->addItem(new \Form\TextItem("rien", "Rien"));
+$myform->addItem(new \Form\SelectItem("sexe", "Sexe", array("Homme" => "h", "Femme" => "f", "Autre" => "a")));
+$myform->addItem(new \Form\SelectItem("pays", "Pays", array("Pologne" => "PL", "France" => "FR", "Allemagne" => "DE", "Italie" => "IT")));
 
 echo $myform->createView();
 
