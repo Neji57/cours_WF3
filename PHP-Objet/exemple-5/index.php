@@ -7,11 +7,11 @@ require_once('Form/TextItem.php');
 require_once('Entity/User.php');
 
 $user = new User("Loic", "Azerty", "ovigne.loic@gmail.com");
-echo $user->getPassword();
 
 $myform = new Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
 $myform->setData($user);
-$myform->addItem(new TextItem("username"));
+$myform->addItem(new TextItem("username", "Nom d'utilisateur"));
+$myform->addItem(new TextItem("email", "Adresse email));
 echo $myform->createView();
 
 require_once('Include/footer.php');
