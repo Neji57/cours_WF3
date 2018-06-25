@@ -10,8 +10,8 @@ $user = new User("Loic", "Azerty", "ovigne.loic@gmail.com");
 echo $user->getPassword();
 
 $myform = new Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
+$myform->setData($user);
 $myform->addItem(new TextItem("username"));
-
 echo $myform->createView();
 
 require_once('Include/footer.php');

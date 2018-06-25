@@ -9,6 +9,7 @@ class Form
     private $action;
     private $attr; // ARRAY
     private $items;
+    private $data; // Objet
 
     public function __construct($name, $method = 'POST', $action = "", $attr = array())
     {
@@ -84,6 +85,7 @@ class Form
         $html .= '>';
 
         foreach ($this->getItems() as $key => $item) {
+            $item->setValue($this->data->getUsername());
             $html .= $item->createView();
         }
 
@@ -105,6 +107,26 @@ class Form
     public function setItems($items)
     {
         $this->items = $items;
+
+        return $this;
+    }
+
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    public function setData($data)
+    {
+        if(is_object($data))
+        {
+            $this->data = $data;
+        }
+        else
+        {
+            trigger_error("Data n'est pas un objet");
+        }
+        
 
         return $this;
     }
