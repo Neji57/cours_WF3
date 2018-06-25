@@ -1,40 +1,39 @@
-<?php
+<?php 
 
 abstract class FormItem
 {
-	private $name;
+    private $name;
 
-	public function __construct($name)
-	{
-		$this->satName();
-	}
-	
-	public function getName()
-	{
-		return $this->name;
-	}
+    public function __construct($name)
+    {
+        $this->setName($name);
+    }
 
-	public function setName($name)
-	{
-		$this->name = $name;
+    public function getName()
+    {
+        return $this->name;
+    }
 
-		return $this;
-	}
+    public function setName($name)
+    {
+        $this->name = $name;
 
-	public abstract function createView();
-	
-	protected function startView()
-	{
-		$html = '<div class="form-group">
-		<label></label>';
+        return $this;
+    }
 
-		return $html;
-	}
+    public abstract function createView();
 
-	protected function endView()
-	{
-		$html = '<div>';
-		
-		return $html;
-	}
+    protected function startView()
+    {
+        $html = '<div class="form-group">
+        <label></label>';
+
+        return $html;
+    }
+
+    protected function endView()
+    {
+        $html = '</div>';
+        return $html;
+    }
 }
