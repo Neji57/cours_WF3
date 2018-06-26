@@ -19,6 +19,6 @@ class Voiture extends Vehicule
 
     public static function klaxonner()
     {
-        echo "pouet";
+        echo "pouet !!!";
     }
 }
