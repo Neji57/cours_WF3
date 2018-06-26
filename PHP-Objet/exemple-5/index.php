@@ -75,6 +75,7 @@ echo $newForm -> getName();
 echo '<hr>';
 echo $myform -> getName();
 echo '<hr>';
+$_SESSION['form'] = $myform;
 
 
 
