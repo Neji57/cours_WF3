@@ -177,7 +177,6 @@ class Form
         foreach ($this -> items as $key => $value) {
             $this -> items[$value -> getName()] = clone($value);
         }
+        $this -> data = clone($this ->data);
     }
-
-
 }
