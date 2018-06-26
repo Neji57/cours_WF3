@@ -21,6 +21,7 @@ spl_autoload_register( function($className)
 });
 
 use Entity\User;
+use DataBase\UserManager;
 /* use Form\Form;
 use Form\TextItem;
 use Form\SelectItem; */
@@ -34,6 +35,9 @@ use Form\
 };
 
 $user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
+
+$userManager = new UserManager;
+$userManager -> save($user);
 // echo $user->getPassword();
 
 $myform = new \Form\Form ("login", "POST", "", array("class" => "form", "id" => "login-form"));
