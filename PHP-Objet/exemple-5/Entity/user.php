@@ -9,8 +9,13 @@
 
 namespace Entity;
 
+use Traits\ValidationTrait;
+
 class User
 {
+    use ValidationTrait;
+    
+    // Attributs
     private $id;
     private $username;
     private $password;

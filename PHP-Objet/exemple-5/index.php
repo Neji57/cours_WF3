@@ -64,7 +64,7 @@ echo $newForm->getItem("username")->getValue();
 echo '<hr>';
 echo $myform->getItem("username")->getValue(); */
 
-$formStr = serialize($myform);
+/* $formStr = serialize($myform);
 $newForm = unserialize($formStr);
 
 
@@ -76,7 +76,7 @@ echo '<hr>';
 echo $myform -> getName();
 echo '<hr>';
 $_SESSION['form'] = $myform;
-
+ */
 
 
 
