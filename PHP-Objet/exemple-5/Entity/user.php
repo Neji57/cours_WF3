@@ -9,11 +9,11 @@
 
 namespace Entity;
 
-use Traits\ValidationTrait;
+//use Traits\ValidationTrait;
 
 class User
 {
-    use ValidationTrait;
+    use \Traits\ValidationTrait;
     
     // Attributs
     private $id;
@@ -74,7 +74,7 @@ class User
     
     public function setEmail($email)
     {
-        if(filter_var($email, FILTER_VALIDATE_EMAIL))
+        if($this -> isMail($email))
         {
             $this -> email = $email;
         }
