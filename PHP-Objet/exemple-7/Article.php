@@ -42,7 +42,7 @@ class Article
 	// Appelée lors de la lecture d'une propriété inaccessible
 	public function __get($name)
 	{
-		echo "Propriété " . $name . " est appelée </br>";
+		echo "Propriété " . $name . " est appelée <hr>";
 		$method = 'get' . ucfirst($name);
 		if(method_exists($this, $method))
 		{
@@ -53,14 +53,30 @@ class Article
 	// Appelée lors de la modification d'une propriété inaccessible
 	public function __set($name, $value)
 	{
-		echo "Propriété " . $name . " est modifiée </br>";
-
+		echo "Propriété " . $name . " est modifiée <hr>";
 		$method = 'set' . ucfirst($name);
 
 		if(method_exists($this, $method))
 		{
 			return $this->$method($value);
 		}
+	}
+
+	public function __tostring()
+	{
+		return $this -> name;
+	}
+
+	public function __isset($name)
+	{
+		echo "...";
+		return false;
+	}
+
+	public function __sleep()
+	{
+		echo "Linéarisation <hr>";
+		return false;
 	}
 
 	public function getName()
