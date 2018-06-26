@@ -52,5 +52,9 @@ echo $newForm->getName();
 echo '</br>';
 echo $myform->getName();
 
+$newForm = clone($myform);
+$newForm = setName($myform);
+echo $newForm
+
 
 require_once('Include/footer.php');

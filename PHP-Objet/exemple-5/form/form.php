@@ -108,12 +108,12 @@ class Form
 
     public function addItem(FormItem $item)
     {
-        $this->items[] = $item;
+        $this->items[$item -> getName()] = $item;
     }
 
     public function getItem($name)
 {
-    if(isset($this -> items[$name]))
+    if (!isset($this -> items[$name]))
     {
         return null;
     }
