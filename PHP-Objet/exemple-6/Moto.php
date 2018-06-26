@@ -14,5 +14,10 @@ class Moto extends Vehicule
     {
         return "Moto " . parent::toString();
         $this -> type = "Moto";
+	}
+	
+	public static function klaxonner()
+    {
+        echo "pouet !!!";
     }
 }
