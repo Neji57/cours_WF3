@@ -53,8 +53,15 @@ echo '</br>';
 echo $myform->getName();
 
 $newForm = clone($myform);
-$newForm = setName($myform);
-echo $newForm
+$newForm->setName("nouveau");
+echo $newForm->getName();
+echo '</br>';
+echo $myform->getName();
+$newForm->getItem("username")->setValue("Plop");
+echo '</br>';
+echo $newForm->getItem("username")->getValue();
+echo '</br>';
+echo $myform->getItem("username")->getValue();
 
 
 require_once('Include/footer.php');
