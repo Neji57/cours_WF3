@@ -62,17 +62,20 @@ class Article
 		}
 	}
 
-	public function __tostring()
+	// Appelée lors de la conversion de l'objet en chaîne 
+	public function __toString()
 	{
 		return $this -> name;
 	}
 
+	// Lors de l'appel de la méthode isset ou empty sur une propriété
 	public function __isset($name)
 	{
-		echo "L'attribut " . $name . " est testé </br>";
+		echo "L'attribut " . $name . " est testé <hr>";
 		return false;
 	}
 
+	// Lors d'une linéaeisation
 	public function __sleep()
 	{
 		echo "Linéarisation <hr>";
@@ -82,18 +85,20 @@ class Article
     // Lors d'une délinéarisation
     public function __wakeup()
     {
-        echo "Délinéarisation </br>";
-    }
+        echo "Délinéarisation <hr>";
+	}
+	
+	// Lors de l'utilisation de l'objet comme méthode
+	public function __invoke()
+	{
+		echo "Utilisation de l'objet comme méthode <hr>";
+	}
+
+
 
 	public function getName()
 	{
-		return $this->name;
-	}
-
-	// Lors de l'utilisation de l'objet comme méthode
-	public function __invikr($attr)
-	{
-		echo "Utilisation de l'objet comme méthode <hr>";
+		return $this -> name;
 	}
 
 	public function setName($name)
