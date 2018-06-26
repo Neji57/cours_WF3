@@ -69,19 +69,31 @@ class Article
 
 	public function __isset($name)
 	{
-		echo "...";
+		echo "L'attribut " . $name . " est testé </br>";
 		return false;
 	}
 
 	public function __sleep()
 	{
 		echo "Linéarisation <hr>";
-		return false;
-	}
+		return ["name"];
+    }
+
+    // Lors d'une délinéarisation
+    public function __wakeup()
+    {
+        echo "Délinéarisation </br>";
+    }
 
 	public function getName()
 	{
 		return $this->name;
+	}
+
+	// Lors de l'utilisation de l'objet comme méthode
+	public function __invikr($attr)
+	{
+		echo "Utilisation de l'objet comme méthode <hr>";
 	}
 
 	public function setName($name)

@@ -10,4 +10,4 @@ $article->name = "Nouveau nom";
 echo $article->name;
 isset($article -> name);
 serialize($article);
-unserialize($article);
+unserialize($str);
