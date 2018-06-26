@@ -13,6 +13,7 @@ class Form
     private $items;
     private $data; 
     private $submitLabel;
+    private $presentation;
 
     public function __construct($name, $method = 'POST', $action = "", $attr = array())
     {
@@ -184,5 +185,25 @@ class Form
     {
         echo "Objet Form sérialisé <hr>";
         return ["name", "method"];
+    }
+
+    /**
+     * Get the value of presentation
+     */ 
+    public function getPresentation()
+    {
+        return $this->presentation;
+    }
+
+    /**
+     * Set the value of presentation
+     *
+     * @return  self
+     */ 
+    public function setPresentation($presentation)
+    {
+        $this->presentation = $presentation;
+
+        return $this;
     }
 }

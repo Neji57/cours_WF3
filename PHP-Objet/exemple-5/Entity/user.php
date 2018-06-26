@@ -50,7 +50,7 @@ class User
      
     public function setUsername($username)
     {
-        if($this -> isStringLength($username, 3, 20))
+        if($this->isStringLength($username, 3, 20))
         {
             $this -> username = $username;
         }
