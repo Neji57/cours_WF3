@@ -13,5 +13,5 @@ class TextItem extends FormItem
         $html .= $this->endView();
 
         return $html;
-    }   
+    }
 }

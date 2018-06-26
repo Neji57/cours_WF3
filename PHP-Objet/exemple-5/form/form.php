@@ -144,7 +144,7 @@ class Form
 
     public function getSubmitView()
     {
-        $html = '<button type="submit" class="btn btn-info form-control">' . $this -> getSubmitLabel() . '</button>';
+        $html = '<button type="submit" class="btn btn-info form-control mb-5">' . $this -> getSubmitLabel() . '</button>';
         return $html;
     }
 

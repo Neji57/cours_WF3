@@ -17,7 +17,7 @@ spl_autoload_register( function($className)
 		require_once($className.'.php');
 	}
 
-	echo "Classe appelée: ".$className."<br>";
+	//echo "Classe appelée: ".$className."<br>";
 });
 
 use Entity\User;
@@ -29,7 +29,8 @@ use Form\
 {
 	Form,
 	TextItem,
-	SelectItem
+	SelectItem,
+	TextareaItem
 };
 
 $user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
@@ -42,6 +43,7 @@ $myform->addItem(new TextItem("email", "Adresse email"));
 $myform->addItem(new TextItem("rien", "Rien"));
 $myform->addItem(new SelectItem("sexe", "Sexe", array("Homme" => "h", "Femme" => "f", "Autre" => "a")));
 $myform->addItem(new SelectItem("pays", "Pays", array("Pologne" => "PL", "France" => "FR", "Allemagne" => "DE", "Italie" => "IT")));
+$myform -> addItem(new TextareaItem("test", "test"));
 
 echo $myform->createView();
 
