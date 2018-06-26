@@ -9,6 +9,9 @@ class Voiture extends Vehicule
     {
         parent::__construct($couleur);
         $this -> type = "Voiture";
+        $this -> estMotorise = true;
+		$this -> nombrePortes = 5;
+		$this -> nnombreRoues = 4;
     }
 
     public function toString()
