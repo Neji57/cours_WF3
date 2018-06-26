@@ -159,4 +159,10 @@ class Form
 
         return $this;
     }
+
+
+    public function __clone()
+    {
+        echo "L'objet Forl est cloné </br>";
+    }
 }
