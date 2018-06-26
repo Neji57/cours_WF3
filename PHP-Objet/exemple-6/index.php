@@ -13,3 +13,5 @@ echo $voiture -> toString();
 echo '<hr>';
 $voiture -> setNombrePortes(4);
 Voiture::klaxonner();
+echo '<hr>';
+echo Vehicule::$counter . ' Véhicules';
