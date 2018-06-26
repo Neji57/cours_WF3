@@ -50,6 +50,19 @@ class Article
 		}
 	}
 
+	// Appelée lors de la modification d'une propriété inaccessible
+	public function __set($name, $value)
+	{
+		echo "Propriété " . $name . " est modifiée </br>";
+
+		$method = 'set' . ucfirst($name);
+
+		if(method_exists($this, $method))
+		{
+			return $this->$method($value);
+		}
+	}
+
 	public function getName()
 	{
 		return $this->name;
