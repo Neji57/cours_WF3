@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('Include/header.php');
 
 /* require_once('Form/Form.php');
@@ -46,22 +46,37 @@ $myform->addItem(new SelectItem("pays", "Pays", array("Pologne" => "PL", "France
 $myform -> addItem(new TextareaItem("presentation", "Présentation"));
 echo $myform->createView();
 
-$newForm = $myform;
+/* $newForm = $myform;
 $newForm->setName("nouveau");
 echo $newForm->getName();
-echo '</br>';
+echo '<hr>';
 echo $myform->getName();
 
 $newForm = clone($myform);
 $newForm->setName("nouveau");
 echo $newForm->getName();
-echo '</br>';
+echo '<hr>';
 echo $myform->getName();
 $newForm->getItem("username")->setValue("Plop");
-echo '</br>';
+echo '<hr>';
+
 echo $newForm->getItem("username")->getValue();
-echo '</br>';
-echo $myform->getItem("username")->getValue();
+echo '<hr>';
+echo $myform->getItem("username")->getValue(); */
+
+$formStr = serialize($myform);
+$newForm = unserialize($formStr);
+
+
+echo $newForm -> getName();
+$newForm -> setName("Nouveau");
+echo '<hr>';
+echo $newForm -> getName();
+echo '<hr>';
+echo $myform -> getName();
+echo '<hr>';
+
+
 
 
 require_once('Include/footer.php');

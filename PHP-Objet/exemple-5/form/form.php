@@ -179,4 +179,9 @@ class Form
         }
         $this -> data = clone($this ->data);
     }
+
+    public function __sleep()
+    {
+        echo "Objet Form sérialisé <hr>";
+    }
 }
