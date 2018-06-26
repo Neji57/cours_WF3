@@ -171,9 +171,13 @@ class Form
         return $this;
     }
 
-
     public function __clone()
     {
         echo "L'objet Form est cloné </br>";
+        foreach ($this -> items as $key => $value) {
+            $this -> items[$value -> getName()] = clone($value);
+        }
     }
+
+
 }
