@@ -21,9 +21,16 @@ spl_autoload_register( function($className)
 });
 
 use Entity\User;
-use Form\Form;
+/* use Form\Form;
 use Form\TextItem;
-use Form\SelectItem;
+use Form\SelectItem; */
+
+use Form\
+{
+	Form,
+	TextItem,
+	SelectItem
+};
 
 $fauxArticle = new \Entity\Produit\Produit();
 $user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
