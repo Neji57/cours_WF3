@@ -111,6 +111,17 @@ class Form
         $this->items[] = $item;
     }
 
+    public function getItem($name)
+{
+    if(isset($this -> items[$name]))
+    {
+        return null;
+    }
+    return $this -> items[$name];
+    /* 
+    $this -> items['username'];
+    */
+}
     public function getItems()
     {
         return $this->items;
@@ -163,6 +174,6 @@ class Form
 
     public function __clone()
     {
-        echo "L'objet Forl est cloné </br>";
+        echo "L'objet Form est cloné </br>";
     }
 }
