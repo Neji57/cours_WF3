@@ -62,6 +62,7 @@ class UserManager extends DBManager
          */
         if ($userData = $query -> fetch()) {
             $user = new User();
+            $user -> setId($userData['id']);
 
             foreach ($this -> data as $key => $value) {
 

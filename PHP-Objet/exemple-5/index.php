@@ -34,6 +34,18 @@ use Form\
 	TextareaItem
 };
 
+if($_POST)
+{
+	$user = new User();
+	foreach ($_POST as $key => $value) {
+		$methode = 'set' . ucfirst($key);
+		if(method_exists($user, $methode))
+		{
+			$user -> $methode($value);
+		}
+	}
+}
+
 //$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
 
 $userManager = new UserManager;
@@ -45,7 +57,6 @@ $myform = new \Form\Form ("login", "POST", "", array("class" => "form", "id" => 
 $myform->setData($user);
 $myform->addItem(new TextItem("username", "Nom d'utilisateur"));
 $myform->addItem(new TextItem("email", "Adresse email"));
-$myform->addItem(new TextItem("rien", "Rien"));
 $myform->addItem(new SelectItem("sexe", "Sexe", array("Homme" => "h", "Femme" => "f", "Autre" => "a")));
 $myform->addItem(new SelectItem("pays", "Pays", array("Pologne" => "PL", "France" => "FR", "Allemagne" => "DE", "Italie" => "IT")));
 $myform -> addItem(new TextareaItem("presentation", "Présentation"));
