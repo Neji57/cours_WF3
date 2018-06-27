@@ -22,6 +22,8 @@ class Subject implements \SplSubject
 	}
 	public function notify ()
 	{
-
+		foreach ($this->observers as $key => $value) {
+			$value -> update($this);
+		}
 	}
 }
