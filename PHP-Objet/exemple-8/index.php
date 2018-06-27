@@ -9,7 +9,12 @@ spl_autoload_register(function ($className) {
 });
 
 use Singleton\Singleton;
+use Factory\Factory;
 
 // Singleton
 $singleton = Singleton::getInstance('NOM');
+$formItem = \Factory\Factory::create("select");
+
+// Si je n'utilise pas le use plus haut, il faut ajouter le chemin
 //$singleton = \Singleton\Singleton::getInstance('NOM');
+//$formItem = \Factory\Factory::create("select");
