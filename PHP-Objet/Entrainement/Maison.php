@@ -5,15 +5,16 @@ class Maison
 	private $materiauStructure;
 	private $materiauToit;
 	private $pieces;
-	const MATERIAU_STRUCTURE = [
+	private const MATERIAU_STRUCTURE = [
 		"Briques",
 		"Parepaing",
-		"Bois"
+		"Bois",
+		"Cuir de licorne"
 	];
-	const MATERIAU_TOIT = [
+	private const MATERIAU_TOIT = [
 		"Tuiles",
 		"Amiante",
-		"Feuille de bananier"
+		"Feuilles de bananier"
 	];
 
 
@@ -42,6 +43,8 @@ class Maison
 		if(in_array($materiauStructure, self::MATERIAU_STRUCTURE))
 		{
 			$this->materiauStructure = $materiauStructure;
+		} else {
+			trigger_error("Le matériau n'est pas valide");
 		}
 
 		return $this;
@@ -65,6 +68,8 @@ class Maison
 		if(in_array($materiauToit, self::MATERIAU_TOIT))
 		{
 			$this->materiauToit = $materiauToit;
+		} else {
+			trigger_error("Le matériau n'est pas valide");
 		}
 
 		return $this;
@@ -93,5 +98,16 @@ class Maison
 		$this->pieces = $pieces;
 
 		return $this;
+	}
+
+	public function getInfos()
+	{
+		$pieces = array();
+		$infos = array(
+			"matStructure" => $this->getMateriauStructure(),
+			"matToit" => $this->getMateriauToit(),
+		);
+
+		return $infos;
 	}
 }

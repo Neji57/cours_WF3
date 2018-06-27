@@ -6,11 +6,12 @@ class Piece
 	private $surface;
 	private $hauteur;
 	private $nbFenetres;
-	public static $counter = 0;
 
-	public function __construct()
+	public function __construct($nom, $surface, $hauteur)
 	{
-		self::$counter++;
+		$this -> setNom($nom);
+		$this ->setSurface($surface);
+		$this ->setHauteur($hauteur);
 	}
 
 	/**

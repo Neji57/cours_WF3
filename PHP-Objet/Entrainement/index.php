@@ -8,9 +8,21 @@ spl_autoload_register(function ($className) {
 	}
 });
 
-$maison = new Maison("Briques", "Feuilles de bananier");
+$maison = new Maison("Cuir de licorne", "Feuilles de bananier");
+
+$chambre1 = new Piece("Chambre 1", 16, 2.5);
+$cuisine = new Piece("Cuisine", 20, 2.5);
 // $maison->setMateriauStructure("Briques");
 // $maison->setMateriauToit("Le toit est en amiante ! Attention au cancer");
-echo $maison->getMateriauStructure();
-echo '<hr>';
-echo $maison->getMateriauToit();
+$pieces = [$chambre1, $cuisine];
+$maison->setPieces($pieces);
+
+// echo "La structure est en : ";
+// echo $maison->getMateriauStructure();
+// echo '<hr>';
+// echo "Le toit est en : ";
+// echo $maison->getMateriauToit();
+
+echo "<pre>";
+print_r ($maison->getInfos());
+echo "</pre>";
