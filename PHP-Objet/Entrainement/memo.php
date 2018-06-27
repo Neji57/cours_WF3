@@ -23,4 +23,11 @@
 			Créer un autoload
 
 			Info : une classe par fichier
+
+	2 - Affiner les classes
+	Créer des constructeurs avec les attributs obligatoires:
+		Maison : matériauxStructure, matériauToit
+		Piece : nom, surface, hauteur
+
+	Dans maison, les matériaux doivent être prédéfinis dans un array de type constante pour valider les données (avec in_array)
  */

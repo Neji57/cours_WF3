@@ -28,7 +28,7 @@ class Piece
 	 */
 	public function setSurface($surface)
 	{
-		if($this -> surface > 0){
+		if($surface > 0){
 			$this->surface = $surface;
 		} else {
 			trigger_error("La surface doit être supérieure à 0");
@@ -51,7 +51,7 @@ class Piece
 	 */
 	public function setHauteur($hauteur)
 	{
-		if ($this->hauteur > 0) {
+		if ($hauteur > 0) {
 			$this->hauteur = $hauteur;
 		} else {
 			trigger_error("La hauteur doit être supérieure à 0");
@@ -74,7 +74,7 @@ class Piece
 	 */
 	public function setNbFenetres($nbFenetres)
 	{
-		if ($this->nbFenetres >= 0) {
+		if ($nbFenetres >= 0) {
 			$this->nbFenetres = $nbFenetres;
 		} else {
 			trigger_error("La nb de fenêtres doit être supérieur ou égal à 0");
@@ -84,7 +84,7 @@ class Piece
 
 	/**
 	 * Get the value of nom
-	 */ 
+	 */
 	public function getNom()
 	{
 		return $this->nom;
@@ -94,7 +94,7 @@ class Piece
 	 * Set the value of nom
 	 *
 	 * @return  self
-	 */ 
+	 */
 	public function setNom(string $nom)
 	{
 		$this->nom = $nom;

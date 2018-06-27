@@ -5,7 +5,7 @@ class Maison
 	private $materiauStructure;
 	private $materiauToit;
 	private $pieces;
-	
+
 
 	public function __construct()
 	{
@@ -26,7 +26,7 @@ class Maison
 	 *
 	 * @return  self
 	 */
-	public function setMateriauStructure($materiauStructure)
+	public function setMateriauStructure(string $materiauStructure)
 	{
 		$this->materiauStructure = $materiauStructure;
 
@@ -46,7 +46,7 @@ class Maison
 	 *
 	 * @return  self
 	 */
-	public function setMateriauToit($materiauToit)
+	public function setMateriauToit(string $materiauToit)
 	{
 		$this->materiauToit = $materiauToit;
 
@@ -60,7 +60,7 @@ class Maison
 
 	/**
 	 * Get the value of pieces
-	 */ 
+	 */
 	public function getPieces()
 	{
 		return $this->pieces;
@@ -70,7 +70,7 @@ class Maison
 	 * Set the value of pieces
 	 *
 	 * @return  self
-	 */ 
+	 */
 	public function setPieces(array $pieces)
 	{
 		$this->pieces = $pieces;
