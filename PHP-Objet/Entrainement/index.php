@@ -8,9 +8,9 @@ spl_autoload_register(function ($className) {
 	}
 });
 
-$maison = new Maison;
-$maison->setMateriauStructure("Briques");
-$maison->setMateriauToit("Le toit est en amiante ! Attention au cancer");
+$maison = new Maison("Briques", "Feuilles de bananier");
+// $maison->setMateriauStructure("Briques");
+// $maison->setMateriauToit("Le toit est en amiante ! Attention au cancer");
 echo $maison->getMateriauStructure();
 echo '<hr>';
 echo $maison->getMateriauToit();

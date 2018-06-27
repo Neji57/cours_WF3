@@ -17,9 +17,10 @@ class Maison
 	];
 
 
-	public function __construct()
+	public function __construct(string $materiauStructure, string $materiauToit)
 	{
-
+		$this -> setMateriauStructure($materiauStructure);
+		$this -> setMateriauToit($materiauToit);
 	}
 
 
@@ -38,7 +39,10 @@ class Maison
 	 */
 	public function setMateriauStructure(string $materiauStructure)
 	{
-		$this->materiauStructure = $materiauStructure;
+		if(in_array($materiauStructure, self::MATERIAU_STRUCTURE))
+		{
+			$this->materiauStructure = $materiauStructure;
+		}
 
 		return $this;
 	}
@@ -58,7 +62,10 @@ class Maison
 	 */
 	public function setMateriauToit(string $materiauToit)
 	{
-		$this->materiauToit = $materiauToit;
+		if(in_array($materiauToit, self::MATERIAU_TOIT))
+		{
+			$this->materiauToit = $materiauToit;
+		}
 
 		return $this;
 	}
