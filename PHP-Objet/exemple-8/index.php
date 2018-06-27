@@ -7,3 +7,7 @@ spl_autoload_register(function ($className) {
 		require_once($className . '.php');
 	}
 });
+
+// Singleton
+$singleton = \Singleton\Singleton::getInstance('NOM');
+$singleton2 = \Singleton\Singleton::getInstance('NOM');
