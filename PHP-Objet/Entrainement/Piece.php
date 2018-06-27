@@ -5,6 +5,12 @@ class Piece
 	private $surface;
 	private $hauteur;
 	private $nbFenetres;
+	public static $counter = 0;
+
+	public function __construct()
+	{
+		self::$counter++;
+	}
 
 	/**
 	 * Get the value of surface
