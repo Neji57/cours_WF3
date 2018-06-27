@@ -8,6 +8,8 @@ spl_autoload_register(function ($className) {
 	}
 });
 
+use Singleton\Singleton;
+
 // Singleton
-$singleton = \Singleton\Singleton::getInstance('NOM');
-$singleton2 = \Singleton\Singleton::getInstance('NOM');
+$singleton = Singleton::getInstance('NOM');
+//$singleton = \Singleton\Singleton::getInstance('NOM');
