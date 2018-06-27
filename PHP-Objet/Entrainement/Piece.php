@@ -2,6 +2,7 @@
 
 class Piece
 {
+	private $nom;
 	private $surface;
 	private $hauteur;
 	private $nbFenetres;
@@ -78,6 +79,26 @@ class Piece
 		} else {
 			trigger_error("La nb de fenêtres doit être supérieur ou égal à 0");
 		}
+		return $this;
+	}
+
+	/**
+	 * Get the value of nom
+	 */ 
+	public function getNom()
+	{
+		return $this->nom;
+	}
+
+	/**
+	 * Set the value of nom
+	 *
+	 * @return  self
+	 */ 
+	public function setNom(string $nom)
+	{
+		$this->nom = $nom;
+
 		return $this;
 	}
 }

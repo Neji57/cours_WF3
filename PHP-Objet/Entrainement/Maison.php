@@ -4,10 +4,12 @@ class Maison
 {
 	private $materiauStructure;
 	private $materiauToit;
+	private $pieces;
+	
 
 	public function __construct()
 	{
-		self::$counter++;
+
 	}
 
 
@@ -47,6 +49,31 @@ class Maison
 	public function setMateriauToit($materiauToit)
 	{
 		$this->materiauToit = $materiauToit;
+
+		return $this;
+	}
+
+	public function addPiece()
+	{
+
+	}
+
+	/**
+	 * Get the value of pieces
+	 */ 
+	public function getPieces()
+	{
+		return $this->pieces;
+	}
+
+	/**
+	 * Set the value of pieces
+	 *
+	 * @return  self
+	 */ 
+	public function setPieces(array $pieces)
+	{
+		$this->pieces = $pieces;
 
 		return $this;
 	}
