@@ -15,6 +15,8 @@ use Factory\Factory;
 $singleton = Singleton::getInstance('NOM');
 $singleton2 = Singleton::getInstance('NOM');
 $formItem = \Factory\Factory::create("select");
+$messagerie = new Messagerie():
+$notification =
 
 // Si je n'utilise pas le use plus haut, il faut ajouter le chemin
 //$singleton = \Singleton\Singleton::getInstance('NOM');
