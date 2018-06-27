@@ -34,9 +34,10 @@ use Form\
 	TextareaItem
 };
 
-$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
+//$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
 
 $userManager = new UserManager;
+$user = $userManager -> findById(1);
 //$userManager -> save($user);
 // echo $user->getPassword();
 

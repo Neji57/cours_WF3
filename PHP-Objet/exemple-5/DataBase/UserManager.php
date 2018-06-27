@@ -6,6 +6,7 @@ use Entity\User;
 
 class UserManager extends DBManager
 {
+    private $data = ["username", "password", "email", "pays", "sexe", "presentation"];
     public function save(User $user)
     {
         // $query = $this->pdo->prepare("INSERT INTO user (username, password, email, pays, sexe, presentation) VALUES (:username, :password, :email, :pays, :sexe, :presentation)");
@@ -19,7 +20,7 @@ class UserManager extends DBManager
 
         // $query->execute();
 
-        $data = ["username", "password", "email", "pays", "sexe", "presentation"];
+        $data = $this -> data;
         $attributes = "";
         $values = "";
 
