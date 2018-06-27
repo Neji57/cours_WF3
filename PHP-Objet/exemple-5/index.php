@@ -34,23 +34,28 @@ use Form\
 	TextareaItem
 };
 
-if($_POST)
-{
-	$user = new User();
+$userManager = new UserManager();
 
-	foreach ($_POST as $key => $value) {
-		$methode = 'set' . ucfirst($key);
-		if(method_exists($user, $methode))
+if ($_POST)
+{
+	$user = $userManager->findById(1);
+	foreach ($_POST as $key => $value)
+	{
+		if ($value == "password")
 		{
-			$user -> $methode($value);
+			continue;
+		}
+		$methode = 'set' . ucfirst($key);
+		if (method_exists($user, $methode))
+		{
+			$user->$methode($value);
 		}
 	}
+	$userManager->save($user);
 }
+$user = $userManager->findById(1);
 
 //$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
-
-$userManager = new UserManager;
-$user = $userManager -> findById(1);
 //$userManager -> save($user);
 // echo $user->getPassword();
 
