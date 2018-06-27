@@ -37,6 +37,7 @@ use Form\
 if($_POST)
 {
 	$user = new User();
+
 	foreach ($_POST as $key => $value) {
 		$methode = 'set' . ucfirst($key);
 		if(method_exists($user, $methode))
