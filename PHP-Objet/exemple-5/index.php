@@ -34,7 +34,7 @@ use Form\
 	TextareaItem
 };
 
-$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
+//$user = new \Entity\User("Piote", "Azerty", "superemail@gmail.com", "IT");
 
 $userManager = new UserManager;
 //$userManager -> save($user);

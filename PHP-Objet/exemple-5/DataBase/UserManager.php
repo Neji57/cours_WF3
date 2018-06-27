@@ -40,7 +40,7 @@ class UserManager extends DBManager
         // Boucle pour appeler les méthodes accesseurs (getUsername())
         foreach ($data as $key => $value) {
             $methode = "get" . ucfirst($value);
-            $query->bindValue(':' . $value, $user->$methode());
+            $query->bindValue(':' . $value, $user -> $methode());
         }
 
         $query->execute();
