@@ -1,5 +1,7 @@
 <?php
 
+namespace Autoloader;
+
 class Autoloader
 {
 
@@ -14,15 +16,15 @@ class Autoloader
 
 
 	/**
-	 * Si le fichier de classe existe, il est requis dans me page
+	 * Si le fichier de classe existe, il est requis dans la page
 	 *
 	 */
 	static function autoload($className)
 	{
 		// Requis sur OS X
 		$className = str_replace('\\', '/', $className);
-		if (file_exists('class/' . $className . '.php')) {
-			require_once('class/' . $className . '.php');
+		if (file_exists($className . '.php')) {
+			require_once($className . '.php');
 		}
 	}
 }
