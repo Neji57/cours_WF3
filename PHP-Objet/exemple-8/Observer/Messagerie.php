@@ -2,10 +2,10 @@
 
 namespace Observer;
 
-class Messagerie extends Subjects
+class Messagerie extends Subject
 {
 	public function envoyerMessage($message)
 	{
-		echo "Message envoyeé :" . $message . "</br>";
+		echo "Message envoyé :" . $message . "</br>";
 	}
 }
