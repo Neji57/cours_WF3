@@ -9,7 +9,7 @@ trait Validationtrait
 		return (filter_var(strtolower($email), FILTER_VALIDATE_EMAIL));
 	}
 
-	private function isStribgLength(string $string, $min, $max)
+	private function isStringLength(string $string, $min, $max)
 	{
 		if(strlen($string) < $min)
 		{
@@ -19,7 +19,7 @@ trait Validationtrait
 		{
 			return false;
 		}
-
+		return true;
 		// return strlen($string) > $min && strlen($string) > $max;
 	}
 }

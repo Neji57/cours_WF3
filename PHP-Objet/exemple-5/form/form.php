@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Form;
 
@@ -11,7 +11,7 @@ class Form
     private $action;
     private $attr; // ARRAY
     private $items;
-    private $data; 
+    private $data;
     private $submitLabel;
     private $presentation;
 
@@ -41,7 +41,7 @@ class Form
         return $this->method;
     }
 
-    public function setMethod($method)
+      public function setMethod($method)
     {
         $this->method = $method;
 
@@ -59,12 +59,12 @@ class Form
 
         return $this;
     }
- 
+
     public function getAttr() : array
     {
         return $this->attr;
     }
- 
+
     public function setAttr(array $attr) // array ('class' => 'form')
     {
         $this->attr = $attr;
@@ -74,11 +74,11 @@ class Form
 
     public function createView()
     {
-        $html = '<form name="' 
-        . $this->getName() 
-        . '" method="' 
+        $html = '<form name="'
+        . $this->getName()
+        . '" method="'
         . $this->getMethod()
-        . '" action="' 
+        . '" action="'
         . $this->getAction()
         . '"'
         ;
@@ -96,7 +96,7 @@ class Form
             {
                 $item->setValue($this->data->$methode());
             }
-            
+
             $html .= $item->createView();
         }
 
@@ -119,7 +119,7 @@ class Form
         return null;
     }
     return $this -> items[$name];
-    /* 
+    /*
     $this -> items['username'];
     */
 }
@@ -189,7 +189,7 @@ class Form
 
     /**
      * Get the value of presentation
-     */ 
+     */
     public function getPresentation()
     {
         return $this->presentation;
@@ -199,7 +199,7 @@ class Form
      * Set the value of presentation
      *
      * @return  self
-     */ 
+     */
     public function setPresentation($presentation)
     {
         $this->presentation = $presentation;
