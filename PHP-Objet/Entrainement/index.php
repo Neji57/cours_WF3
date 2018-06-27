@@ -23,8 +23,9 @@ spl_autoload_register(function ($className) {
 
 <input type="text" class="form-control" name="nom" placeholder="Nom de la maison" /><br/>
 <input type="text" class="form-control" name="matStruct" value="<?= $infos["matStructure"] ?>" /><br/>
-<input type="text" class="form-control" name="matToit" value="<?= $infos["matToit"] ?>" /><br/>
+<input type="text" class="form-control" name="matToit" value="<? $infos["matToit"] ?>" /><br/>
 <textarea name="pieces" class="form-control" cols="80" rows="20">
+
 <?php
 foreach ($infos['pieces'] as $key => $value) {
 	echo "PIECES $key
@@ -39,6 +40,7 @@ foreach ($infos['pieces'] as $key => $value) {
             ";
 }
 ?>
+
 </textarea>
 
 <?php
