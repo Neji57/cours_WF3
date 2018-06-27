@@ -17,6 +17,6 @@ class Singleton
 		{
 			self::$instance = new Singleton($name);
 		}
-		return
+		return self::$instance;
 	}
 }
