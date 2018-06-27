@@ -5,6 +5,16 @@ class Maison
 	private $materiauStructure;
 	private $materiauToit;
 	private $pieces;
+	const MATERIAU_STRUCTURE = [
+		"Briques",
+		"Parepaing",
+		"Bois"
+	];
+	const MATERIAU_TOIT = [
+		"Tuiles",
+		"Amiante",
+		"Feuille de bananier"
+	];
 
 
 	public function __construct()
