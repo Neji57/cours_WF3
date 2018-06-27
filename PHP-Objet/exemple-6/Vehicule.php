@@ -1,6 +1,6 @@
 <?php
 
-class Vehicule 
+class Vehicule
 {
     protected $nombreRoues;
     protected $estMotorise;

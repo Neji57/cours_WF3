@@ -7,14 +7,16 @@
 
 		  Une MAISON contient des PIECES
 		  Créer une classe Maison avec les attributs privés suivants:
-			  -materiauStructure
-			  - materiauToit
+			  -materiauStructure | type string
+			  - materiauToit | type string
+			  - Pieces | type array
 
 			La classe Maison contient 1 ou plusieurs objets Piece
 			Créer une classe Piece avec les attributs privés suivants:
-				- surface
-				- hauteur
-				- nbFenetres
+				- surface | > 0
+				- hauteur | > 0
+				- nbFenetres | >= 0
+			Créer les getter et setter pour valider les données
 
 			Créer un objet Maison qui va contenir plusieurs objets Piece (dans index.php)
 
