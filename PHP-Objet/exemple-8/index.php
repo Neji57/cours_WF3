@@ -13,6 +13,7 @@ use Factory\Factory;
 
 // Singleton
 $singleton = Singleton::getInstance('NOM');
+$singleton2 = Singleton::getInstance('NOM');
 $formItem = \Factory\Factory::create("select");
 
 // Si je n'utilise pas le use plus haut, il faut ajouter le chemin
