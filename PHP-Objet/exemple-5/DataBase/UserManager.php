@@ -47,14 +47,22 @@ class UserManager extends DBManager
     }
 
     public function findById($id)
-    ‘
-    $queryStr = "SELECT * FROM user WHERE id=:id";
-    $query = $this -> pdo -> prepare($queryStr);
-    $query -> bindParam(':id', $id, \PDO::PARAM_INT);
-    $query -> execute();
-
-    if($userData = $query = $query -> fetch())
     {
-        # code...
+        $queryStr = "SELECT * FROM user WHERE id=:id";
+        $query = $this -> pdo -> prepare($queryStr);
+        $query -> bindParam(':id', $id, \PDO::PARAM_INT);
+        $query -> execute();
+
+        if($userData = $query = $query -> fetch())
+        {
+            $user = new User;
+            foreach ($userData as $key => $value) {
+                $methode = "set" . ucfirst($value);
+                if(method_exists($user, $methode))
+                {
+                    $user -> $methode($userData[$value]);
+                }
+            }
+        }
     }
 }

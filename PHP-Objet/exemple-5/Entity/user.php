@@ -24,13 +24,8 @@ class User
     private $sexe;
     private $presentation;
 
-    public function __construct($username, $password, $email, $pays = "FR")
+    public function __construct()
     {
-        $this -> setUsername($username);
-        $this -> setPassword($password);
-        $this -> setEmail($email);
-        $this->setPays($pays);
-        $this -> id = uniqid();
     }
 
     public function getId()
@@ -95,11 +90,19 @@ class User
         return $this;
     }
 
+    /**
+     * Get the value of Pays
+     */
     public function getPays()
     {
         return $this->pays;
     }
 
+    /**
+     * Set the value of Pays
+     *
+     * @return  self
+     */
     public function setPays($pays)
     {
         $this->pays = $pays;
