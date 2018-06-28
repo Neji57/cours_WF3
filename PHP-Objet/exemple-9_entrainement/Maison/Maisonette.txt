@@ -1,0 +1,4 @@
+Maison: Maisonette
+Matériaux structure: Corne
+Matériaux toiture: Tuile
+Pièces: nv,

@@ -9,7 +9,7 @@ class Maison
     public $pieces;
 
     private const TYPE_MATERIAUX_STRUCTURE = ["Briques", "Bois", "Ciment", "Mousse"];
-    private const TYPE_MATERIAUX_TOITURE = ["Tuiles", "Ardoise", "Branches"];
+     const TYPE_MATERIAUX_TOITURE = ["Tuiles", "Ardoise", "Branches"];
 
     public function __construct(string $materiauxStructure, string $materiauxToiture)
     {

@@ -1,5 +1,5 @@
 // Chargement DOM
-$(function () 
+$(function ()
 {
 	var $form = $('#message-form');
 	var lastId = 0;
@@ -50,7 +50,7 @@ $(function ()
 			lastId = data.messages[data.messages.length -1].id; // Récupère l'id du dernier message
 			// scroll en bas de la page
 			$('html').animate({scrollTop: $(document).height()}, 'slow');
-			
+
 		});
 	}
 

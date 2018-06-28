@@ -1,4 +1,7 @@
 <?php
+// Appel de la page header
+require_once('inc/header.php');
+
 use Autoloader\Autoloader;
 use Form\Form;
 
@@ -13,3 +16,8 @@ $form = new Form($_POST);
 echo $form->input("username");
 echo $form->input("password");
 echo $form->submit();
+
+
+
+// Appel de la page header
+require_once('inc/footer.php');

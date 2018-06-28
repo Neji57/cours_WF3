@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('src/utils.php');
 $pdo = dbConnect();
@@ -8,7 +8,7 @@ $registrationError = "";
 $loginError = '';
 
 
-// inscription 
+// inscription
 if(isset($_POST['register'])) {
     $result = register($pdo, $_POST, $_FILES);
     if(!$result['success']) {
@@ -33,7 +33,7 @@ if($user)
     $template = "messenger";
 }
 
-require_once('view/header.php'); 
-require_once('view/' . $template . '.php'); 
-require_once('view/footer.php'); 
+require_once('view/header.php');
+require_once('view/' . $template . '.php');
+require_once('view/footer.php');
 ?>
