@@ -18,9 +18,13 @@ $cat3 = new Chat('Ice', '8', 'Beige', 'femelle', 'Persan');
 
 
 
-var_dump($cat1->getInfosArray());
-var_dump($cat2->getInfosArray());
-var_dump($cat3->getInfosArray());
+var_dump($cat1->getInfosBeautiful());
+var_dump($cat2->getInfosBeautiful());
+var_dump($cat3->getInfosBeautiful());
+
+var_dump($cat1->getInfos());
+var_dump($cat2->getInfos());
+var_dump($cat3->getInfos());
 
 
 // Appel de la page header

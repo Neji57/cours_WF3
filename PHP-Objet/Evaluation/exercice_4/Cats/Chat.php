@@ -144,7 +144,7 @@ class Chat
 	 * @return void
 	 */
 
-	public function getInfos()
+	public function getInfosBeautiful()
 	{
 			echo 'Prénom du chat: ' . $this->getPrenom() . '</br>';
 			echo 'Age du chat: ' . $this->getAge() . ' ans</br>';
@@ -154,7 +154,7 @@ class Chat
 			echo '<hr>';
 	}
 
-	public function getInfosArray()
+	public function getInfos()
 	{
 		$infos = array(
 			$this->getPrenom(),

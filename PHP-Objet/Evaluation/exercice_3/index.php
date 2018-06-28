@@ -3,7 +3,8 @@
 require_once('inc/header.php');
 
 use Autoloader\Autoloader;
-use Cats\Chat;
+use Form\Form;
+use Form\BootstrapForm;
 
 // Requiert la classe AUtoloader
 require_once('Autoloader/Autoloader.php');
@@ -11,17 +12,22 @@ require_once('Autoloader/Autoloader.php');
 // Appelle la fonction register de la classe Autoloader
 Autoloader::register();
 
+$form = new BootstrapForm($_POST);
+?>
 
-$cat1 = new Chat('Kitty', '5', 'Noir', 'femelle', 'Européen');
-$cat2 = new Chat('Link', '2', 'Blanc', 'male', 'Siamois');
-$cat3 = new Chat('Ice', '8', 'Beige', 'femelle', 'Persan');
+<div class="alert bg-warning message"></div>
+<form action="ajax/saveAjax.php" method="post">
 
+	<?php
+	echo $form->input("marque");
+	echo $form->input("modele");
+	echo $form->input("annee");
+	echo $form->input("couleur");
+	echo $form->submit();
+	?>
 
+</form>
 
-var_dump($cat1->getInfosArray());
-var_dump($cat2->getInfosArray());
-var_dump($cat3->getInfosArray());
-
-
+<?php
 // Appel de la page header
 require_once('inc/footer.php');

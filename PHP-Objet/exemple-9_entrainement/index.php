@@ -37,13 +37,13 @@ $infos = $maison->getInfos();
 
 <form action="Maison/enregistrerAjax.php" method="post">
     <div class="form-group">
-      <input type="text" class="form-control" name="nom" placeholder="Nom de la maison">
+        <input type="text" class="form-control" name="nom" placeholder="Nom de la maison">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" name="matStructure" value"<?= $infos['matStructure'] ?>" placeholder="Matériaux de la structure">
+        <input type="text" class="form-control" name="matStructure" value"<?= $infos['matStructure'] ?>" placeholder="Matériaux de la structure">
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" name="matToiture" value"<?= $infos['matToiture'] ?>" placeholder="Matériaux de la toiture">
+        <input type="text" class="form-control" name="matToiture" value"<?= $infos['matToiture'] ?>" placeholder="Matériaux de la toiture">
     </div>
     <div class="form-group">
         <textarea class="form-control" name="pieces" id="pieces" rows="3">
