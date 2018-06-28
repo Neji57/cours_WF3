@@ -1,0 +1,1 @@
+SELECT articles.*, users.firstname, users.lastname FROM articles JOIN users On user.id = articles.id_user WHERE articles.id = 10
