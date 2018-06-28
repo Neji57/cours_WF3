@@ -8,8 +8,8 @@ class Maison
     private $materiauxToiture;
     public $pieces;
 
-    private const TYPE_MATERIAUX_STRUCTURE = ["Briques", "Bois", "Ciment", "Mousse"];
-     const TYPE_MATERIAUX_TOITURE = ["Tuiles", "Ardoise", "Branches"];
+    const TYPE_MATERIAUX_STRUCTURE = ["Briques", "Bois", "Ciment", "Mousse"];
+    const TYPE_MATERIAUX_TOITURE = ["Tuiles", "Ardoise", "Branches"];
 
     public function __construct(string $materiauxStructure, string $materiauxToiture)
     {
@@ -39,7 +39,7 @@ class Maison
     {
         return $this->materiauxToiture;
     }
- 
+
     public function setMateriauxToiture(string $materiauxToiture)
     {
         if(in_array($materiauxToiture, self::TYPE_MATERIAUX_TOITURE))
@@ -50,7 +50,7 @@ class Maison
         {
             trigger_error("Le matériaux de la toiture n'est pas valide.");
         }
-        
+
         return $this;
     }
 
@@ -70,7 +70,7 @@ class Maison
     {
         $pieces = array();
 
-        foreach ($this->getPieces() as $key => $value) 
+        foreach ($this->getPieces() as $key => $value)
         {
             $pieces[] = array(
                 "nom" => $value->getNom(),
