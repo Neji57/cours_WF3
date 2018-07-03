@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Model;
 
@@ -13,7 +13,7 @@ class Article extends Entity
 
     /**
      * Get the value of title
-     */ 
+     */
     public function getTitle()
     {
         return $this->title;
@@ -23,7 +23,7 @@ class Article extends Entity
      * Set the value of title
      *
      * @return  self
-     */ 
+     */
     public function setTitle($title)
     {
         $this->title = $title;
@@ -33,7 +33,7 @@ class Article extends Entity
 
     /**
      * Get the value of content
-     */ 
+     */
     public function getContent()
     {
         return $this->content;
@@ -43,7 +43,7 @@ class Article extends Entity
      * Set the value of content
      *
      * @return  self
-     */ 
+     */
     public function setContent($content)
     {
         $this->content = $content;
@@ -54,7 +54,7 @@ class Article extends Entity
 
     /**
      * Get the value of dateCreate
-     */ 
+     */
     public function getDateCreate()
     {
         return $this->dateCreate;
@@ -64,7 +64,7 @@ class Article extends Entity
      * Set the value of dateCreate
      *
      * @return  self
-     */ 
+     */
     public function setDateCreate($dateCreate)
     {
         $this->dateCreate = $dateCreate;
@@ -74,7 +74,7 @@ class Article extends Entity
 
     /**
      * Get the value of dateUpdate
-     */ 
+     */
     public function getDateUpdate()
     {
         return $this->dateUpdate;
@@ -84,11 +84,19 @@ class Article extends Entity
      * Set the value of dateUpdate
      *
      * @return  self
-     */ 
+     */
     public function setDateUpdate($dateUpdate)
     {
         $this->dateUpdate = $dateUpdate;
 
         return $this;
+    }
+
+    public function __clone()
+    {
+        $this->id = 0;
+        $this->title = '(copie) ' . $this->title;
+        $this->dateCreate = new \DateTime;
+        $this->dateUpdate = new \DateTime;
     }
 }
