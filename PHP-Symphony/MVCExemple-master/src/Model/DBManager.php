@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Model;
 
@@ -6,7 +6,7 @@ abstract class DBManager
 {
     protected $pdo;
     protected $tableName;
-    protected $className = __CLASS__;
+    protected $className = __class__;
 
     public function __construct()
     {
@@ -21,10 +21,10 @@ abstract class DBManager
         if ($entity->getId() > 0) { // Update
             $setters = "";
             foreach ($data as $key => $value) {
-                $setters .= $value . " = :".$value.",";
+                $setters .= $value . " = :" . $value . ",";
             }
             $setters = substr($setters, 0, strlen($setters) - 1); // Supprime le dernier ','
-            $queryStr = "UPDATE " . $this->tableName  . " SET " . $setters . " WHERE id=".$entity->getId();
+            $queryStr = "UPDATE " . $this->tableName . " SET " . $setters . " WHERE id=" . $entity->getId();
         } else {
             $attributes = "";
             $values = "";
@@ -34,7 +34,7 @@ abstract class DBManager
             }
             $attributes = substr($attributes, 0, strlen($attributes) - 1); // Supprime le dernier ','
             $values = substr($values, 0, strlen($values) - 1); // Supprime le dernier ','
-            $queryStr = "INSERT INTO " . $this->tableName  . " (" . $attributes . ") VALUES (" . $values . ")";
+            $queryStr = "INSERT INTO " . $this->tableName . " (" . $attributes . ") VALUES (" . $values . ")";
         }
 
         $query = $this->pdo->prepare($queryStr);
@@ -69,16 +69,23 @@ abstract class DBManager
         return $entities;
     }
 
+    public function delete(Entity $entity)
+    {
+        $query = $this->pdo->prepare('DELETE FROM ' . $this->className . ' WHERE id=?');
+        $query->execute([$entity->getId()]);
+    }
+
     /**
-     * Converti une chaine en camel_case
+     * Converti une chaine en snake_case
      * @param string $input Chaîne à convertir
      * @return string
      */
-    protected function fromCamelCase(string $input) {
+    protected function fromCamelCase(string $input)
+    {
         preg_match_all('!([A-Z][A-Z0-9]*(?=$|[A-Z][a-z0-9])|[A-Za-z][a-z0-9]+)!', $input, $matches);
         $ret = $matches[0];
         foreach ($ret as &$match) {
-          $match = $match == strtoupper($match) ? strtolower($match) : lcfirst($match);
+            $match = $match == strtoupper($match) ? strtolower($match) : lcfirst($match);
         }
         return implode('_', $ret);
     }
