@@ -71,7 +71,7 @@ abstract class DBManager
 
     public function delete(Entity $entity)
     {
-        $query = $this->pdo->prepare('DELETE FROM ' . $this->className . ' WHERE id=?');
+        $query = $this->pdo->prepare('DELETE FROM ' . $this->tableName . ' WHERE id=?');
         $query->execute([$entity->getId()]);
     }
 
