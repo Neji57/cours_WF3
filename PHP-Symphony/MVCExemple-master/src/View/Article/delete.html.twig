@@ -2,9 +2,15 @@
 {% block title %}suppression article - {{ parent() }}{% endblock %}
 {% block body %}
 
-{% embed 'Decorator/card.html.twig' with {"classes" : 'bg-danger text-light'} %}
-{% block header %}Supprimer un article{% endblock %}
-{% block body %}Voulez-vous supprimer cet article ?{% endblock %}
+<form action="" method="POST">
+	{% embed 'Decorator/card.html.twig' with {"classes" : 'border-danger'} %}
+	{% block header %}Supprimer un article{% endblock %}
+	{% block body %}Voulez-vous supprimer l'article "{{ entity.title }}" ?{% endblock %}
+	{% block footer %}
+		<button type="submit" name="delete" class="btn btn-danger">Oui</button>
+		<a class="btn btn-secondary" herf="/{{ path }}/article/index">Annuler</a>
+	{% endblock %}
+	{% endembed %}
+</form>
 
-{% endembed %}
 {% endblock %}
