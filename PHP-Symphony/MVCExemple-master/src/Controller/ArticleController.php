@@ -1,5 +1,5 @@
 <?php
-namespace Controller; 
+namespace Controller;
 
 use Model\ArticleManager;
 use Model\Article;
@@ -64,6 +64,16 @@ class ArticleController
             'template' => 'Article/edit.html.twig',
             'data' => array(
                 'entity' => $article,
+            )
+        );
+    }
+
+    public function delete($id)
+    {
+        return array(
+            'template' => 'Article/delete.html.twig',
+            'data' => array(
+                'entity' => null, //$article,
             )
         );
     }
