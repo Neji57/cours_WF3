@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 {% block title %}suppression article - {{ parent() }}{% endblock %}
 {% block body %}
-supprimer un article
+
+{% embed 'Decorator/card.html.twig' with {"classes" : 'bg-danger text-light'} %}
+{% block header %}Supprimer un article{% endblock %}
+{% block body %}Voulez-vous supprimer cet article ?{% endblock %}
+
+{% endembed %}
 {% endblock %}

@@ -1,11 +1,11 @@
-<div class="card text-center">
-  <div class="card-header">
-	{% block header %}{% endblock %}
+<div class="card">
+  <div class="card-header {% if classes is defined %}{{ classes  }}{% endif %}">
+    {% block header %}{% endblock %}
   </div>
   <div class="card-body">
-	{% block body %}{% endblock %}
+    {% block body %}{% endblock %}
   </div>
-  <div class="card-footer text-muted">
-	{% block footer %}{% endblock %}
+  <div class="card-footer text-muted {{ classes  }}">
+    {% block footer %}{% endblock %}
   </div>
 </div>
