@@ -1,5 +1,5 @@
 <?php
-namespace Controller;
+namespace Controller; 
 
 use Model\ArticleManager;
 use Model\Article;
@@ -70,10 +70,20 @@ class ArticleController
 
     public function delete($id)
     {
+        $articleManager = new ArticleManager;
+        $article = $articleManager->findById($id);
+
+        if(!empty($_POST))
+        {
+            $articleManager -> delete($article);
+            header("Location: /" . BASEPATH . "/article/index");
+            exit();
+        }
+
         return array(
             'template' => 'Article/delete.html.twig',
             'data' => array(
-                'entity' => null, //$article,
+                'entity' => $article
             )
         );
     }

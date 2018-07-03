@@ -1,6 +1,6 @@
 <?php
 
-define('BASEPATH', "cours_wf3/PHP-Symphony/MVCExemple-master");
+define('BASEPATH', "CoursNumericall/PHP/MVC/MVCExemple");
 
 require_once __DIR__ . "/vendor/autoload.php";
 spl_autoload_register(function($className){
