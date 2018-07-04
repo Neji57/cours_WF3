@@ -5,11 +5,13 @@ namespace App\Controller\Admin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route ('/admin/article')
+ */
 class ArticleController extends Controller
 {
 	/**
-	 *
-	 * @Route ('/admin/article')
+	 * @Route ('/')
 	 */
 	public function index()
 	{
@@ -17,8 +19,7 @@ class ArticleController extends Controller
 	}
 
 	/**
-	 *
-	 * @Route ('/admin/article')
+	 * @Route ('/new')
 	 */
 	public function new()
 	{
