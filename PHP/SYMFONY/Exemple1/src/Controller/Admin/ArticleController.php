@@ -68,7 +68,7 @@ class ArticleController extends Controller
 	/**
 	 * @Route("/edit/{id}", requirements={"id" = "\d+"}) void
 	 */
-	public function edit(Request $request)
+	public function edit(Request $request, Article $article)
 	{
 		// Création du formulaire
 		$form = $this->createForm(ArticleType::class, $article);
