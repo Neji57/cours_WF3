@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 	/**
 	 * @ORM\Column(type="string", length=80)
-	 * @Assert\EqualTo("Mary")
+	 * @Assert\EqualTo("WebForce 3")
 	 */
 	private $title;
 
