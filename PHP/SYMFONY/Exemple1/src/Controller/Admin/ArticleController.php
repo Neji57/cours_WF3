@@ -6,12 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route ('/admin/article')
+ * @Route("/admin/article")
  */
 class ArticleController extends Controller
 {
 	/**
-	 * @Route ('/')
+	 * @Route("/")
 	 */
 	public function index()
 	{
@@ -19,7 +19,7 @@ class ArticleController extends Controller
 	}
 
 	/**
-	 * @Route ('/new')
+	 * @Route("/new")
 	 */
 	public function new()
 	{
