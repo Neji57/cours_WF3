@@ -1,3 +1,10 @@
+$background: #B9F3FF;
+$light: #6CE7FF;
+$text: #5C7A7F;
+$dark: #36737F;
+$middle: #57B9CC;
+
 body{
-	background-color: #e91010;
+	background-color: $background;
+	color: $text;
 }
