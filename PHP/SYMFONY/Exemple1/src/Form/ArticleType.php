@@ -13,9 +13,11 @@ class ArticleType extends AbstractType
 	{
 		$builder
 			->add('title')
-			->add('content')
+			->add('content', null, array(
+				'label' => 'Contenu'
+			))
 			->add('save', SubmitType::class, array(
-
+				'label' => 'Enregistrer'
 			))
 		;
 	}
