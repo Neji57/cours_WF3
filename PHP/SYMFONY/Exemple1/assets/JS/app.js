@@ -1,1 +1,3 @@
-console.log('toto');
+import 'bootstrap';
+
+$('body').append('HELLO JQUERY');
