@@ -1,12 +1,3 @@
+@import "~bootswatch/dist/slate/_variables";
 @import "~bootstrap/scss/bootstrap";
 
-$background: #DCCEFF;
-$light: #A482FF;
-$text: #6E677F;
-$dark: #52417F;
-$middle: #8368CC;
-
-body{
-	background-color: $background;
-	color: $text;
-}
