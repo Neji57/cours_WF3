@@ -40,6 +40,8 @@ class ArticleController extends Controller
 
 			// Sauvegarde dans la BDD
 			$em = $this->getDoctrine()->getManager();
+			$em->persist($article);
+			$em->flush();
 		}
 
 		return $this->render('admin/article/new.html.twig');
