@@ -32,23 +32,33 @@ class ArticleController extends Controller
 		$form = $this->createForm(ArticleType::class, $article);
 		$form->handleRequest($request);
 
-		if(!empty($_POST))
+		if($form->isSubmitted() && $form->isValid())
 		{
-			$post = array();
-			foreach($_POST as $key => $p)
-			{
-				$post[$key] = trim($p);
-			}
-			$article
-				->setTitle(strip_tags($_POST['title']))
-				->setContent($post['content'])
-			;
-
-			// Sauvegarde dans la BDD
+				// Sauvegarde dans la BDD
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($article);
 			$em->flush();
+
+			return $this->redirectToRoute('app_admin_article_index')
 		}
+
+		// if(!empty($_POST))
+		// {
+		// 	$post = array();
+		// 	foreach($_POST as $key => $p)
+		// 	{
+		// 		$post[$key] = trim($p);
+		// 	}
+		// 	$article
+		// 		->setTitle(strip_tags($_POST['title']))
+		// 		->setContent($post['content'])
+		// 	;
+
+		// 	// Sauvegarde dans la BDD
+		// 	$em = $this->getDoctrine()->getManager();
+		// 	$em->persist($article);
+		// 	$em->flush();
+		// }
 
 		return $this->render('admin/article/new.html.twig', array(
 			'form' =>$form->createView(),
