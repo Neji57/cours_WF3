@@ -1,8 +1,10 @@
-$background: #B9F3FF;
-$light: #6CE7FF;
-$text: #5C7A7F;
-$dark: #36737F;
-$middle: #57B9CC;
+@import "~bootstrap/scss/bootstrap";
+
+$background: #DCCEFF;
+$light: #A482FF;
+$text: #6E677F;
+$dark: #52417F;
+$middle: #8368CC;
 
 body{
 	background-color: $background;
