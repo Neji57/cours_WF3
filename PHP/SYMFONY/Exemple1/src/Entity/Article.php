@@ -19,7 +19,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 	/**
 	 * @ORM\Column(type="string", length=80)
-	 * @Assert\EqualTo("WebForce 3")
+	 * @Assert\Length(
+	 *      min = 2,
+	 *      max = 50,
+	 * )
 	 */
 	private $title;
 
