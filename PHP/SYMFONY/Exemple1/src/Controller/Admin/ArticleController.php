@@ -8,6 +8,6 @@ class ArticleController extends Controller
 {
 	public function index()
 	{
-		return
+		return $this->render('admin/article/index.html.twig');
 	}
 }
