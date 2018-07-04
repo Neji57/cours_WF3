@@ -7,6 +7,3 @@ homepage:
   defaults:
     template: index.html.twig
 
-admin_article_index:
-  path: /admin/article/
-  controller: App\Controller\Admin\ArticleController::index
