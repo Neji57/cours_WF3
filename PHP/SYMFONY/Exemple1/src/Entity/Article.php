@@ -2,16 +2,14 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mappping as ORM;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
  */
-
  class Article
  {
 	 /**
-	  *
 	  * @ORM\Id
 	  *@ORM\GeneratedValue
 	  *@ORM\Column(type="integer")
@@ -19,7 +17,7 @@ use Doctrine\ORM\Mappping as ORM;
 	private $id;
 
 	/**
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(type="string", length=80)
 	 */
 	private $title;
 
