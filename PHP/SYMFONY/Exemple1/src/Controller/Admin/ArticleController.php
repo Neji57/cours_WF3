@@ -27,6 +27,9 @@ class ArticleController extends Controller
 	{
 		$article = new Article;
 
+		// Création du formulaire
+		$form = $this->createForm(ArticleType::class, $article);
+
 		if(!empty($_POST))
 		{
 			$post = array();
