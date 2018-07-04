@@ -39,7 +39,7 @@ class ArticleController extends Controller
 			$em->persist($article);
 			$em->flush();
 
-			return $this->redirectToRoute('app_admin_article_index')
+			return $this->redirectToRoute('app_admin_article_index');
 		}
 
 		// if(!empty($_POST))
