@@ -1,9 +1,9 @@
 add: Ajouter
-delete: Supprimer
-edit: Modifier
+edit: Editer
 cancel: Annuler
+delete: Supprimer
 article:
-  add: Ajouter
-  delete: Supprimer
-  edit: Modifier
-  cancel: Annuler
+  edit: Modifier un article
+  add: Ajouter un article
+  delete: Supprimer un article
+  count: Article|Articles

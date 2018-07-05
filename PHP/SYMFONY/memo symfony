@@ -12,3 +12,5 @@ npm run build
 
 php bin/console cache:clear
 php bin/console debug:translation fr
+
+composer require knplabs/knp-menu-bundle
