@@ -1,4 +1,29 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-
+{% embed 'decorator/_card.html.twig' %}
+{% block header %}Liste des articles{% endblock %}
+{% block body %}
+<a href="{{ path('app_admin_article_new') }}" class="btn btn-success float-right">Ajouter</a>
+{% endblock %}
+{% block table %}
+<table class="table">
+	<thead>
+		<tr>
+			<th>Titre</th>
+			<th>Date ajout</th>
+			<th>date modif</th>
+			<th></th>
+		</tr>
+	</tbody>
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</tbody>
+</table>
+{% endblock %}
+{% endembed %}
 {% endblock %}
