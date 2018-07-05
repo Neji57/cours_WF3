@@ -23,7 +23,7 @@
 - [EXPLICATION : DESIGN PATTERN / SINGLETON](https://apprendre-php.com/tutoriels/tutoriel-45-singleton-instance-unique-d-une-classe.html)
 
 ---
-## Résumé des explications du prof 
+## Résumé des explications du prof
 
 Une **classe** c'est un **modèle de donnée** avec **attributs** & des **méthodes** qui va définir le comportement d'un objet.
 
@@ -85,7 +85,7 @@ Par exemple, vous ne pouvez pas faire de `private $_attribut = 1 + 1` ou bien `p
 On peut y avoir accès depuis n'importe où, depuis l'intérieur de l'objet (dans les méthodes qu'on a créées), comme depuis l'extérieur
 
 
-#### L'attribut `private` : 
+#### L'attribut `private` :
 
 Impose quelques restrictions : on n'aura accès aux attributs et méthodes seulement depuis l'intérieur de la classe, c'est-à-dire que seul le code voulant accéder à un attribut privé ou une méthode privée écrit(e) à l'intérieur de la classe fonctionnera. Pour s'y retrouver correctement dans le code, il est préférable d'utiliser la notation `PEAR` qui dit que chaque nom d'élément privé (ici il s'agit d'attributs, il peut aussi s'agir de méthodes) doit être précédé d'un underscore. Exemple : `$_attribut`.
 
@@ -97,13 +97,13 @@ Ce type de visibilité est, au niveau restrictif, à placer entre `public` et pr
 
 **EXEMPLE :**
 
-```
+```php
 <?php
 class ClasseMere
 {
   protected $attributProtege;
   private $_attributPrive;
-  
+
   public function __construct()
   {
     $this->attributProtege = 'Hello world !';
@@ -131,8 +131,8 @@ $obj->afficherAttributs(); // Affiche « Hello world ! » suivi de rien du tout 
 ### Les méthodes
 
 Pour la déclaration de méthodes, il suffit de faire précéder le mot-clé `function` à la visibilité de la méthode. Les types de visibilité des méthodes sont les mêmes que les attributs. Les méthodes n'ont en général pas besoin d'être masquées à l'utilisateur, vous les mettrez souvent en `public` (à moins que vous teniez absolument à ce que l'utilisateur ne puisse pas appeler cette méthode, par exemple s'il s'agit d'une fonction qui simplifie certaines tâches sur l'objet mais qui ne doit pas être appelée n'importe comment).
- 
-- `static` : toutes les variables appelées dans la fonction ne peuvent être modifiées 
+
+- `static` : toutes les variables appelées dans la fonction ne peuvent être modifiées
 
 
 ### Utiliser une classe
@@ -141,7 +141,7 @@ Pour la déclaration de méthodes, il suffit de faire précéder le mot-clé `fu
 
 On va utiliser notre classe afin qu'elle nous fournisse un objet.
 
-```
+```php
 $perso = new Personnage;
 ```
 
@@ -150,7 +150,7 @@ $perso = new Personnage;
 
 Pour appeler une méthode d'un objet, il va falloir utiliser un opérateur : il s'agit de l'opérateur -> (une flèche composée d'un tiret suivi d'un chevron fermant). Celui-ci s'utilise de la manière suivante. À gauche de cet opérateur, on place l'objet que l'on veut utiliser. Dans l'exemple pris juste au-dessus, cet objet aurait été$perso. À droite de l'opérateur, on spécifie le nom de la méthode que l'on veut invoquer.
 
-```
+```php
 <?php
 // Nous créons une classe « Personnage ».
 class Personnage
@@ -159,14 +159,14 @@ class Personnage
   private $_localisation;
   private $_experience;
   private $_degats;
-        
+
   // Nous déclarons une méthode dont le seul but est d'afficher un texte.
   public function parler()
   {
     echo 'Je suis un personnage !';
   }
 }
-    
+
 $perso = new Personnage; // Création d'un nouvel objet Personnage >> $perso
 $perso->parler(); // signifie « va chercher l'objet $perso, et invoque la méthode parler() sur cet objet »
 ```
@@ -175,7 +175,7 @@ $perso->parler(); // signifie « va chercher l'objet $perso, et invoque la méth
 
 Comme son nom l'indique, le constructeur sert à construire l'objet. Si des attributs doivent être initialisés ou qu'une connexion à la BDD doit être faite, c'est par ici que ça se passe. Le constructeur est exécuté **dès la création** de l'objet et par conséquent, **aucune valeur ne doit être retournée**, même si ça ne génèrera aucune erreur. Bien sûr, une classe fonctionne très bien sans constructeur, il n'est en rien obligatoire ! Si vous n'en spécifiez pas, cela revient au même que si vous en aviez écrit un vide (sans instruction à l'intérieur).
 
-```
+```php
 public function __construct($force, $degats) // Constructeur demandant 2 paramètres
   {
     echo 'Voici le constructeur !'; // Message s'affichant une fois que tout objet est créé.
@@ -192,10 +192,10 @@ public function __construct($force, $degats) // Constructeur demandant 2 paramè
 
 [Doc PHP.NET](http://php.net/manual/fr/function.spl-autoload-register.php)
 
-```
+```php
 spl_autoload_register(function($className)
 {
-    // /* remplacer les \ par des / mac OS X UNIQUEMENT */ $className = str_replace('\\', '/', $className); 
+    // /* remplacer les \ par des / mac OS X UNIQUEMENT */ $className = str_replace('\\', '/', $className);
 
     if(file_exists($className . '.php'))
     {
@@ -208,13 +208,13 @@ spl_autoload_register(function($className)
 
 [Cours rapide Openclassrooms](https://openclassrooms.com/courses/les-espaces-de-noms-namespace) | Pour plus de détails sur le code ci-dessous : [PHP.NET - Utilisation des espaces de noms : importation et alias](http://php.net/manual/fr/language.namespaces.importing.php)
 
-À savoir : 
+À savoir :
 
--> Ça regroupe des variables et des fonctions, des classes, tout ce que vous voulez dans un même ensemble. 
+-> Ça regroupe des variables et des fonctions, des classes, tout ce que vous voulez dans un même ensemble.
 
 -> Il doit TOUJOURS être au début de la requête, sinon une erreur fatale va apparaître
 
-```
+```php
 namespace foo;
 use My\Full\Classname as Another;
 
@@ -249,13 +249,13 @@ $a = new ArrayObject(array(1));
 func(); // Appel la fonction My\Full\functionName
 
 // affiche la valeur de My\Full\CONSTANT
-echo CONSTANT; 
+echo CONSTANT;
 ```
 
 ---
 - **STARTER TEMPLATE CRÉATION OBJET**
 
-```
+```php
 <?php
 
 namespace ;
@@ -277,40 +277,12 @@ class OBJET /* extends PARENT*/
 ---
 - **Tester le type d'attribut (string, array,...)**
 
-```
+```php
 public function setAttribut(string $attribut)
 {
     $this->attribut = $attribut;
 
     return $this;
 }
-
-```
-
----
-- TEXT
-
-```
-
-```
-
----
-- TEXT
-
-```
-
-```
-
----
-- TEXT
-
-```
-
-```
-
----
-- TEXT
-
-```
 
 ```

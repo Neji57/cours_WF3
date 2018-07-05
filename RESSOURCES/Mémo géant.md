@@ -1,8 +1,8 @@
 # Mémo géant
 
-Plutôt que de fouiller dans TOUS les dossiers pour retrouver TOUS mes mémos, tout sera écrit ici. 
+Plutôt que de fouiller dans TOUS les dossiers pour retrouver TOUS mes mémos, tout sera écrit ici.
 
-La structure de ce fichier sera la suivante : 
+La structure de ce fichier sera la suivante :
 
 **SOMMAIRE GÉNÉRAL**
 
@@ -14,8 +14,8 @@ La structure de ce fichier sera la suivante :
 
 **SOMMAIRE LANGUAGE 1**
 
-- THEME 1 
-- THEME 2 
+- THEME 1
+- THEME 2
 - THEME 3
 
 
@@ -54,7 +54,7 @@ La structure de ce fichier sera la suivante :
 
 - [OPENCLASSROOMS - Introduction à AJAX](https://openclassrooms.com/courses/1916641-dynamisez-vos-sites-web-avec-javascript/1920925-quest-ce-que-lajax)
 
-### AVEC JAVASCRIPT 
+### AVEC JAVASCRIPT
 - `var hxr = new XMLHttpRequest` : fais un appel AJAX en natif
 - `xhr.open(METHOD, URL, ASYNC)` : prépare la requête
 - `this.status` : status de la réponse serveur
@@ -66,7 +66,7 @@ La structure de ce fichier sera la suivante :
 
 #### CODE TYPE
 
-```
+```javascript
 var hxr = new XMLHttpRequest;
 
 xhr.open(METHOD, URL, ASYNC);
@@ -93,7 +93,7 @@ xhr.send();
 
 #### CODE TYPE
 
-```
+```javascript
 $.ajax({
 
     url: '',
@@ -119,7 +119,7 @@ $.ajax({
 #### Permet de paramétrer toutes les prochaînes requêtes AJAX (et donc de gagner du temps)
 
 
-```
+```javascript
 $.ajaxSetup({
     url: 'script.php'
 });
@@ -131,14 +131,14 @@ $.ajax({}).done(...);
 
 #### Requête GET & POST
 
-```
+```javascript
 $.get(URL, DATA, function(data){}, DATATYPE); // Requête GET
 $.post(URL, DATA, function(data){}, DATATYPE); // Requête POST
 $.getJSON(URL, DATA, function(data){}); // Requête GET type JSON
 $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 ```
 
---- 
+---
 
 - `$('form').serialize()` : retourne les données d'un formulaire sous forme de chaîne encodée pour les URL
 
@@ -155,7 +155,7 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 ### STARTER TEMPLATE
 
-```
+```html
 <!doctype html>
 <html lang="fr">
   <head>
@@ -182,7 +182,7 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 ### FORMULAIRE TEMPLATE
 
-```
+```html
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -250,9 +250,9 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 ### CDN JQUERY
 
-```
+```html
 <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-``` 
+```
 
 ---
 ---
@@ -275,14 +275,14 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 - `PHP_EOL` : permet de sauter une ligne dans un fichier
 - `require_once("fichier.txt")` : bloque l'execution du code si le fichier n'est pas trouvé
-- `strlen()` retourne la longueur d'une chaîne 
-- `` 
+- `strlen()` retourne la longueur d'une chaîne
+- ``
 
 ### BASIQUE
 
 #### ENREGISTRER DES INFORMATIONS DANS UN FICHIER
 
-```
+```php
 // VERSION À FAIRE À CHAQUE FOIS (methode dans if et ensuite le reste dans le if)
     if($_POST)
     {
@@ -290,7 +290,7 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
         {
             echo "Pas de pseudo renseigné";
         }
-        else 
+        else
         {
             echo "Bienvenue sur le site " .$_POST['pseudo'];
         }
@@ -326,7 +326,7 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 ### ORIENTÉ OBJET
 
-- `$this` 
+- `$this`
 - `self::` représente l'objet depuis lequel il est appelé. Peut également s'écrire de la manière suivante (pas trop recommandée) > `::objet`. À utiliser **uniquement** sur les `const` et les `static`.
 - [COURS MADE IN MAZA](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#petites-explications-maison)
 
@@ -334,10 +334,10 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 [Doc PHP.NET](http://php.net/manual/fr/function.spl-autoload-register.php)
 
-```
+```php
 spl_autoload_register(function($className)
 {
-    // /* remplacer les \ par des / mac OS X UNIQUEMENT */ $className = str_replace('\\', '/', $className); 
+    // /* remplacer les \ par des / mac OS X UNIQUEMENT */ $className = str_replace('\\', '/', $className);
 
     if(file_exists($className . '.php'))
     {
@@ -350,13 +350,13 @@ spl_autoload_register(function($className)
 
 [Cours rapide Openclassrooms](https://openclassrooms.com/courses/les-espaces-de-noms-namespace) | Pour plus de détails sur le code ci-dessous : [PHP.NET - Utilisation des espaces de noms : importation et alias](http://php.net/manual/fr/language.namespaces.importing.php)
 
-À savoir : 
+À savoir :
 
--> Ça regroupe des variables et des fonctions, des classes, tout ce que vous voulez dans un même ensemble. 
+-> Ça regroupe des variables et des fonctions, des classes, tout ce que vous voulez dans un même ensemble.
 
 -> Il doit TOUJOURS être au début de la requête, sinon une erreur fatale va apparaître
 
-```
+```php
 namespace foo;
 use My\Full\Classname as Another;
 
@@ -391,12 +391,12 @@ $a = new ArrayObject(array(1));
 func(); // Appel la fonction My\Full\functionName
 
 // affiche la valeur de My\Full\CONSTANT
-echo CONSTANT; 
+echo CONSTANT;
 ```
 ---
 #### **STARTER TEMPLATE CRÉATION OBJET**
 
-```
+```php
 <?php
 
 namespace ;
@@ -417,7 +417,7 @@ class OBJET /* extends PARENT*/
 ---
 #### **TESTER LE TYPE D'ATTRIBUT (string, array, ...)**
 
-```
+```php
 public function setAttribut(string $attribut)
 {
     $this->attribut = $attribut;

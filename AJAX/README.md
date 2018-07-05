@@ -93,7 +93,7 @@ $.getJSON(URL, DATA, function(data){}); // Requête GET type JSON
 $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 ```
 
---- 
+---
 
 - `$('form').serialize()` : retourne les données d'un formulaire sous forme de chaîne encodée pour les URL
 

@@ -10,31 +10,31 @@ Les raccourcis *appellés `snippet`* sont utilisés pour gagner du temps. Par ex
 
 ### 1ère étape : **organisation de nos snippets**
 
-- Clique sur l'engrenage en bas à gauche de ton écran. Un menu s'affiche. 
+- Clique sur l'engrenage en bas à gauche de ton écran. Un menu s'affiche.
 - Clique sur `Paramètres`.
 - Dans `Paramètres utilisateur` colle ce bout de code à la fin *(n'oublies pas les virgules !)* : `"editor.snippetSuggestions": "top"`. Il permet de placer **tes propres** snippets tout en haut dans les suggestions. Elles seront donc prioritaires sur les autres, ce qui est bien pratique !
 
 ### 2ème étape : **accéder au bon fichier pour le bon language**
 
-- Clique sur le même engrenage que pour la 1ère étape. 
+- Clique sur le même engrenage que pour la 1ère étape.
 - Clique sur `Extraits de code de l'utilisateur`
 - Sélectionne le language pour tes snippets. Ici on va prendre **PHP**.
 - Un fichier `.json` va s'ouvrir et là on commence à prendre son pied \ (•◡•) /
 
 ### 3ème étape : **créer un snippet**
 
-En soit, c'est écrit sur le fichier, mais on va reprendre pas à pas les étapes clés pour créer correctement un snippet. 
+En soit, c'est écrit sur le fichier, mais on va reprendre pas à pas les étapes clés pour créer correctement un snippet.
 
 Chaque snippet doit contenir :
 
 - Un **nom** : c'est juste le nom de ton snippet, rien de bien compliqué.
-- Un **prefixe** : c'est ce que tu vas écrire pour appeler ton snippet. 
+- Un **prefixe** : c'est ce que tu vas écrire pour appeler ton snippet.
 - Un **body** : la manière dont ton snippet va fonctionner.
 - Une **description** : petit descriptif de ta fonction et/ou de ton snippet.
 
 Voici l'apparence d'un snippet :
 
-```
+```json
 "NOM": {
 	"prefix": "CE QUE TU VAS ÉCRIRE",
 	"body": [
@@ -48,13 +48,13 @@ Voici l'apparence d'un snippet :
 
 **PREREQUIS**
 
-Dans un snippet, tu as déjà dû le remarquer, ton curseur se met **AUTOMATIQUEMENT** à des endroits **clés** pour te faire gagner du temps. Tu as juste à faire `TAB` pour naviguer entre les différents paramètres de ton raccourci pour écrire ce que tu veux. 
+Dans un snippet, tu as déjà dû le remarquer, ton curseur se met **AUTOMATIQUEMENT** à des endroits **clés** pour te faire gagner du temps. Tu as juste à faire `TAB` pour naviguer entre les différents paramètres de ton raccourci pour écrire ce que tu veux.
 
-Pour insérer un emplacement de curseur, il suffit d'écrire `${1:}`. 
+Pour insérer un emplacement de curseur, il suffit d'écrire `${1:}`.
 - le `${}` indique qu'il va y avoir une interraction avec le curseur, on y entre des paramètres comme expliqué en dessous.
 - Le `1:` représente l'ordre de navigation de ton curseur. Si tu as qu'un emplacement, il faut quand même le mettre. Si tu en as plusieurs, il te suffit d'incrémenter à la mano tes numéros.
 
-Tu as peut-être déjà remarqué mais des fois, t'as carrément un texte sélectionné qui apparaît ! ⚆ _ ⚆ 
+Tu as peut-être déjà remarqué mais des fois, t'as carrément un texte sélectionné qui apparaît ! ⚆ _ ⚆
 
 C'est l'oeuvre du `:` apres le `1`. Pour écrire le texte, il te suffit d'écrire ce que tu veux derrière les deux points. Je vais faire quelques exemples pour que ce soit bien clair.
 
@@ -64,7 +64,7 @@ C'est l'oeuvre du `:` apres le `1`. Pour écrire le texte, il te suffit d'écrir
 
 **EXEMPLE 1 :** Snippet pour la fonction `if()`
 
-```
+```json
 "if()": {
 	"prefix": "if",
 	"body": [
@@ -79,7 +79,7 @@ C'est l'oeuvre du `:` apres le `1`. Pour écrire le texte, il te suffit d'écrir
 
 Le résutat sera le suivant :
 
-```
+```php
 if(EMPLACEMENT1)
 {
 EMPLACEMENT2
@@ -90,7 +90,7 @@ EMPLACEMENT2
 
 **EXEMPLE 2 :** Snippet pour initier une base de donnée *(issu du code de Steve)*
 
-```
+```json
 "BDD": {
 		"prefix": "BDD",
 		"body": [
@@ -110,7 +110,7 @@ EMPLACEMENT2
 
 Le résutat sera le suivant :
 
-```
+```php
 $dsn = 'mysql:host=localhost; dbname=nom';
 $login = 'root';
 $pwd = '';
@@ -124,7 +124,7 @@ $pdo = new PDO($dsn, $login, $pwd, $attributes);
 
 Pour mieux visualiser les emplacements :
 
-```
+```php
 $EMPLACEMENT5 = 'mysql:host=EMPLACEMENT1; dbname=EMPLACEMENT2';
 $EMPLACEMENT6 = 'EMPLACEMENT3';
 $EMPLACEMENT7 = 'EMPLACEMENT4';
@@ -144,7 +144,7 @@ $EMPLACEMENT9 = new PDO($EMPLACEMENT5, $EMPLACEMENT6, $EMPLACEMENT7, $EMPLACEMEN
 
 ## Petite liste avec les snippets **PHP** de Steve ✧ﾟ･: *ヽ(◕ヮ◕ヽ)
 
-```
+```json
 "print_r()": {
 		"prefix": "printr",
 		"body": [
