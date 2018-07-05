@@ -20,7 +20,7 @@
 			<div class="btn-group">
 				<td>
 					<a href="{{ path('app_admin_article_edit', { 'id': entity.id }) }}" class="btn btn-secondary"><i class="fas fa-edit"></i> Editer</a>
-					<a href="#" class="btn btn-danger"><i class="fas fa-trash"></i> supprimer</a>
+					<a href="{{ path('app_admin_article_delete', { 'id': entity.id }) }}" class="btn btn-danger"><i class="fas fa-trash"></i> supprimer</a>
 				</td>
 			</div>
 		</tr>
