@@ -97,7 +97,7 @@ class ArticleController extends Controller
 	}
 
 	/**
-	 * @Route("/edit/{id}", requirements={"id" = "\d+"}) void
+	 * @Route("/delete/{id}", requirements={"id" = "\d+"}) void
 	 */
 	public function delete(Request $request, Article $article)
 	{
