@@ -96,11 +96,18 @@ class ArticleController extends Controller
 		));
 	}
 
+	/**
+	 * @Route("/edit/{id}", requirements={"id" = "\d+"}) void
+	 */
 	public function delete(Request $request, Article $article)
 	{
-			$form = $this->createFormBuilder()
-				->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]))
-				->setMethod('DELETE')
-			;
+		$form = $this->createFormBuilder()
+			->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]))
+			->setMethod('DELETE')
+		;
+
+		return $this->render('admin/article/delete.html.twig', array(
+			'form' => $form->createView(),
+		));
 	}
 }
