@@ -15,12 +15,16 @@
 - Installer fontawesome :
     - dans le terminal : `npm i @fortawesome/fontawesome-free-webfonts --save-dev`
     - dans `assets` trouver le fichier CSS ou SCSS et coller ces deux lignes dispo aussi [ici](https://www.npmjs.com/package/@fortawesome/fontawesome-free-webfonts) puis faire `npm run dev`
-```
+```scss
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
 ```
 - Mettre à jour les bibliothèques (Fontawesome par exemple) : `npm update`
 - Lancer le serveur proposé par Symfony `php bin/console server:run`. Avantage : les liens ressemblent à ceux de la prod
+- Compiler son projet: 
+    - `npm run dev` (Plus rapide)
+    - `npm run build` (Plus complet pour la fin du projet)
+    - `npm run watch` (analyse les changements à chaque sauvegarde de fichier)
 - Nettoyer le cache : `php bin/console cache:clear`
 - Statut des traductions `php bin/console debug:translation fr`
 
