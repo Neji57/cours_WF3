@@ -1,4 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-	{{ form(form, {'attr': { 'novalidate':true}} ) }}
+{{ form_start(form) }}
+{% embed 'decorator/_card.html.twig' %}
+    {% block header %}
+    Modifier un article
+    {% endblock %}
+
+    {% block body %}
+    {{ form(form) }}
+    {% endblock %}
+
+    {% block footer %}
+        <button type="submit" class="btn btn-warning">Modifier</button>
+        <a class="btn btn-secondary" href="{{ path('app_admin_article_index') }}" role="button">Annuler</a>
+    {% endblock %}
+ {% endembed %}
+{{ form_end(form) }}
 {% endblock %}

@@ -22,9 +22,7 @@ class ArticleType extends AbstractType
 			// ->add('country', CountryType::class, array(
 			// 	'mapped' =>false,
 			// ))
-			->add('save', SubmitType::class, array(
-				'label' => 'Enregistrer'
-			))
+
 		;
 	}
 }

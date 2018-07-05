@@ -32,6 +32,12 @@ class ArticleController extends Controller
 
 		$nbPages = ceil(count($entities) / $count);
 
+		if($nbPages < $page)
+		{
+			$this->addFlash('danger', "Il n'y a que $nbPages page(s)");
+			return $this->redirectToRoute('app_admin_article_index');
+		}
+
 		return $this->render('admin/article/index.html.twig', array(
 			'entities' => $entities,
 			'nbPages' => (int)$nbPages,
@@ -57,6 +63,8 @@ class ArticleController extends Controller
 			$em -> persist($article);
 			$em -> flush();
 
+			$this->addFlash('success', "L'article " . $article->getTitle() . " a bien été crée");
+
 			return $this -> redirectToRoute('app_admin_article_index');
 		}
 
@@ -80,6 +88,8 @@ class ArticleController extends Controller
 			$em = $this -> getDoctrine() -> getManager();
 			$em -> persist($article);
 			$em -> flush();
+
+			$this->addFlash('success', "L'article " . $article->getTitle() . " a bien été modifié");
 
 			return $this -> redirectToRoute('app_admin_article_index');
 		}
