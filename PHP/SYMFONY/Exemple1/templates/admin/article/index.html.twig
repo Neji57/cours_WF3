@@ -1,32 +1,44 @@
 {% extends 'base.html.twig' %}
-{% block body %}
-{% embed 'decorator/_card.html.twig' %}
-{% block header %}Liste des articles{% endblock %}
-{% block body %}
-<a href="{{ path('app_admin_article_new') }}" class="btn btn-success float-right">Ajouter</a>
-{% endblock %}
-{% block table %}
-<table class="table">
-	<thead>
-		<tr>
-			<th>Titre</th>
-			<th>Date ajout</th>
-			<th>date modif</th>
-			<th></th>
-		</tr>
-	</thead>
 
-	<tbody>
-	{% for entity in entities %}
-		<tr>
-			<td>{{ entity.title }}</td>
-			<td>{{ entity.dateCreate | date('d/m/Y H:i') }}</td>
-			<td>{{ entity.dateUpdate | date('d/m/Y H:i') }}</td>
-			<td></td>
-		</tr>
-	{% endfor %}
-	</tbody>
-</table>
-{% endblock %}
-{% endembed %}
-{% endblock %}
+{% block body %}
+
+    {% embed 'decorator/_card.html.twig' %}
+
+        {% block header %}
+            Liste des articles
+        {% endblock %}
+
+        {% block body %}
+            <a class="btn btn-success float-right" href="{{ path('app_admin_article_new') }}" role="button">Ajouter</a>
+        {% endblock %}
+
+        {% block table %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Date ajout</th>
+                        <th>Date modif.</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>{{ entity.title }}</td>
+                            <td>{{ entity.dateCreate|date('d/m/Y H:i') }}</td>
+                            <td>{{ entity.dateUpdate|date('d/m/y H:i') }}</td>
+                            <td></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endblock %} {# block table #}
+
+        {% block footer %}
+            {{ entities.iterator|length }}/{{ entities|length }} Article(s)
+        {% endblock %}
+
+    {% endembed %} {# embed 'decorator/_card.html.twig' #}
+{% endblock %}{# block body #}
+
