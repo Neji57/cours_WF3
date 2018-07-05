@@ -15,6 +15,10 @@
     Admin
     {% endblock %}
 
+    {% block menu %}
+    {{ knp_menu_render('admin') }}
+    {% endblock %}
+
     {% endembed %}
         {% for type, messages in app.flashes %}
              {% for message in messages %}
