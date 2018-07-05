@@ -4,8 +4,8 @@ namespace App\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use App\Entity\Article;
-use Doctrine\ORM\Mapping\OrderBy;
 
 class ArticleRepository extends ServiceEntityRepository
 {
@@ -22,5 +22,7 @@ class ArticleRepository extends ServiceEntityRepository
 			->setFirstResult($first)
 			->setMaxResults($count)
 		;
+
+		return new Paginator($queryBuilder);
 	}
 }
