@@ -10,6 +10,6 @@ class ArticleRepository extends ServiceEntityRepository
 {
 	public function __construct(RegistryInterface $registry)
 	{
-		parent::__construct($registry, Product::class);
+		parent::__construct($registry, Article::class);
 	}
 }

@@ -14,14 +14,17 @@
 			<th>date modif</th>
 			<th></th>
 		</tr>
-	</tbody>
-	<thead>
+	</thead>
+
+	<tbody>
+	{% for entity in entities %}
 		<tr>
-			<th></th>
-			<th></th>
-			<th></th>
-			<th></th>
+			<td>{{ entity.title }}</td>
+			<td>{{ entity.dateCreate | date('d/m/Y H:i') }}</td>
+			<td>{{ entity.dateUpdate | date('d/m/Y H:i') }}</td>
+			<td></td>
 		</tr>
+	{% endfor %}
 	</tbody>
 </table>
 {% endblock %}
