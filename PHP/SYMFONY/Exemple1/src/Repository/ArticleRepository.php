@@ -18,7 +18,7 @@ class ArticleRepository extends ServiceEntityRepository
 	{
 		$first = ($page - 1) * $count;
 		$queryBuilder = $this->createQueryBuilder('a')
-			->OrderBy('a.dateCreate', 'ASC')
+			->OrderBy('a.dateCreate', 'DESC')
 			->setFirstResult($first)
 			->setMaxResults($count)
 		;
