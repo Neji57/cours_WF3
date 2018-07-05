@@ -1,1 +1,9 @@
-add : Ajouter
+add: Ajouter
+delete: Supprimer
+edit: Modifier
+cancel: Annuler
+article:
+  add: Ajouter
+  delete: Supprimer
+  edit: Modifier
+  cancel: Annuler

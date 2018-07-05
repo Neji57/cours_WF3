@@ -9,3 +9,6 @@ Compiler...
 npm run watch
 npm run dev
 npm run build
+
+php bin/console cache:clear
+php bin/console debug:translation fr
