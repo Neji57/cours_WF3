@@ -14,13 +14,13 @@ use App\Form\ArticleType;
 class ArticleController extends Controller
 {
 	/**
-	 * @Route("/")
+	 * @Route("/{page}", requirements={"page" = "\d+"}, defaults={"page"=1})
 	 */
-	public function index()
+	public function index($page)
 	{
 		$count = 10;
 		$em = $this->getDoctrine()->getManager();
-		$entities = $em->getRepository(Article::class)->findByPage();
+		$entities = $em->getRepository(Article::class)->findByPage($page, $count);
 		$nbPages = ceil(count($entities) / $count);
 		return $this->render('admin/article/index.html.twig', array(
 			'entities' => $entities,
