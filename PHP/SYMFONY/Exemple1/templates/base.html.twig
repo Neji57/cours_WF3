@@ -9,8 +9,11 @@
 
 <body>
     <div class="container">
+        {% for message in app.flashes %}
+
+        {% endfor %}
         {% block body %}{% endblock %}
-        <script src="{{ asset('build/js/app.js') }}"></script>
+            <script src="{{ asset('build/js/app.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </div>
 </body>

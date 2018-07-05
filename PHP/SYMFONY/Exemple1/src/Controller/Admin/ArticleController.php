@@ -96,6 +96,17 @@ class ArticleController extends Controller
 			->setMethod('DELETE');
 
 		$form = $formBuilder->getForm();
+		$form->handleRequest($request);
+
+		if ($form->isSubmitted() && $form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->remove($article);
+			$em->flush();
+
+			$this->addFlash('success', "L'article" . $article->getArticle() ." a bien été supprimé.");
+
+			return $this->redirectToRoute('app_admin_article_index');
+		}
 
 		return $this->render('admin/article/delete.html.twig', array(
 			'form' => $form->createView(),
