@@ -21,9 +21,10 @@ class ArticleController extends Controller
 		$count = 10;
 		$em = $this->getDoctrine()->getManager();
 		$entities = $em->getRepository(Article::class)->findByPage();
-		$nbPages = count($entities) / $count;
+		$nbPages = ceil(count($entities) / $count);
 		return $this->render('admin/article/index.html.twig', array(
 			'entities' => $entities,
+			'nbPages' => $nbPages,
 		));
 	}
 
