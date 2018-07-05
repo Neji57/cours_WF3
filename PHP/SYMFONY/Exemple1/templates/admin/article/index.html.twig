@@ -31,15 +31,15 @@
 	<nav aria-label="Page navigation example">
 		<ul class="pagination">
 			<li class="page-item">
-				<a class="page-link" href="#">&laquo;</a>
+				<a class="page-link" href="{{ path('app_admin_article_index') }}">&laquo;</a>
 			</li>
 			{% for p in 1..nbPages %}
 			<li class="page-item">
-				<a class="page-link" href="#">{{ p }}</a>
+				<a class="page-link {% if p = page %}{{ active }}{% endif %} " href="{{ path('app_admin_article_index', { 'page': p }) }}">{{ p }}</a>
 			</li>
 			{% endfor %}
 			<li class="page-item">
-				<a class="page-link" href="#">&raquo;</a>
+				<a class="page-link" href="{{ path('app_admin_article_index', { 'page': nbPages }) }}">&raquo;</a>
 			</li>
 		</ul>
 	</nav>
