@@ -25,6 +25,7 @@ class ArticleController extends Controller
 		return $this->render('admin/article/index.html.twig', array(
 			'entities' => $entities,
 			'nbPages' => $nbPages,
+			'page' => $page,
 		));
 	}
 
