@@ -6,4 +6,4 @@
 <button type="submit" class="btn btn-danger">Supprimer</button>
 <a href="{{ path('app_admin_article_index') }}" class="btn btn-secondary"></a>
 
-<div class="alert alert-danger">Confirmer la suppression de l'article <strong>{{ entity.title }}</strong> </div>
+<div class="alert alert-{{ type }}">{{ message }}</div>
