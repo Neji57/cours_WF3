@@ -98,6 +98,7 @@ class ArticleController extends Controller
 
 	public function delete(Request $request, Article $article)
 	{
-
+			$form = $this->createFormBuilder()
+				->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]));
 	}
 }
