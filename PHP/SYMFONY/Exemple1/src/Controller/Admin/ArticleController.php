@@ -95,4 +95,9 @@ class ArticleController extends Controller
 			'form' => $form->createView(),
 		));
 	}
+
+	public function delete(Request $request, Article $article)
+	{
+
+	}
 }
