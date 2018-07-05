@@ -9,7 +9,11 @@
 
 <body>
     <div class="container">
-    {% embed 'decorator\_nav.html.twig' with {'class': 'fixed-top navbar-light bg-light'} %}
+    {% embed 'decorator/_nav.html.twig' with {'class': 'fixed-top navbar-light bg-light', 'brandUrl': '#'} %}
+
+    {% block brand %}
+    Admin
+    {% endblock %}
 
     {% endembed %}
         {% for type, messages in app.flashes %}
