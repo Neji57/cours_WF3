@@ -16,6 +16,7 @@ class ArticleRepository extends ServiceEntityRepository
 
 	public function findByPage($page = 1, $count = 10)
 	{
+		$first = ($page - 1) * $count;
 		$queryBuilder = $this->createQueryBuilder('a')
 			->OrderBy('a.dateCreate', 'ASC')
 			->setFirstResult($first)
