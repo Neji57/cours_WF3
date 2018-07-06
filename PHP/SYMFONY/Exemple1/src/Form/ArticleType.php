@@ -17,7 +17,10 @@ class ArticleType extends AbstractType
 				'label' => 'Titre'
 			))
 			->add('content', null, array(
-				'label' => 'Contenu'
+				'label' => 'Contenu',
+				'attr' => array(
+					'class' =>'tinymce',
+				),
 			))
 			// ->add('country', CountryType::class, array(
 			// 	'mapped' =>false,

@@ -31,6 +31,7 @@
         {% endfor %}
         {% block body %}{% endblock %}
             <script src="{{ asset('build/js/app.js') }}"></script>
+            {{ tinymce_init() }}
         {% block javascripts %}{% endblock %}
     </div>
 </body>
