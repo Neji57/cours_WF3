@@ -28,6 +28,7 @@
 - Nettoyer le cache : `php bin/console cache:clear`
 - Statut des traductions `php bin/console debug:translation fr`
 - Créer un Entity automatiquement `php bin/console make:entity`
+- Mettre à jour la base de données `php bin/console make:entity`
 
 
 Si erreur ci-dessous :
