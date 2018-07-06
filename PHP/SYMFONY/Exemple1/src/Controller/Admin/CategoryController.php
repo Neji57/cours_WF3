@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -6,25 +7,28 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Category;
 use App\Form\CategoryType;
-use App\Form\CategoryRepository;
+use App\Repository\CategoryRepository;
+
 /**
  * @Route("/admin/category")
  */
-
 class CategoryController extends Controller
 {
 	/**
-	 * @Route("/{page}", requirements={"page"= "\d+"}, defaults = {"page"=1})
+	 * @Route("/{page}", requirements={"page" = "\d+"}, defaults={"page"=1})
 	 */
 	public function index($page)
 	{
 		$count = 10;
 		$em = $this->getDoctrine()->getManager();
-		$entities = $em->getRepository(CategoryRepository::class)->findByPage($page, $count);
+		$entities = $em->getRepository(Category::class)->findByPage($page, $count);
 		$nbPages = ceil(count($entities) / $count);
+		$nbPages = $nbPages == 0 ? 1 : $nbPages;
 		if ($nbPages < $page) {
+
 			$t = $this->get('translator');
 			$this->addFlash('danger', $t->transChoice('page_error', $nbPages, array('%nbPages%' => $nbPages)));
+
 			return $this->redirectToRoute('app_admin_category_index');
 		}
 		return $this->render('admin/category/index.html.twig', array(
@@ -39,8 +43,9 @@ class CategoryController extends Controller
 	 */
 	public function new(Request $request)
 	{
+        // Nouvelle entité Category
 		$category = new Category;
-        //Creation du formulaire
+        // Création du formulaire
 		$form = $this->createForm(CategoryType::class, $category);
 		$form->handleRequest($request);
 
@@ -48,27 +53,12 @@ class CategoryController extends Controller
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($category);
 			$em->flush();
+
 			$t = $this->get('translator');
 			$this->addFlash('success', $t->trans('category.add_success', array('%entity%' => $category->getTitle())));
+
 			return $this->redirectToRoute('app_admin_category_index');
 		}
-    //         /*if(!empty($_POST))
-	// 	{
-	// 		$post = array();
-
-	// 		foreach($_POST as $key => $p)
-	// 		{
-	// 			$post[$key] = trim($p); // trim enlève les espaces avant & après
-	// 		}
-	// 		// HYDRATATION
-	// 		$category 	-> setTitle(strip_tags($post/* ou $_POST si la boucle n'existe pas */['title']))
-	// 					-> setContent($post['content'])
-	// 					;
-	// 		// SAUVEGARDE DANS LA BDD
-	// 		$em = $this -> getDoctrine() -> getManager();
-	// 		$em -> persist($category);
-	// 		$em -> flush();
-    // }
 
 		return $this->render('admin/category/new.html.twig', array(
 			'form' => $form->createView(),
@@ -78,19 +68,20 @@ class CategoryController extends Controller
 	/**
 	 * @Route("/edit/{id}", requirements={"id" = "\d+"})
 	 */
-
-	public function edit(Request $request, category $category)
+	public function edit(Request $request, Category $category)
 	{
-		// CREATION DU FORMULAIRE
+        // Création du formulaire
 		$form = $this->createForm(CategoryType::class, $category);
 		$form->handleRequest($request);
+
 		if ($form->isSubmitted() && $form->isValid()) {
-			$category->setDateUpdate(new \DateTime);
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($category);
 			$em->flush();
+
 			$t = $this->get('translator');
 			$this->addFlash('success', $t->trans('category.edit_success', array('%entity%' => $category->getTitle())));
+
 			return $this->redirectToRoute('app_admin_category_index');
 		}
 
@@ -103,7 +94,7 @@ class CategoryController extends Controller
 	/**
 	 * @Route("/delete/{id}", requirements={"id" = "\d+"})
 	 */
-	public function delete(Request $request, category $category)
+	public function delete(Request $request, Category $category)
 	{
 		$formBuilder = $this->createFormBuilder()
 			->setAction($this->generateUrl('app_admin_category_delete', ['id' => $category->getId()]))
@@ -119,6 +110,7 @@ class CategoryController extends Controller
 
 			$t = $this->get('translator');
 			$this->addFlash('success', $t->trans('category.delete_success', array('%entity%' => $category->getTitle())));
+
 			return $this->redirectToRoute('app_admin_category_index');
 		}
 
