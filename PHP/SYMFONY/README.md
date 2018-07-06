@@ -21,12 +21,13 @@
 ```
 - Mettre à jour les bibliothèques (Fontawesome par exemple) : `npm update`
 - Lancer le serveur proposé par Symfony `php bin/console server:run`. Avantage : les liens ressemblent à ceux de la prod
-- Compiler son projet: 
+- Compiler son projet:
     - `npm run dev` (Plus rapide)
     - `npm run build` (Plus complet pour la fin du projet)
     - `npm run watch` (analyse les changements à chaque sauvegarde de fichier)
 - Nettoyer le cache : `php bin/console cache:clear`
 - Statut des traductions `php bin/console debug:translation fr`
+- Créer un Entity automatiquement `php bin/console make:entity`
 
 
 Si erreur ci-dessous :
