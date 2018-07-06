@@ -4,15 +4,15 @@
 {% embed 'decorator/_card.html.twig' %}
 
     {% block header %}
-    {{ entity.title }}
+    <h2>{{ entity.title }}</h2>
     {% endblock %}
 
     {% block body %}
-	{{ entity.content }}
+	<b>{{ entity.content }}</b>
     {% endblock %}
 
     {% block footer %}
-	{{ entity.dateCreate|date('d/m/Y H:i') }}
+	<small>{{ entity.dateCreate|date('d/m/Y H:i') }}</small>
     {% endblock %}
 
  {% endembed %}
