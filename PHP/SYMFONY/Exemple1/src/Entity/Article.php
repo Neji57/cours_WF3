@@ -41,6 +41,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 	 */
 	private $dateUpdate;
 
+	/**
+	 * @ORM
+	 */
+	private $category;
+
 	public function __construct()
 	{
 		$this->dateCreate = new \DateTime;

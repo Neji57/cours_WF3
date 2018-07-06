@@ -13,3 +13,13 @@ article:
   count: Article|Articles
   article: Article
   delete_message: Confirmer la suppression de l'article <b> "%entity%" <b>
+category:
+  edit: Modifier la catégorie <b> "%entity%" <b>
+  edit_success: La catégorie <b> "%entity%" <b> a bien été modifiée
+  add: Ajouter une catégorie
+  add_success: La catégorie <b> "%entity%" <b> a bien été ajoutée
+  delete: Supprimer la catégorie <b> "%entity%" <b>
+  delete_success: La catégorie <b> "%entity%" <b> a bien été supprimée
+  count: Catégorie|Catégories
+  category: Catégorie
+  delete_message: Confirmer la suppression de la catégorie <b> "%entity%" <b>

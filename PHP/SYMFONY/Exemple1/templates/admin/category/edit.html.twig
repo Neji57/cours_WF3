@@ -3,7 +3,7 @@
 {{ form_start(form) }}
 {% embed 'decorator/_card.html.twig' %}
     {% block header %}
-    {{ 'category.edit'|trans( {'%entity%' : entity.title} )|raw }}
+    {{ 'category.edit'|trans( {'%entity%' : entity.name} )|raw }}
     {% endblock %}
 
     {% block body %}
@@ -12,7 +12,7 @@
 
     {% block footer %}
         <button type="submit" class="btn btn-warning">Modifier</button>
-        <a class="btn btn-secondary" href="{{ path('app_admin_article_index') }}" role="button">Annuler</a>
+        <a class="btn btn-secondary" href="{{ path('app_admin_category_index') }}" role="button">Annuler</a>
     {% endblock %}
  {% endembed %}
 {{ form_end(form) }}
