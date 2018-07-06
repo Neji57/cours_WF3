@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * @method Category|null find($id, $lockMode = null, $lockVersion = null)
@@ -34,7 +35,7 @@ class CategoryRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+     */
 
     /*
     public function findOneBySomeField($value): ?Category
@@ -46,5 +47,15 @@ class CategoryRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
+     */
+
+    public function findByPage($page = 1, $count = 10)
+    {
+        $first = ($page - 1) * $count;
+        $queryBuilder = $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->setFirstResult($first)
+            ->setMaxResults($count);
+        return new Paginator($queryBuilder);
+    }
 }
