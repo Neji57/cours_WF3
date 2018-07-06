@@ -1,6 +1,6 @@
 # Migrer un projet
 
-## Lorsque tu veux migrer un projet ou quand tu le récupère sur github, les fichiers du projet ne sont pas forcémenttous présents. il faut entrer quelques commandes pour que tout fonctionne correctement.
+## Lorsque tu veux migrer un projet ou quand tu le récupère sur github, les fichiers du projet ne sont pas forcément tous présents. il faut entrer quelques commandes pour que tout fonctionne correctement.
 
 ## Commandes
 
