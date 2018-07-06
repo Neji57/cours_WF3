@@ -51,8 +51,8 @@ class ArticleController extends Controller
 	 */
 	public function show(Article $article)
 	{
-		return $this->render('admin/article/edit.html.twig', array(
-			'entity' => $article
+		return $this->render('article/show.html.twig', array(
+			'entity' => $article,
 		));
 	}
 
