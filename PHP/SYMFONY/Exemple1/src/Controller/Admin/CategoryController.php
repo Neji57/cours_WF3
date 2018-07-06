@@ -7,14 +7,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Request;
 
-use App\Entity\Article;
-use App\Form\ArticleType;
+use App\Entity\Category;
+use App\Form\CategoryType;
 
 /**
- * @Route("/admin/article")
+ * @Route("/admin/category")
  */
 
-class ArticleController extends Controller
+class CategoryController extends Controller
 {
 	/**
 	 * @Route("/{page}", requirements={"page" = "\d+"}, defaults={"page" = 1})
@@ -23,21 +23,23 @@ class ArticleController extends Controller
 	{
 		$count = 10;
 
-		$em = $this->getDoctrine()->getManager();
+		$em = $this -> getDoctrine() -> getManager();
 
 		$entities = $em
-			->getRepository(Article::class)
-			->findByPage($page, $count);
+			-> getRepository(Category::class)
+			->findByPage($page, $count)
+		;
 
 		$nbPages = ceil(count($entities) / $count);
 
-		if ($nbPages < $page) {
+		if($nbPages < $page)
+		{
 			$t = $this->get('translator');
-			$this->addFlash('danger', $t->transChoice('page_error', $nbPages, array('%nbPages%' => $nbPages)));
-			return $this->redirectToRoute('app_admin_article_index');
+			$this->addFlash('danger', $t->transChoice('page_error', $nbPages,  array('%nbPages%' => $nbPages)));
+			return $this->redirectToRoute('app_admin_category_index');
 		}
 
-		return $this->render('admin/article/index.html.twig', array(
+		return $this->render('admin/category/index.html.twig', array(
 			'entities' => $entities,
 			'nbPages' => (int)$nbPages,
 			'page' => $page
@@ -49,25 +51,26 @@ class ArticleController extends Controller
 	 */
 	public function new(Request $request)
 	{
-		// NOUVELLE ENTITÉE ARTICLE
-		$article = new Article;
+		// NOUVELLE ENTITÉE category
+		$category = new Category;
 
 		// CREATION DU FORMULAIRE
-		$form = $this->createForm(ArticleType::class, $article);
-		$form->handleRequest($request);
+		$form = $this -> createForm(CategoryType::class, $category);
+		$form -> handleRequest($request);
 
-		if ($form->isSubmitted() && $form->isValid()) {
-			$em = $this->getDoctrine()->getManager();
-			$em->persist($article);
-			$em->flush();
+		if($form -> isSubmitted() && $form -> isValid())
+		{
+			$em = $this -> getDoctrine() -> getManager();
+			$em -> persist($category);
+			$em -> flush();
 
 			$t = $this->get('translator');
-			$this->addFlash('success', $t->trans('article.add_success', array('%entity%' => $article->getTitle())));
+			$this->addFlash('success', $t->trans('category.add_success', array('%entity%' => $category->getTitle())));
 
-			return $this->redirectToRoute('app_admin_article_index');
+			return $this -> redirectToRoute('app_admin_article_index');
 		}
 
-		return $this->render('admin/article/new.html.twig', array(
+		return $this->render('admin/category/new.html.twig', array(
 			'form' => $form->createView(),
 		));
 	}
@@ -75,56 +78,59 @@ class ArticleController extends Controller
 	/**
 	 * @Route ("/edit/{id}", requirements={"id" = "\d+"})
 	 */
-	public function edit(Request $request, Article $article)
+	public function edit(Request $request, Category $category)
 	{
 		// CREATION DU FORMULAIRE
-		$form = $this->createForm(ArticleType::class, $article);
-		$form->handleRequest($request);
+		$form = $this -> createForm(CategoryType::class, $category);
+		$form -> handleRequest($request);
 
-		if ($form->isSubmitted() && $form->isValid()) {
-			$article->setDateUpdate(new \DateTime);
-			$em = $this->getDoctrine()->getManager();
-			$em->persist($article);
-			$em->flush();
+		if($form -> isSubmitted() && $form -> isValid())
+		{
+			$category -> setDateUpdate(new \DateTime);
+			$em = $this -> getDoctrine() -> getManager();
+			$em -> persist($category);
+			$em -> flush();
 
 			$t = $this->get('translator');
-			$this->addFlash('success', $t->trans('article.edit_success', array('%entity%' => $article->getTitle())));
+			$this->addFlash('success', $t->trans('category.edit_success', array('%entity%' => $category->getTitle())));
 
-			return $this->redirectToRoute('app_admin_article_index');
+			return $this -> redirectToRoute('app_admin_article_index');
 		}
 
-		return $this->render('admin/article/edit.html.twig', array(
+		return $this->render('admin/category/edit.html.twig', array(
 			'form' => $form->createView(),
-			'entity' => $article
+			'entity' => $category
 		));
 	}
 
 	/**
 	 * @Route ("/delete/{id}", requirements={"id" = "\d+"})
 	 */
-	public function delete(Request $request, Article $article)
+	public function delete(Request $request, Category $category)
 	{
-		$formBuilder = $this->createFormBuilder()
-			->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]))
-			->setMethod('DELETE');
+		$formBuilder = $this -> createFormBuilder()
+			-> setAction($this -> generateUrl('app_admin_article_delete', ['id' => $category -> getId()]))
+			-> setMethod('DELETE')
+		;
 
-		$form = $formBuilder->getForm();
-		$form->handleRequest($request);
+		$form = $formBuilder -> getForm();
+		$form -> handleRequest($request);
 
-		if ($form->isSubmitted() && $form->isValid()) {
-			$em = $this->getDoctrine()->getManager();
-			$em->remove($article);
-			$em->flush();
+		if($form -> isSubmitted() && $form -> isValid())
+		{
+			$em = $this -> getDoctrine() -> getManager();
+			$em -> remove($category);
+			$em -> flush();
 
 			$t = $this->get('translator');
-			$this->addFlash('success', $t->trans('article.delete_success', array('%entity%' => $article->getTitle())));
+			$this->addFlash('success', $t->trans('category.delete_success', array('%entity%' => $category->getTitle())));
 
-			return $this->redirectToRoute('app_admin_article_index');
+			return $this -> redirectToRoute('app_admin_article_index');
 		}
 
-		return $this->render('admin/article/delete.html.twig', array(
+		return $this -> render('admin/category/delete.html.twig', array(
 			'form' => $form->createView(),
-			'entity' => $article
+			'entity' => $category
 		));
 	}
 }
