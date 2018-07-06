@@ -6,41 +6,105 @@
 ---
 ## Commandes
 
-- Installer la toolbar Apache : `composer require symfony/apache-pack`, à la fin, faire yes : `y`.
-- Afficher la liste des routes : `php bin/console debug:router`
-- Créer une base de données :
-    - Dans le fichier `.env`, modifier la ligne **23** (dans l'exemple1 : `DATABASE_URL=mysql://root@127.0.0.1:3306/Sf_exo`)
-    - Dans le terminal : `php bin/console doctrine:database:create`
-    - Mettre à jour la base de données `php bin/console doctrine:schema:update --force`
-- Lorsque l'on fait des modifications dans le dossier `assets`, pour que les changements prennent effet il faut rentrer cette commande dans le terminal : `npm run dev`
-- Installer fontawesome :
-    - dans le terminal : `npm i @fortawesome/fontawesome-free-webfonts --save-dev`
-    - dans `assets` trouver le fichier CSS ou SCSS et coller ces deux lignes dispo aussi [ici](https://www.npmjs.com/package/@fortawesome/fontawesome-free-webfonts) puis faire `npm run dev`
-```scss
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
-@import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
+- Installer la toolbar Apache : 
 ```
-- Mettre à jour les bibliothèques (Fontawesome par exemple) : `npm update`
-- Lancer le serveur proposé par Symfony `php bin/console server:run`. Avantage : les liens ressemblent à ceux de la prod
-- Compiler son projet:
-    - `npm run dev` (Plus rapide)
-    - `npm run build` (Plus complet pour la fin du projet)
-    - `npm run watch` (analyse les changements à chaque sauvegarde de fichier)
-- Nettoyer le cache : `php bin/console cache:clear`
-- Statut des traductions `php bin/console debug:translation fr`
-- Créer un Entity automatiquement `php bin/console make:entity`
-- Créer une categorie de formulaire `php bin/console make:form`
+composer require symfony/apache-pack
+```
+- à la fin, faire yes : `y`.
 
+- Afficher la liste des routes : 
+```
+php bin/console debug:router
+```
+---
+
+- Créer une base de données :
+    - Dans le fichier `.env`, modifier la ligne **23** dans l'exemple1 par la ligne suivante : 
+    ```
+    DATABASE_URL=mysql://root@127.0.0.1:3306/Sf_exo
+    ```
+    - Dans le terminal : 
+    ```
+    php bin/console doctrine:database:create
+    ```
+
+    - Mettre à jour la base de données : 
+    ```
+    php bin/console doctrine:schema:update --force
+    ```
+---
+
+- Installer fontawesome :
+    - dans le terminal : 
+    ```
+    npm i @fortawesome/fontawesome-free-webfonts --save-dev
+    ```
+
+    - dans `assets` trouver le fichier CSS ou SCSS et coller ces deux lignes dispo aussi [ici](https://www.npmjs.com/package/@fortawesome/fontawesome-free-webfonts) puis faire `npm run dev`
+    ```scss
+    @import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
+    @import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
+    ```
+---
+
+- Lorsque l'on fait des modifications dans le dossier `assets`, pour que les changements prennent effet il faut rentrer cette commande dans le terminal : 
+```
+npm run dev
+```
+
+- Mettre à jour les bibliothèques (Fontawesome par exemple) : 
+```
+npm update
+```
+
+- Lancer le serveur proposé par Symfony (Avantage : les liens ressemblent à ceux de la prod)
+```
+php bin/console server:run
+```
+
+- Compiler son projet:
+```
+npm run dev             (Plus rapide)
+npm run build           (Plus complet pour la fin du projet)
+npm run watch           (analyse les changements à chaque sauvegarde de fichier)
+```
+
+- Nettoyer le cache : 
+```
+php bin/console cache:clear
+```
+
+- Statut des traductions 
+```
+php bin/console debug:translation fr
+```
+
+- Créer un Entity automatiquement 
+```
+php bin/console make:entity
+```
+
+- Créer une categorie de formulaire 
+```
+php bin/console make:form
+```
+---
 
 Si erreur ci-dessous :
 
 ```
 Error: Encore.setOutputPath() cannot be called yet because the runtime environment doesn't appear to be configured. Make sure you're using the encore executable or call Encore.configureRuntimeEnvironment() first if you're purposely not calling Encore directly.
 ```
--  Dans `webpack.config.js`, ajouter cette partie en dessous de `Encore` : `.configureRuntimeEnvironment('dev')`
+-  Dans `webpack.config.js`, ajouter cette partie en dessous de `Encore` : 
+```js
+.configureRuntimeEnvironment('dev')
+```
 
 BUNDLE SYMFONY
-- `composer require knplabs/knp-menu-bundle` aide à faire des menus
+(aide à faire des menus)
+```
+composer require knplabs/knp-menu-bundle
+```
 
 ---
 ## MEMO
