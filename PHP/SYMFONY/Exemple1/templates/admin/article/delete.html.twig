@@ -4,7 +4,7 @@
 {{ form_start(form) }}
 {% embed 'decorator/_card.html.twig' %}
     {% block header %}
-    {{ 'article.delete'|trans }}
+    {{ 'article.delete'|trans( {'%entity%' : entity.title} )|raw }}
     {% endblock %}
 
     {% block body %}

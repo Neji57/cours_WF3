@@ -2,10 +2,11 @@ add: Ajouter
 edit: Editer
 cancel: Annuler
 delete: Supprimer
+page_error: Il n'y a qu'une page|Il n'y a que %nbPages% pages
 article:
   edit: Modifier l'article <b> "%entity%" <b>
   edit_success: L'article <b> "%entity%" <b> a bien été modifié
-  add: ajouter l'article <b> "%entity%" <b>
+  add: Ajouter un article
   add_success: L'article <b> "%entity%" <b> a bien été ajouté
   delete: Supprimer l'article <b> "%entity%" <b>
   delete_success: L'article <b> "%entity%" <b> a bien été supprimé
