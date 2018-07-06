@@ -11,6 +11,7 @@
 - Créer une base de données :
     - Dans le fichier `.env`, modifier la ligne **23** (dans l'exemple1 : `DATABASE_URL=mysql://root@127.0.0.1:3306/Sf_exo`)
     - Dans le terminal : `php bin/console doctrine:database:create`
+    - Mettre à jour la base de données `php bin/console doctrine:schema:update --force`
 - Lorsque l'on fait des modifications dans le dossier `assets`, pour que les changements prennent effet il faut rentrer cette commande dans le terminal : `npm run dev`
 - Installer fontawesome :
     - dans le terminal : `npm i @fortawesome/fontawesome-free-webfonts --save-dev`
@@ -28,7 +29,6 @@
 - Nettoyer le cache : `php bin/console cache:clear`
 - Statut des traductions `php bin/console debug:translation fr`
 - Créer un Entity automatiquement `php bin/console make:entity`
-- Mettre à jour la base de données `php bin/console doctrine:schema:update --force`
 - Créer une categorie de formulaire `php bin/console make:form`
 
 
