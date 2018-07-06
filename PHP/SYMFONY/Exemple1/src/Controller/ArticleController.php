@@ -36,10 +36,10 @@ class ArticleController extends Controller
 		{
 			$t = $this->get('translator');
 			$this->addFlash('danger', $t->transChoice('page_error', $nbPages,  array('%nbPages%' => $nbPages)));
-			return $this->redirectToRoute('app_admin_article_index');
+			return $this->redirectToRoute('app_article_index');
 		}
 
-		return $this->render('admin/article/index.html.twig', array(
+		return $this->render('article/index.html.twig', array(
 			'entities' => $entities,
 			'nbPages' => (int)$nbPages,
 			'page' => $page
