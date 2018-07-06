@@ -53,7 +53,7 @@ class CategoryRepository extends ServiceEntityRepository
     {
         $first = ($page - 1) * $count;
         $queryBuilder = $this->createQueryBuilder('a')
-            ->orderBy('a.id', 'DESC')
+            ->orderBy('a.id', 'ASC')
             ->setFirstResult($first)
             ->setMaxResults($count);
         return new Paginator($queryBuilder);

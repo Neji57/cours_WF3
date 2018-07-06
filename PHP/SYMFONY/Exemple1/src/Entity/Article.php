@@ -42,7 +42,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 	private $dateUpdate;
 
 	/**
-	 * @ORM
+	 * @ORM\ManyToOne()
 	 */
 	private $category;
 
