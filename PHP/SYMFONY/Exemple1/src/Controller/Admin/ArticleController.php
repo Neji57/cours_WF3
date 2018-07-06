@@ -63,7 +63,8 @@ class ArticleController extends Controller
 			$em -> persist($article);
 			$em -> flush();
 
-			$this->addFlash('success', "L'article " . $article->getTitle() . " a bien été crée");
+			$t = $this->get('translator');
+			$this->addFlash('success', $t->trans('article.add_success', array('%entity%' => $article->getTitle())));
 
 			return $this -> redirectToRoute('app_admin_article_index');
 		}
@@ -120,7 +121,8 @@ class ArticleController extends Controller
 			$em -> remove($article);
 			$em -> flush();
 
-			$this -> addFlash('success', "L'article " . $article->getTitle() . " a bien été supprimé");
+			$t = $this->get('translator');
+			$this->addFlash('success', $t->trans('article.delete_success', array('%entity%' => $article->getTitle())));
 
 			return $this -> redirectToRoute('app_admin_article_index');
 		}
