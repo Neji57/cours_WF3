@@ -35,7 +35,7 @@ class ArticleController extends Controller
 		if($nbPages < $page)
 		{
 			$t = $this->get('translator');
-			$this->addFlash('danger', $t->transChoice('page_error',  array('%nbPages%' => $nbPages)));
+			$this->addFlash('danger', $t->transChoice('page_error', $nbPages,  array('%nbPages%' => $nbPages)));
 			return $this->redirectToRoute('app_admin_article_index');
 		}
 
