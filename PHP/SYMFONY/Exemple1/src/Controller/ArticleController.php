@@ -46,5 +46,15 @@ class ArticleController extends Controller
 		));
 	}
 
+	/**
+	 * @Route ("/show/{id}", requirements={"id" = "\d+"})
+	 */
+	public function show(Article $article)
+	{
+		return $this->render('admin/article/edit.html.twig', array(
+			'entity' => $article
+		));
+	}
+
 
 }
