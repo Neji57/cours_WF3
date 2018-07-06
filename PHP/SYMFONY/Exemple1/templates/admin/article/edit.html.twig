@@ -3,7 +3,7 @@
 {{ form_start(form) }}
 {% embed 'decorator/_card.html.twig' %}
     {% block header %}
-    Modifier un article
+    {{ 'article.edit'|trans( {'%entity%' : entity.title} )|trans }}
     {% endblock %}
 
     {% block body %}
