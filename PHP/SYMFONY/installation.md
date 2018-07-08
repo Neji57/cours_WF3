@@ -2,13 +2,13 @@
 
 ## Ouvrir le terminal
 
-# Créer un nouveau projet
+### Créer un nouveau projet
 ```
 composer create-project symfony/website-skeleton 'nom-de-votre-projet'
 ```
 *( cela va créer un dossier avec le nom de votre projet)*
 
-# Déplacez vous dans le dossier de votre projet
+### Déplacez vous dans le dossier de votre projet
 	```
 	cd nom-de-votre-projet
 	```
