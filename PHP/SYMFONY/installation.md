@@ -98,7 +98,7 @@ Activation du CSS et du JS
 yarn add --dev sass-loader node-sass
 ```
 
-# Installation de LESS
+### Installation de LESS
 *pré-processeur Less, installation des dépendances*
 ```
 yarn add --dev less-loader less
