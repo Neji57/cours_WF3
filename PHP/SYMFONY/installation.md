@@ -105,18 +105,22 @@ yarn add --dev less-loader less
 ```
 
 
-*lancer la compilation
-**yarn run encore dev --watch**
+### Lancer la compilation
+*le compilateur lancé, il surveille les fichier js et scss dans le dossier ASSETS pour les compiler dans le dossier PUBLIC/BUILD*
+```
+yarn run encore dev --watch
+```
 
-+le compilateur lancé, il surveille les fichier js et scss dans le dossier ASSETS pour les compiler dans le dossier PUBLIC/BUILD
-
-+pour lier le css anisi que le js au template asset va le gérer
-*taper la commande suivante
-**composer require asset**
-+il faudra à l'avenir écrire les liens de cette façon dans les fichier .html.twig:
-- pour le css :  href="{{asset('build/css/app.css')}}"
-- pour le js :  scr="{{asset('build/js/app.js')}}"
-
+### Pour lier le CSS anisi que le JS au template, asset va le gérer
+*taper la commande suivante*
+```
+composer require asset
+```
+- Il faudra à l'avenir écrire les liens de cette façon dans les fichier .html.twig:
+	```php
+	pour le css :  href="{{asset('build/css/app.css')}}"
+	pour le js :  scr="{{asset('build/js/app.js')}}"
+	```
 
 *installer BOOTSTRAP
 **yarn add bootstrap --dev**
