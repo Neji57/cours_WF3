@@ -122,10 +122,14 @@ composer require asset
 	pour le js :  scr="{{asset('build/js/app.js')}}"
 	```
 
-*installer BOOTSTRAP
-**yarn add bootstrap --dev**
-*importer bootstrap dans le fichier app.css*
-+ @import "~bootstrap/scss/bootstrap";;
+### Installer BOOTSTRAP
+```
+yarn add bootstrap --dev
+```
+- Importer bootstrap dans le fichier app.css*
+	```scss
+	@import "~bootstrap/scss/bootstrap";;
+	```
 
 * dans le fichier webpack.config.js
 
