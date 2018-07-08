@@ -75,7 +75,7 @@ brew install yarn
 
 Activation du CSS et du JS
 --
-* Dans le fichier webpack.config.js
+*Dans le fichier webpack.config.js :*
 
 - décommenter les lignes suivantes :
 	```js
