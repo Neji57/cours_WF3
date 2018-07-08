@@ -81,22 +81,29 @@ Activation du CSS et du JS
 	```js
 	.addEntry('js/app', './assets/js/app.js')
 	.addStyleEntry('css/app', './assets/css/app.scss')
-	.enableSassLoader() *(pour activer le compilateur sass)*
+	.enableSassLoader() 	(pour activer le compilateur sass)
 	```
-+ décommenter .addStyleEntry('css/app', './assets/css/app.scss')
-+ renommer la ligne du dessus en .addStyleEntry('css/app', './assets/csss/app.scss')
-+ décommenter
++ renommer la ligne du dessus en
+	```
+	.addStyleEntry('css/app', './assets/csss/app.scss')
+	```
 
 + dans le dossier ASSESTS créer un dossier->scss puis un fichier app.scss
 + dans le dossier ASSESTS créer un dossier->js puis un fichier app.js
+---
 
-*installation de SASS*
-**yarn add --dev sass-loader node-sass**
-*pré-processeur Sass, installation des dépendances
+### Installation de SASS
+*pré-processeur Sass, installation des dépendances*
+```
+yarn add --dev sass-loader node-sass
+```
 
-*installation de LESS*
-**yarn add --dev less-loader less**
-*pré-processeur Less, installation des dépendances
+# Installation de LESS
+*pré-processeur Less, installation des dépendances*
+```
+yarn add --dev less-loader less
+```
+
 
 *lancer la compilation
 **yarn run encore dev --watch**
