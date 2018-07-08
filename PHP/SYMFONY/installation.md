@@ -35,25 +35,28 @@ composer require --dev profiler
 
 ### Installer les annoatations
 *(Cette commande permet d'éviter les switch entre le dossier "config/routes" et "src/controller")*
-*(ajouter le use dans le controller ```php(use Symfony\Component\Routing\Annotation\Route;)```)*
+*(ajouter le use dans le controller (use Symfony\Component\Routing\Annotation\Route;))*
 ```
 composer require annotations -vvv
 ```
 
-- Installer le moteur de template TWIG
-	```
-	composer require twig
-	```
-	*(crée le dossier template)*
-	*(faire un extends dans la classe du controller(extends Controller) et ajouter le use
-	```php
-	(use Symfony\Bundle\FrameworkBundle\Controller\Controller;)
-	```
-	pour afficher une page)*
+### Installer le moteur de template TWIG
+```
+composer require twig
+```
+*(crée le dossier template)*
+*(faire un extends dans la classe du controller(extends Controller) et ajouter le use
+```php
+(use Symfony\Bundle\FrameworkBundle\Controller\Controller;)
+```
+pour afficher une page)*
 
-**installer ENCORE
-**composer require encore**
+### Installer ENCORE
 *ENCORE est le composant symfony qui gère le scss et le js dans dossier assets*
+```
+composer require encore
+```
+
 
 *installation de BREW*
 *taper la commande suivante pour installer BREW
