@@ -75,21 +75,21 @@ brew install yarn
 
 Activation du CSS et du JS
 --
-* dans le fichier webpack.config.js
+* Dans le fichier webpack.config.js
 
-+ décommenter les lignes
+- décommenter les lignes suivantes :
 	```js
 	.addEntry('js/app', './assets/js/app.js')
 	.addStyleEntry('css/app', './assets/css/app.scss')
 	.enableSassLoader() 	(pour activer le compilateur sass)
 	```
-+ renommer la ligne du dessus en
+- renommer la ligne du dessus en :
 	```
 	.addStyleEntry('css/app', './assets/scss/app.scss')
 	```
 
-+ dans le dossier ASSESTS créer un dossier->scss puis un fichier app.scss
-+ dans le dossier ASSESTS créer un dossier->js puis un fichier app.js
+- dans le dossier ASSESTS créer un dossier->scss puis un fichier app.scss
+- dans le dossier ASSESTS créer un dossier->js puis un fichier app.js
 ---
 
 ### Installation de SASS
