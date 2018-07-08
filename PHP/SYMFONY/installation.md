@@ -56,17 +56,21 @@ pour afficher une page)*
 ```
 composer require encore
 ```
+---
 
+### Installation de BREW
+*taper la commande suivante pour installer BREW*
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+Homebrew installe ce dont vous avez besoin et qu’Apple n’a pas installé.
 
-*installation de BREW*
-*taper la commande suivante pour installer BREW
-**/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"**
-+Homebrew installe ce dont vous avez besoin et qu’Apple n’a pas installé.
-
-*installation de YARN*
-*taper la commande suivante pour installer YARN
-**brew install yarn**
-+(Yarn met en cache chaque package installé afin de ne plus avoir à les télécharger.)
+### Installation de YARN
+*taper la commande suivante pour installer YARN*
+```
+brew install yarn
+```
+(Yarn met en cache chaque package installé afin de ne plus avoir à les télécharger.)
 
 activation du css et du js
 --
