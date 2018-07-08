@@ -59,20 +59,21 @@ composer require encore
 ---
 
 ### Installation de BREW
+*Homebrew installe ce dont vous avez besoin et qu’Apple n’a pas installé.*
 *taper la commande suivante pour installer BREW*
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-Homebrew installe ce dont vous avez besoin et qu’Apple n’a pas installé.
 
 ### Installation de YARN
+*(Yarn met en cache chaque package installé afin de ne plus avoir à les télécharger.)*
 *taper la commande suivante pour installer YARN*
 ```
 brew install yarn
 ```
-(Yarn met en cache chaque package installé afin de ne plus avoir à les télécharger.)
+---
 
-activation du css et du js
+Activation du CSS et du JS
 --
 * dans le fichier webpack.config.js
 
