@@ -18,7 +18,7 @@
 	```
 	composer require symfony/web-server-bundle --dev
 	```
-	*( cela installera tout les services indispensables)*
+	*(cela installera tous les services indispensables)*
 
 - Démarrer le serveur propre à SYMFONY
 	```
@@ -31,16 +31,22 @@
 	```
 
 - Installer les annoatations
-```
-composer require annotations -vvv
-```
-*permet d'éviter les switch entre le dossier "config/routes" et "src/controller"*
-*ajouter le use dans le controller (use Symfony\Component\Routing\Annotation\Route;)*
+	```
+	composer require annotations -vvv
+	```
+	*(permet d'éviter les switch entre le dossier "config/routes" et "src/controller")*
+	*(ajouter le use dans le controller (use Symfony\Component\Routing\Annotation\Route;))*
 
-**installer le moteur de template TWIG
-**composer require twig**
-*crée le dossier template*
-*faire un extends dans la classe du controller(extends Controller) et ajouter le use (use Symfony\Bundle\FrameworkBundle\Controller\Controller;)pour afficher une page*
+- Installer le moteur de template TWIG
+	```
+	composer require twig
+	```
+	*(crée le dossier template)*
+	*(faire un extends dans la classe du controller(extends Controller) et ajouter le use
+	```php
+	(use Symfony\Bundle\FrameworkBundle\Controller\Controller;)
+	```
+	pour afficher une page)*
 
 **installer ENCORE
 **composer require encore**
