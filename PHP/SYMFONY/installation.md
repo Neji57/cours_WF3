@@ -3,39 +3,42 @@
 ## Ouvrir le terminal
 
 ### Créer un nouveau projet
+*(Cette commande cela va créer un dossier avec le nom de votre projet)*
 ```
 composer create-project symfony/website-skeleton 'nom-de-votre-projet'
 ```
-*( cela va créer un dossier avec le nom de votre projet)*
+
 
 ### Déplacez vous dans le dossier de votre projet
-	```
-	cd nom-de-votre-projet
-	```
-	*(cela va permettre au terminal en cours de pointer sur le dossier du projet)*
+*(Cette commande va permettre au terminal en cours de pointer sur le dossier du projet)*
+```
+cd nom-de-votre-projet
+```
 
-- Installer le service
-	```
-	composer require symfony/web-server-bundle --dev
-	```
-	*(cela installera tous les services indispensables)*
 
-- Démarrer le serveur propre à SYMFONY
-	```
-	php bin/console server:run
-	```
+### Installer le service
+*(Cette commande installera tous les services indispensables)*
+```
+composer require symfony/web-server-bundle --dev
+```
 
-- Installer la barre de debug
-	```
-	composer require --dev profiler
-	```
 
-- Installer les annoatations
-	```
-	composer require annotations -vvv
-	```
-	*(permet d'éviter les switch entre le dossier "config/routes" et "src/controller")*
-	*(ajouter le use dans le controller (use Symfony\Component\Routing\Annotation\Route;))*
+### Démarrer le serveur propre à SYMFONY
+```
+php bin/console server:run
+```
+
+### Installer la barre de debug
+```
+composer require --dev profiler
+```
+
+### Installer les annoatations
+*(Cette commande permet d'éviter les switch entre le dossier "config/routes" et "src/controller")*
+*(ajouter le use dans le controller ```php(use Symfony\Component\Routing\Annotation\Route;)```)*
+```
+composer require annotations -vvv
+```
 
 - Installer le moteur de template TWIG
 	```
