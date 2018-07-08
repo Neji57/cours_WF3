@@ -131,21 +131,21 @@ yarn add bootstrap --dev
 	@import "~bootstrap/scss/bootstrap";;
 	```
 
-* dans le fichier webpack.config.js
+### Installer JQUERY
+```
+yarn add jquery --dev
+```
+- dans le fichier webpack.config.js décommenter la ligne suivante :
+```
+.autoProvidejQuery()
+```
 
-+ décommenter.autoProvidejQuery()
-+ installer JQUERY
-**yarn add jquery --dev**
-+ installer popper
-**yarn add popper.js --dev**
-+ installer webpack (à jour)
-**yarn add --dev webpack**
+### Installer popper
+```
+yarn add popper.js --dev
+```
 
-
-
-
-
-
-
-
-
+### Installer webpack (à jour)
+```
+yarn add --dev webpack
+```
