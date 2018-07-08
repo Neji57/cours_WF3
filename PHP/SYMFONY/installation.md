@@ -6,18 +6,19 @@
 	```
 	composer create-project symfony/website-skeleton 'nom-de-votre-projet'
 	```
-	( cela va créer un dossier avec le nom de votre projet)
+	*( cela va créer un dossier avec le nom de votre projet)*
 
 - Déplacez vous dans le dossier de votre projet avec la commande suivante
 	```
 	cd nom-de-votre-projet
 	```
+	*(cela va permettre au terminal en cours de pointer sur le dossier du projet)*
 
 - Installer le service
 	```
 	composer require symfony/web-server-bundle --dev
 	```
-	( cela installera tout les services indispensables)
+	*( cela installera tout les services indispensables)*
 
 - Démarrer le serveur propre à SYMFONY
 	```
@@ -29,8 +30,10 @@
 	composer require --dev profiler
 	```
 
-**installer les annoatations
-**composer require annotations -vvv**
+- Installer les annoatations
+```
+composer require annotations -vvv
+```
 *permet d'éviter les switch entre le dossier "config/routes" et "src/controller"*
 *ajouter le use dans le controller (use Symfony\Component\Routing\Annotation\Route;)*
 
