@@ -85,7 +85,7 @@ Activation du CSS et du JS
 	```
 + renommer la ligne du dessus en
 	```
-	.addStyleEntry('css/app', './assets/csss/app.scss')
+	.addStyleEntry('css/app', './assets/scss/app.scss')
 	```
 
 + dans le dossier ASSESTS créer un dossier->scss puis un fichier app.scss
