@@ -77,7 +77,10 @@ Activation du CSS et du JS
 --
 * dans le fichier webpack.config.js
 
-+ décommenter .addEntry('js/app', './assets/js/app.js')
++ décommenter
+	```js
+	.addEntry('js/app', './assets/js/app.js')
+	```
 + décommenter .addStyleEntry('css/app', './assets/css/app.scss')
 + renommer la ligne du dessus en .addStyleEntry('css/app', './assets/csss/app.scss')
 + décommenter .enableSassLoader() pour activer le compilateur sass
