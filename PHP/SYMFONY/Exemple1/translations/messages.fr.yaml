@@ -26,7 +26,3 @@ category:
   name: Catégories
   category: Catégorie
   delete_message: Confirmer la suppression de la catégorie <b> "%entity%" <b>
-layout:
-  login: Connexion
-Security:
-  login:
