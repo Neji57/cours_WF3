@@ -5,23 +5,25 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
- class Article
- {
-	 /**
-	  * @ORM\Id
-	  * @ORM\GeneratedValue
-	  * @ORM\Column(type="integer")
-	  */
+
+class Article
+{
+	/**
+	 * @ORM\Id
+	 * @ORM\GeneratedValue
+	 * @ORM\Column(type="integer")
+	 */
 	private $id;
 
 	/**
 	 * @ORM\Column(type="string", length=80)
 	 * @Assert\Length(
 	 *      min = 2,
-	 *      max = 50,
+	 *      max = 50
 	 * )
 	 */
 	private $title;
@@ -42,7 +44,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 	private $dateUpdate;
 
 	/**
-	 * @ORM\ManyToOne(targetEntity="Category")
+	 * @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
 	 */
 	private $category;
 
@@ -60,43 +62,22 @@ use Symfony\Component\Validator\Constraints as Assert;
 		return $this->id;
 	}
 
-
 	/**
-	 * Get the value of title
+	 * Get the value of dateUpdate
 	 */
-	public function getTitle()
+	public function getDateUpdate()
 	{
-		return $this->title;
+		return $this->dateUpdate;
 	}
 
 	/**
-	 * Set the value of title
+	 * Set the value of dateUpdate
 	 *
 	 * @return  self
 	 */
-	public function setTitle($title)
+	public function setDateUpdate($dateUpdate)
 	{
-		$this->title = $title;
-
-		return $this;
-	}
-
-	/**
-	 * Get the value of content
-	 */
-	public function getContent()
-	{
-		return $this->content;
-	}
-
-	/**
-	 * Set the value of content
-	 *
-	 * @return  self
-	 */
-	public function setContent($content)
-	{
-		$this->content = $content;
+		$this->dateUpdate = $dateUpdate;
 
 		return $this;
 	}
@@ -122,21 +103,41 @@ use Symfony\Component\Validator\Constraints as Assert;
 	}
 
 	/**
-	 * Get the value of dateUpdate
+	 * Get the value of content
 	 */
-	public function getDateUpdate()
+	public function getContent()
 	{
-		return $this->dateUpdate;
+		return $this->content;
 	}
 
 	/**
-	 * Set the value of dateUpdate
+	 * Set the value of content
 	 *
 	 * @return  self
 	 */
-	public function setDateUpdate($dateUpdate)
+	public function setContent($content)
 	{
-		$this->dateUpdate = $dateUpdate;
+		$this->content = $content;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of title
+	 */
+	public function getTitle()
+	{
+		return $this->title;
+	}
+
+	/**
+	 * Set the value of title
+	 *
+	 * @return  self
+	 */
+	public function setTitle($title)
+	{
+		$this->title = $title;
 
 		return $this;
 	}
@@ -160,4 +161,4 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 		return $this;
 	}
- }
+}
