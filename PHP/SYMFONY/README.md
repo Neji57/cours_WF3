@@ -103,7 +103,7 @@ php bin/console fos:user:create
 ```
 php bin/console fos:user:promote
 
-    *(ensuite choisir l'utilisateur et entrer son role)*
+    ensuite choisir l'utilisateur et entrer son role
 
     Please choose a username:Picobuu
     Please choose a role:ROLE_SUPER_ADMIN
