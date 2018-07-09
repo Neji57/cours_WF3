@@ -167,4 +167,28 @@ class Article
 
 		return $this;
 	}
+
+	/**
+	 * Get the value of user
+	 *
+	 * @return  \App\Entity\User
+	 */
+	public function getUser()
+	{
+		return $this->user;
+	}
+
+	/**
+	 * Set the value of user
+	 *
+	 * @param  \App\Entity\User  $user
+	 *
+	 * @return  self
+	 */
+	public function setUser(\App\Entity\User $user)
+	{
+		$this->user = $user;
+
+		return $this;
+	}
 }

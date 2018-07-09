@@ -19,9 +19,34 @@ class User extends BaseUser
 	 */
 	protected $id;
 
+	/**
+	 * @ORM\OneToMany(targetEntity="Article", mappedBy="user")
+	 */
+	private $articles;
+
 	public function __construct()
 	{
 		parent::__construct();
         // your own logic
+	}
+
+	/**
+	 * Get the value of articles
+	 */ 
+	public function getArticles()
+	{
+		return $this->articles;
+	}
+
+	/**
+	 * Set the value of articles
+	 *
+	 * @return  self
+	 */ 
+	public function setArticles($articles)
+	{
+		$this->articles = $articles;
+
+		return $this;
 	}
 }
