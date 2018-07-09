@@ -26,4 +26,5 @@ category:
   list: Liste des catégories
   name: Catégories
   category: Catégorie
+  categories: Catégories
   delete_message: Confirmer la suppression de la catégorie <b> "%entity%" <b>
