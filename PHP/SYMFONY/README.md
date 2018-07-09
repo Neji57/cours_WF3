@@ -99,7 +99,12 @@ composer require friendsofsymfony/user-bundle
 php bin/console fos:user:create
 ```
 
-- upgrade d'un utilisateur en bdd
+- Créer un utilisateur qui as déjà les droits super admin
+```
+php bin/console fos:user:create --super-admin
+```
+
+- upgrade d'un utilisateur en super admin
 ```
 php bin/console fos:user:promote
 
