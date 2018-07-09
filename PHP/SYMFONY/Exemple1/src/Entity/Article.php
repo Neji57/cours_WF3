@@ -44,9 +44,9 @@ class Article
 	private $dateUpdate;
 
 	/**
-	 * @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
+	 * @ORM\ManyToMany(targetEntity="Category", inversedBy="articles")
 	 */
-	private $category;
+	private $categories;
 
 	/**
 	 * @var \App\Entity\User
@@ -149,26 +149,6 @@ class Article
 	}
 
 	/**
-	 * Get the value of category
-	 */
-	public function getCategory()
-	{
-		return $this->category;
-	}
-
-	/**
-	 * Set the value of category
-	 *
-	 * @return  self
-	 */
-	public function setCategory($category)
-	{
-		$this->category = $category;
-
-		return $this;
-	}
-
-	/**
 	 * Get the value of user
 	 *
 	 * @return  \App\Entity\User
@@ -188,6 +168,26 @@ class Article
 	public function setUser(\App\Entity\User $user)
 	{
 		$this->user = $user;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of categories
+	 */
+	public function getCategories()
+	{
+		return $this->categories;
+	}
+
+	/**
+	 * Set the value of categories
+	 *
+	 * @return  self
+	 */
+	public function setCategories($categories)
+	{
+		$this->categories = $categories;
 
 		return $this;
 	}
