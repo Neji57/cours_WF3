@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
-
 class Article
 {
 	/**
@@ -23,7 +23,7 @@ class Article
 	 * @ORM\Column(type="string", length=80)
 	 * @Assert\Length(
 	 *      min = 2,
-	 *      max = 50
+	 *      max = 80,
 	 * )
 	 */
 	private $title;
@@ -35,7 +35,7 @@ class Article
 	private $content;
 
 	/**
-	 * @ORM\Column(type="datetime")
+	 * @ORM\Column(type="datetime", name="date_create")
 	 */
 	private $dateCreate;
 
@@ -55,10 +55,16 @@ class Article
 	 */
 	private $user;
 
+	/**
+	 * @ORM\OneToMany(targetEntity="App\Entity\ArticleFollow", mappedBy="article", orphanRemoval=true)
+	 */
+	private $articleFollows;
+
 	public function __construct()
 	{
 		$this->dateCreate = new \DateTime;
 		$this->dateUpdate = new \DateTime;
+		$this->articleFollows = new ArrayCollection();
 	}
 
 	/**
@@ -70,41 +76,21 @@ class Article
 	}
 
 	/**
-	 * Get the value of dateUpdate
+	 * Get the value of title
 	 */
-	public function getDateUpdate()
+	public function getTitle()
 	{
-		return $this->dateUpdate;
+		return $this->title;
 	}
 
 	/**
-	 * Set the value of dateUpdate
+	 * Set the value of title
 	 *
 	 * @return  self
 	 */
-	public function setDateUpdate($dateUpdate)
+	public function setTitle($title)
 	{
-		$this->dateUpdate = $dateUpdate;
-
-		return $this;
-	}
-
-	/**
-	 * Get the value of dateCreate
-	 */
-	public function getDateCreate()
-	{
-		return $this->dateCreate;
-	}
-
-	/**
-	 * Set the value of dateCreate
-	 *
-	 * @return  self
-	 */
-	public function setDateCreate($dateCreate)
-	{
-		$this->dateCreate = $dateCreate;
+		$this->title = $title;
 
 		return $this;
 	}
@@ -130,21 +116,41 @@ class Article
 	}
 
 	/**
-	 * Get the value of title
+	 * Get the value of dateCreate
 	 */
-	public function getTitle()
+	public function getDateCreate()
 	{
-		return $this->title;
+		return $this->dateCreate;
 	}
 
 	/**
-	 * Set the value of title
+	 * Set the value of dateCreate
 	 *
 	 * @return  self
 	 */
-	public function setTitle($title)
+	public function setDateCreate($dateCreate)
 	{
-		$this->title = $title;
+		$this->dateCreate = $dateCreate;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of dateUpdate
+	 */
+	public function getDateUpdate()
+	{
+		return $this->dateUpdate;
+	}
+
+	/**
+	 * Set the value of dateUpdate
+	 *
+	 * @return  self
+	 */
+	public function setDateUpdate($dateUpdate)
+	{
+		$this->dateUpdate = $dateUpdate;
 
 		return $this;
 	}
@@ -189,6 +195,37 @@ class Article
 	public function setCategories($categories)
 	{
 		$this->categories = $categories;
+
+		return $this;
+	}
+
+	/**
+	 * @return Collection|ArticleFollow[]
+	 */
+	public function getArticleFollows() : Collection
+	{
+		return $this->articleFollows;
+	}
+
+	public function addArticleFollow(ArticleFollow $articleFollow) : self
+	{
+		if (!$this->articleFollows->contains($articleFollow)) {
+			$this->articleFollows[] = $articleFollow;
+			$articleFollow->setArticle($this);
+		}
+
+		return $this;
+	}
+
+	public function removeArticleFollow(ArticleFollow $articleFollow) : self
+	{
+		if ($this->articleFollows->contains($articleFollow)) {
+			$this->articleFollows->removeElement($articleFollow);
+            // set the owning side to null (unless already changed)
+			if ($articleFollow->getArticle() === $this) {
+				$articleFollow->setArticle(null);
+			}
+		}
 
 		return $this;
 	}
