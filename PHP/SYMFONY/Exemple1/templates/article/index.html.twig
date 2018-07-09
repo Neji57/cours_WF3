@@ -10,7 +10,11 @@
       <small>{{ entity.dateCreate|date('d/m/Y H:i') }}</small>
     </div>
     <p class="mb-1"></p>
-    <small>{{ entity.category }}</small>
+    <td>
+        {% for category in entity.categories %}
+            <span class="badge badge-secondary mr-1">{{ category }} </span>
+        {% endfor %}
+    </td>
   </a>
   {% endfor %}
 </div>
