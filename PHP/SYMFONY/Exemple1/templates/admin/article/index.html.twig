@@ -27,6 +27,9 @@
                 </thead>
                 <tbody>
                     {% for entity in entities %}
+                    {% for category in entity.categories %}
+                        <span class="badge badge-secondary mr-1">{{ category }} </span>
+                    {% endfor %}
                     {% set countByPage = countByPage +1 %}
                         <tr>
                             <td>{{ entity.title }}</td>

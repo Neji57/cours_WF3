@@ -17,7 +17,7 @@ class ArticleType extends AbstractType
 			->add('title', null, array(
 				'label' => 'Titre'
 			))
-			->add('category', null, array(
+			->add('categories', null, array(
 				'label' => 'category.category',
 				'expanded'=>true,
 				'required'=>true,
