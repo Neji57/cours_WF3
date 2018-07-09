@@ -162,7 +162,8 @@ Avec paramètres :
 */
 ```
 
-Définir l'entité *(annotation à mettre au dessus de la déclaration de classe)*
+Définir l'entité
+*(annotation à mettre au dessus de la déclaration de classe)*
 ```php
 /**
  * @ORM\Entity(name="nom_de_la_table", repositoryClass="namespace\de\la\classe")
@@ -177,9 +178,10 @@ Définir une colonne
 ```
 
 Définir une relation
+*(Un seul objet peut être associé à un seul autre)*
 ```php
 /**
- * @ORM\Column(name="nom_du_champ", type="string | text | integer | float | datetime | json_array", nullable=true length=255)
+ * @ORM\OneToOne(targetEntity="namespace\de\la\classe")
 */
 ```
 
