@@ -17,29 +17,67 @@ class Category
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=60)
      */
     private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Article", mappedBy="category")
+     */
+    private $articles;
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function __toString()
     {
         return $this->name;
     }
 
-    public function setName(string $name): self
+    /**
+     * Get the value of articles
+     */
+    public function getArticles()
     {
-        $this->name = $name;
+        return $this->articles;
+    }
+
+    /**
+     * Set the value of articles
+     *
+     * @return  self
+     */
+    public function setArticles($articles)
+    {
+        $this->articles = $articles;
 
         return $this;
     }
 
-    public function __tostring()
+    /**
+     * Get the value of name
+     *
+     * @return  string
+     */
+    public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set the value of name
+     *
+     * @param  string  $name
+     *
+     * @return  self
+     */
+    public function setName(string $name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 }

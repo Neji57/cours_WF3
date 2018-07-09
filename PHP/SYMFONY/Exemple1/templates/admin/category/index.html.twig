@@ -16,6 +16,7 @@
         <thead class="thead-dark">
             <tr>
                 <th>{{ "category.name"|trans }}</th>
+                <th>{{ "article.count_label"|trans }}</th>
                 <th></th>
             </tr>
         </thead>
@@ -23,6 +24,7 @@
             {% for entity in entities %}
             <tr>
                 <td>{{ entity.name }}</td>
+                <td>{{ entity.articles|length }}</td>
                 <td>
                     <div class="btn-group">
                         <a class="btn btn-secondary" href="{{ path('app_admin_category_edit', {'id' : entity.id}) }}" ><i class="fa fa-edit"></i></a>
