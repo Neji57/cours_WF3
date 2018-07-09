@@ -48,6 +48,12 @@ class Article
 	 */
 	private $category;
 
+	/**
+	 * @var \App\Entity\User
+	 * @ORM\ManyToOne(targetEntity="User", inversedBy="articles")
+	 */
+	private $user;
+
 	public function __construct()
 	{
 		$this->dateCreate = new \DateTime;
