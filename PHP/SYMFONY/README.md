@@ -186,10 +186,16 @@ Définir une relation
 ```
 
 - *(Plusieurs objets peuvent être associésà un seul autre)*
-*(Un seul objet peut être associé à un seul autre)*
 ```php
 /**
  * @ORM\ManyToOne(targetEntity="namespace\de\la\classe")
+*/
+```
+
+- *(Plusieurs objets peuvent être associésà plusieurs autres)*
+```php
+/**
+ * @ORM\ManyToMany(targetEntity="namespace\de\la\classe")
 */
 ```
 
