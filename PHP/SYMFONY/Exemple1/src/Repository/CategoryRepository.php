@@ -52,7 +52,9 @@ class CategoryRepository extends ServiceEntityRepository
     public function findByPage($page = 1, $count = 10)
     {
         $first = ($page - 1) * $count;
-        $queryBuilder = $this->createQueryBuilder('a')
+        $queryBuilder = $this->createQueryBuilder('c')
+            ->select('c, a')
+            ->leftJoin('c.articles', 'a')
             ->orderBy('a.id', 'ASC')
             ->setFirstResult($first)
             ->setMaxResults($count);
