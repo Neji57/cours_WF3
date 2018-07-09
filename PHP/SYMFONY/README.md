@@ -88,6 +88,11 @@ php bin/console make:entity
 ```
 php bin/console make:form
 ```
+
+- Installer le bundle friendsofsymfony
+```
+composer require friendsofsymfony/user-bundle
+```
 ---
 
 Si erreur ci-dessous :
