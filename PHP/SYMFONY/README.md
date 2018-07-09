@@ -6,36 +6,36 @@
 ---
 ## Commandes
 
-- Installer la toolbar Apache : 
+- Installer la toolbar Apache :
 ```
 composer require symfony/apache-pack
 ```
 - à la fin, faire yes : `y`.
 
-- Afficher la liste des routes : 
+- Afficher la liste des routes :
 ```
 php bin/console debug:router
 ```
 ---
 
 - Créer une base de données :
-    - Dans le fichier `.env`, modifier la ligne **23** dans l'exemple1 par la ligne suivante : 
+    - Dans le fichier `.env`, modifier la ligne **23** dans l'exemple1 par la ligne suivante :
     ```
     DATABASE_URL=mysql://root@127.0.0.1:3306/Sf_exo
     ```
-    - Dans le terminal : 
+    - Dans le terminal :
     ```
     php bin/console doctrine:database:create
     ```
 
-    - Mettre à jour la base de données : 
+    - Mettre à jour la base de données :
     ```
     php bin/console doctrine:schema:update --force
     ```
 ---
 
 - Installer fontawesome :
-    - dans le terminal : 
+    - dans le terminal :
     ```
     npm i @fortawesome/fontawesome-free-webfonts --save-dev
     ```
@@ -47,12 +47,12 @@ php bin/console debug:router
     ```
 ---
 
-- Lorsque l'on fait des modifications dans le dossier `assets`, pour que les changements prennent effet il faut rentrer cette commande dans le terminal : 
+- Lorsque l'on fait des modifications dans le dossier `assets`, pour que les changements prennent effet il faut rentrer cette commande dans le terminal :
 ```
 npm run dev
 ```
 
-- Mettre à jour les bibliothèques (Fontawesome par exemple) : 
+- Mettre à jour les bibliothèques (Fontawesome par exemple) :
 ```
 npm update
 ```
@@ -69,22 +69,22 @@ npm run build           (Plus complet pour la fin du projet)
 npm run watch           (analyse les changements à chaque sauvegarde de fichier)
 ```
 
-- Nettoyer le cache : 
+- Nettoyer le cache :
 ```
 php bin/console cache:clear
 ```
 
-- Statut des traductions 
+- Statut des traductions
 ```
 php bin/console debug:translation fr
 ```
 
-- Créer un Entity automatiquement 
+- Créer un Entity automatiquement
 ```
 php bin/console make:entity
 ```
 
-- Créer une categorie de formulaire 
+- Créer une categorie de formulaire
 ```
 php bin/console make:form
 ```
@@ -95,7 +95,7 @@ Si erreur ci-dessous :
 ```
 Error: Encore.setOutputPath() cannot be called yet because the runtime environment doesn't appear to be configured. Make sure you're using the encore executable or call Encore.configureRuntimeEnvironment() first if you're purposely not calling Encore directly.
 ```
--  Dans `webpack.config.js`, ajouter cette partie en dessous de `Encore` : 
+-  Dans `webpack.config.js`, ajouter cette partie en dessous de `Encore` :
 ```js
 .configureRuntimeEnvironment('dev')
 ```
@@ -159,6 +159,27 @@ Avec paramètres :
 ```php
 /**
 * @Route("/edit/{id}", requirements={"id":"\d+"})
+*/
+```
+
+Définir l'entité *(annotation à mettre au dessus de la déclaration de classe)*
+```php
+/**
+ * @ORM\Entity(name="nom_de_la_table", repositoryClass="namespace\de\la\classe")
+*/
+```
+
+Définir une colonne
+```php
+/**
+ * @ORM\Column(name="nom_du_champ", type="string | text | integer | float | datetime | json_array", nullable=true length=255)
+*/
+```
+
+Définir une relation
+```php
+/**
+ * @ORM\Column(name="nom_du_champ", type="string | text | integer | float | datetime | json_array", nullable=true length=255)
 */
 ```
 
