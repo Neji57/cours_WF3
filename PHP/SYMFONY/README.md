@@ -107,7 +107,7 @@ php bin/console fos:user:promote
 
     Please choose a username:Picobuu
     Please choose a role:ROLE_SUPER_ADMIN
-    ```
+```
 ---
 
 Si erreur ci-dessous :
