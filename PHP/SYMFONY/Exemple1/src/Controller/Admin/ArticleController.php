@@ -56,6 +56,7 @@ class ArticleController extends Controller
 
 		// RECUPERATION DE L'UTILISATEUR CONNECTE
 		$user = $this->get('security.token_storage')->getToken()->getUser();
+		$article->setUser($user);
 
 		// CREATION DU FORMULAIRE
 		$form = $this -> createForm(ArticleType::class, $article);
