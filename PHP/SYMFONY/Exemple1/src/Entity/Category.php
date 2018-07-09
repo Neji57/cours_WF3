@@ -23,7 +23,7 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Article", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Article", mappedBy="categories")
      */
     private $articles;
 
