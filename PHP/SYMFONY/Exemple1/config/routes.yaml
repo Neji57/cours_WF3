@@ -7,3 +7,5 @@ homepage:
   defaults:
     template: index.html.twig
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
