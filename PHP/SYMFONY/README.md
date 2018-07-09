@@ -171,7 +171,8 @@ Définir l'entité
 *(annotation à mettre au dessus de la déclaration de classe)*
 ```php
 /**
- * @ORM\Entity(name="nom_de_la_table", repositoryClass="namespace\de\la\classe")
+ * @ORM\Entity(repositoryClass="namespace\de\la\classe")
+ * @ORM\table(name="nom_de_la_table")
 */
 ```
 
