@@ -33,7 +33,7 @@ php bin/console doctrine:schema:update --force
 # Compiler le projet
 
 Normalement tu devrais avoir un projet fonctionnel (sans erreurs) cependant, il est possible que les styles et les scripts ne soient pas pris en compte.
-- Pour résoudre problème, il faut compiler le projet. Entre cette commande dans le terminal :
+- Pour résoudre le problème, il faut compiler le projet. Entre cette commande dans le terminal :
 ```
 npm run build
 ```
