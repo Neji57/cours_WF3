@@ -27,13 +27,14 @@
                 </thead>
                 <tbody>
                     {% for entity in entities %}
-                    {% for category in entity.categories %}
-                        <span class="badge badge-secondary mr-1">{{ category }} </span>
-                    {% endfor %}
+
                     {% set countByPage = countByPage +1 %}
                         <tr>
                             <td>{{ entity.title }}</td>
-                            <td>{{ entity.categories }}</td>
+                            <td>
+                                {% for category in entity.categories %}
+                                    <span class="badge badge-secondary mr-1">{{ category }} </span>
+                                {% endfor %}</td>
                             <td>{{ entity.user }}</td>
                             <td>{{ entity.dateCreate|date('d/m/Y H:i') }}</td>
                             <td>{{ entity.dateUpdate|date('d/m/y H:i') }}</td>
