@@ -25,3 +25,4 @@ category:
   name: Catégories
   category: Catégorie
   delete_message: Confirmer la suppression de la catégorie <b> "%entity%" <b>
+  count_label: nombre d'articles
