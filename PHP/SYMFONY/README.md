@@ -178,6 +178,14 @@ Définir une colonne
 ```
 
 Définir une relation
+- *(Un seul objet peut être associé à un seul autre)*
+```php
+/**
+ * @ORM\OneToOne(targetEntity="namespace\de\la\classe")
+*/
+```
+
+- Plusieurs objets peuvent être associésà un seul autre
 *(Un seul objet peut être associé à un seul autre)*
 ```php
 /**
