@@ -32,7 +32,7 @@ class User extends BaseUser
 
 	/**
 	 * Get the value of articles
-	 */ 
+	 */
 	public function getArticles()
 	{
 		return $this->articles;
@@ -42,7 +42,7 @@ class User extends BaseUser
 	 * Set the value of articles
 	 *
 	 * @return  self
-	 */ 
+	 */
 	public function setArticles($articles)
 	{
 		$this->articles = $articles;

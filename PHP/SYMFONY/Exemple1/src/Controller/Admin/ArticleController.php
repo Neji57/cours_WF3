@@ -60,6 +60,8 @@ class ArticleController extends Controller
 
 		// CREATION DU FORMULAIRE
 		$form = $this -> createForm(ArticleType::class, $article);
+		//tester le role de l'utilisateur
+		// $this->get('security.authorization_checker')->isGranted('ROLE_SUPER_ADMIN');
 		$form -> handleRequest($request);
 
 		if($form -> isSubmitted() && $form -> isValid())
