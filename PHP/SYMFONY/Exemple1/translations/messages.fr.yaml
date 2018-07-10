@@ -28,3 +28,5 @@ category:
   category: Catégorie
   categories: Catégories
   delete_message: Confirmer la suppression de la catégorie <b> "%entity%" <b>
+admin:
+  admin: Accès administrateur
