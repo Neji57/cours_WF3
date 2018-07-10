@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
+use App\Entity\ArticleFollow;
 
 /**
  * @Route("/article")
@@ -68,8 +69,21 @@ class ArticleController extends Controller
 	 * @route("/follow/{id}", requirements={"id" = "\d+"})
 	 *
 	 */
-	public function follow()
+	public function follow(request $request, Article $article)
 	{
+		$user= $this->get('security.token_storage')->getToken()->getUser();
+		if($request->getMethod() == 'POST' && !is_null($user)) //is_object($user), $user instanceof \App\Entity\User)
+		{
+			$af = new ArticleFollow();
+			$af
+				->setArticle($article)
+				->setUser($user)
+			;
+
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($af);
+			$em->flush();
+		}
 		return $this->redirectToRoute('app_article_show', array('id' => $article->getId()));
 	}
 }

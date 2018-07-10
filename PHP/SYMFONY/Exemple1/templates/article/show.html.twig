@@ -14,15 +14,15 @@
     {% block footer %}
 
     <div class="row">
-        <div class="col">
+        <div class="col-4">
             <small>{{ entity.dateCreate|date('d/m/Y H:i') }}</small>
         </div>
-        <div class="col">
+        <div class="col-7">
             {{ 'article.followers'|transchoice(entity.articlesFollows|length, {'%count%': entity.articlesFollows|length}) }}
         </div>
-        <div class="col">
+        <div class="col-1">
             {{ form_start(form) }}
-    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-heart"></i></button>
+    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-heart"></i></button>
     {{ form_end(form) }}
         </div>
     </div>
