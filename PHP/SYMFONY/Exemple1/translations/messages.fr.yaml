@@ -4,6 +4,8 @@ cancel: Annuler
 delete: Supprimer
 app_title: Titreuh
 page_error: Il n'y a qu'une page|Il n'y a que %nbPages% pages
+
+logout: Se déconnecter
 article:
   edit: Modifier le pokémon <b> "%entity%" </b>
   edit_success: Le pokémon <b> "%entity%" </b> a bien été modifié
