@@ -20,6 +20,7 @@ article:
   count_label: Nombre de pokémons
   user: Auteur
   list: .icon-newspaper Liste des Pokémon
+  followers: "{ 0 } Aucune personne ne suis l'article | { 1 } personne suis l'article | [2, inf[%count% personnes suivent l'article"
 category:
   edit: Modifier le type <b> "%entity%" </b>
   edit_success: Le type <b> "%entity%" </b> a bien été modifié
@@ -32,7 +33,7 @@ category:
   name: Type
   category: Type
   categories: Types
-  delete_message: Confirmer la suppression du type <b> "%entity%" <b>
+  delete_message: Confirmer la suppression du type <b> "%entity%" </b>
 admin:
   admin: Accès administrateur
 simplyUser:

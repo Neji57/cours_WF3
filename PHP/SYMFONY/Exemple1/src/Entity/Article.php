@@ -202,12 +202,12 @@ class Article
 	/**
 	 * @return Collection|ArticleFollow[]
 	 */
-	public function getArticleFollows() : Collection
+	public function getArticlesFollows() : Collection
 	{
 		return $this->articleFollows;
 	}
 
-	public function addArticleFollow(ArticleFollow $articleFollow) : self
+	public function addArticlesFollow(ArticleFollow $articleFollow) : self
 	{
 		if (!$this->articleFollows->contains($articleFollow)) {
 			$this->articleFollows[] = $articleFollow;
@@ -217,7 +217,7 @@ class Article
 		return $this;
 	}
 
-	public function removeArticleFollow(ArticleFollow $articleFollow) : self
+	public function removeArticlesFollow(ArticleFollow $articleFollow) : self
 	{
 		if ($this->articleFollows->contains($articleFollow)) {
 			$this->articleFollows->removeElement($articleFollow);

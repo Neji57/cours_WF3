@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block body %}
-    <a href="{{ path('app_admin_category_new') }}" class="btn btn-success float-right"><i class="fa fa-plus"></i> {{ 'add'|trans }}</a>
+    <a href="{{ path('app_admin_category_new') }}" class="btn btn-outline-success btn-sm float-right"><i class="fa fa-plus"></i> {{ 'add'|trans }}</a>
 {% endblock %}
 
 {% block table %}
@@ -27,8 +27,8 @@
                 <td>{{ entity.articles|length }}</td>
                 <td>
                     <div class="btn-group">
-                        <a class="btn btn-secondary" href="{{ path('app_admin_category_edit', {'id' : entity.id}) }}" ><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger" href="{{ path('app_admin_category_delete', {'id' : entity.id}) }}" ><i class="fa fa-trash"></i></a>
+                        <a class="btn btn-outline-secondary btn-sm" href="{{ path('app_admin_category_edit', {'id' : entity.id}) }}" ><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-outline-danger btn-sm" href="{{ path('app_admin_category_delete', {'id' : entity.id}) }}" ><i class="fa fa-trash"></i></a>
                     </div>
 
                 </td>

@@ -13,6 +13,8 @@
 
     {% block footer %}
 	<small>{{ entity.dateCreate|date('d/m/Y H:i') }}</small>
+    <hr>
+    {{ 'article.followers'|transchoice(entity.articlesFollows|length, {'%count%': entity.articlesFollows|length}) }}
     {% endblock %}
 
  {% endembed %}
