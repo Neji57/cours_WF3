@@ -8,23 +8,23 @@
 </head>
 
 <body>
-    <div class="container">
-        {% for type, messages in app.flashes %}
-             {% for message in messages %}
-                <div class="alert alert-{{ type }} alert-dismissible fade show">{{ message|raw }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            {% endfor %}
+
+    {% for type, messages in app.flashes %}
+            {% for message in messages %}
+            <div class="alert alert-{{ type }} alert-dismissible fade show">{{ message|raw }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         {% endfor %}
-        {% block main_content %}
-            {% block body %}{% endblock %}
-        {% endblock %}
-            <script src="{{ asset('build/js/app.js') }}"></script>
-            {{ tinymce_init() }}
-        {% block javascripts %}{% endblock %}
-    </div>
+    {% endfor %}
+    {% block main_content %}
+        {% block body %}{% endblock %}
+    {% endblock %}
+        <script src="{{ asset('build/js/app.js') }}"></script>
+        {{ tinymce_init() }}
+    {% block javascripts %}{% endblock %}
+
 </body>
 
 </html>

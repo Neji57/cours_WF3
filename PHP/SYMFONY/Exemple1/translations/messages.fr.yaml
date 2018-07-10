@@ -2,11 +2,12 @@ add: Ajouter
 edit: Editer
 cancel: Annuler
 delete: Supprimer
+app_title: Titreuh
 page_error: Il n'y a qu'une page|Il n'y a que %nbPages% pages
 article:
   edit: Modifier le pokémon <b> "%entity%" </b>
-  edit_success: L'article <b> "%entity%" </b> a bien été modifié
-  add: Ajouter un article
+  edit_success: Le pokémon <b> "%entity%" </b> a bien été modifié
+  add: Ajouter un pokémon
   add_success: Le pokémon <b> "%entity%" </b> a bien été ajouté
   delete: Supprimer le pokémon <b> "%entity%" </b>
   delete_success: Le pokémon <b> "%entity%" </b> a bien été supprimé
