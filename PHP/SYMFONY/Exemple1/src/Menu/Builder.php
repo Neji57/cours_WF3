@@ -39,5 +39,14 @@ class Builder
 		return $menu;
 	}
 
+	public function createUserMenu()
+	{
+		$menu = $this->factory->createItem('root');
+		$menu->setChildrenAttribute('class', 'navbar-nav');
+		$menu->addChild('user', ['uri' => '#']);
+		$parent->addChild('logout', ['route' => 'fos_user_security_logout']);
+		return $menu;
+	}
+
 
 }

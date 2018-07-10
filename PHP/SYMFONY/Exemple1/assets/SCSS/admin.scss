@@ -14,7 +14,7 @@
 	.logo {
 		width: 230px;
 		text-align: center;
-		background-color: darken($primary, 5%);
+		background-color: darken($info, 5%);
 		color: #fff;
 		border-bottom: 0 solid transparent;
 		display: block;
@@ -31,7 +31,7 @@
 		top: 0;
 	}
 	.navbar {
-		background-color: $primary;
+		background-color: $info;
 		margin-left: 230px;
 		border: none;
 		min-height: 54px;
@@ -67,7 +67,7 @@
 			}
 			&.active {
 				>.nav-link {
-					border-left-color: $primary;
+					border-left-color: $info;
 					background-color: $dark;
 				}
 			}
