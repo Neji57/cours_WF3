@@ -35,5 +35,5 @@ category:
   delete_message: Confirmer la suppression du type <b> "%entity%" <b>
 admin:
   admin: Accès administrateur
-user:
-  user: Accès non admin
+simplyUser:
+  simplyUser: Accès non admin

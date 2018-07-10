@@ -7,10 +7,12 @@ use Knp\Menu\FactoryInterface;
 class Builder
 {
 	private $factory;
+	private $tokenStorage;
 
-	public function __construct(FactoryInterface $factory)
+	public function __construct(FactoryInterface $factory, $tokenStorage = null)
 	{
 		$this->factory = $factory;
+		$this->tokenStorage = $tokenStorage;
 	}
 
 	public function createAdminMenu()
@@ -26,7 +28,7 @@ class Builder
 		$categoryParent->addChild('category.categories', ['route' => 'app_admin_category_index']);
 		$categoryParent->addChild('category.add', ['route' => 'app_admin_category_new']);
 
-		$menu->addChild('user.user', ['route' => 'app_article_index']);
+		$menu->addChild('simplyUser.simplyUser', ['route' => 'app_article_index']);
 		return $menu;
 	}
 
@@ -41,6 +43,7 @@ class Builder
 
 	public function createUserMenu()
 	{
+		$user = $this->tokenStorage->getToken()->getUser();
 		$menu = $this->factory->createItem('root');
 		$menu->setChildrenAttribute('class', 'navbar-nav');
 
