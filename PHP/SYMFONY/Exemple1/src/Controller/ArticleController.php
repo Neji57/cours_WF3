@@ -49,10 +49,10 @@ class ArticleController extends Controller
 	/**
 	 * @Route ("/show/{id}", requirements={"id" = "\d+"})
 	 */
-	public function show(Article $article)
+	public function show(request $request, Article $article)
 	{
 		$formBuilder = $this->createFormBuilder()
-			//->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]))
+			->setAction($this->generateUrl('app_article_follow', ['id' => $article->getId()]))
 			->setMethod('POST');
 
 		$form = $formBuilder->getForm();
@@ -64,5 +64,12 @@ class ArticleController extends Controller
 		));
 	}
 
-
+	/**
+	 * @route("/follow/{id}", requirements={"id" = "\d+"})
+	 *
+	 */
+	public function follow()
+	{
+		return $this->redirectToRoute('app_article_show', array('id' => $article->getId()));
+	}
 }

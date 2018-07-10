@@ -12,9 +12,21 @@
     {% endblock %}
 
     {% block footer %}
-	<small>{{ entity.dateCreate|date('d/m/Y H:i') }}</small>
-    <hr>
-    {{ 'article.followers'|transchoice(entity.articlesFollows|length, {'%count%': entity.articlesFollows|length}) }}
+
+    <div class="row">
+        <div class="col">
+            <small>{{ entity.dateCreate|date('d/m/Y H:i') }}</small>
+        </div>
+        <div class="col">
+            {{ 'article.followers'|transchoice(entity.articlesFollows|length, {'%count%': entity.articlesFollows|length}) }}
+        </div>
+        <div class="col">
+            {{ form_start(form) }}
+    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-heart"></i></button>
+    {{ form_end(form) }}
+        </div>
+    </div>
+
     {% endblock %}
 
  {% endembed %}
