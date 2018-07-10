@@ -44,7 +44,7 @@ class Builder
 		$menu = $this->factory->createItem('root');
 		$menu->setChildrenAttribute('class', 'navbar-nav');
 
-		$parent = $menu->addChild('user', ['uri' => '#']);
+		$parent = $menu->addChild($user->getUsername(), ['uri' => '#']);
 
 		$parent->addChild('logout', ['route' => 'fos_user_security_logout']);
 		return $menu;
