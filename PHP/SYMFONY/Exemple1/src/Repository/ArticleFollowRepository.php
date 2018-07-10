@@ -6,6 +6,10 @@ use App\Entity\ArticleFollow;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
+use App\Entity\Article;
+use App\Entity\User;
+
+
 /**
  * @method ArticleFollow|null find($id, $lockMode = null, $lockVersion = null)
  * @method ArticleFollow|null findOneBy(array $criteria, array $orderBy = null)
@@ -18,6 +22,19 @@ class ArticleFollowRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ArticleFollow::class);
     }
+
+    public function findOneByArticleAndUser(Article $article, User $user)
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.user = :user')
+            ->andWhere('a.article = :article')
+            ->setParameter('user', $user)
+            ->setParameter('article', $article)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
 
 //    /**
 //     * @return ArticleFollow[] Returns an array of ArticleFollow objects
