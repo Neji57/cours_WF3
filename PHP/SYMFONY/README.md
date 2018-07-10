@@ -16,6 +16,11 @@ composer require symfony/apache-pack
 ```
 php bin/console debug:router
 ```
+
+- Afficher la liste des services :
+```
+php bin/console debug:autowiring
+```
 ---
 
 - Créer une base de données :
