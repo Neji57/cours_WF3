@@ -51,8 +51,16 @@ class ArticleController extends Controller
 	 */
 	public function show(Article $article)
 	{
+		$formBuilder = $this->createFormBuilder()
+			//->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]))
+			->setMethod('POST');
+
+		$form = $formBuilder->getForm();
+		$form->handleRequest($request);
+
 		return $this->render('article/show.html.twig', array(
 			'entity' => $article,
+			'form' => $form->createView(),
 		));
 	}
 
