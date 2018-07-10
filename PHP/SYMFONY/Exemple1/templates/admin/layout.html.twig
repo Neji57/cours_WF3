@@ -1,5 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-	MENU
+{% block main_content %}
+	{% block body %}
+		{% embed 'decorator/_nav.html.twig' with {'class': 'fixed-top navbar-light bg-light', 'brandUrl': '#'} %}
+
+			{% block brand %}
+				Admin
+			{% endblock %}
+
+			{% block menu %}
+				{{ knp_menu_render('admin') }}
+			{% endblock %}
+
+		{% endembed %}
+	{% endblock %}
 {% endblock %}
