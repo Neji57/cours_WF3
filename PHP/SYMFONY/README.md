@@ -1,7 +1,7 @@
 # SYMFONY
 
 - [MEMO](https://github.com/Neji57/cours_WF3/tree/master/PHP/SYMFONY#memo)
-- [Liens utiles](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/SYMFONY#liens-utiles)
+- [Liens utiles](https://github.com/Neji57/cours_WF3/tree/master/PHP/SYMFONY#liens-utiles)
 
 ---
 ## Commandes
@@ -234,6 +234,22 @@ Définir une relation
 ```php
 /**
  * @ORM\ManyToMany(targetEntity="namespace\de\la\classe")
+*/
+```
+
+- *(Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire)*
+// Panier
+```php
+/**
+ * @ORM\OneToMany(targetEntity="PanierProduit")
+*/
+
+/**
+ * @ORM\OneToMany(targetEntity="Panier")
+*/
+
+/**
+ * @ORM\OneToMany(targetEntity="Panier")
 */
 ```
 
