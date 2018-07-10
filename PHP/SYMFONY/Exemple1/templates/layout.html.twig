@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block main_content %}
+	{% block body %}
+		{% embed 'decorator/_nav.html.twig' with {'class': 'fixed-top navbar-light bg-light', 'brandUrl': '#'} %}
+
+		{% block brand %}
+			Pokedex
+		{% endblock %}
+
+		{% block menu %}
+			{{ knp_menu_render('main'}) }}
+		{% endblock %}
+
+	{% endembed %}
+	{% endblock %}
+{% endblock %}
