@@ -108,10 +108,13 @@ class ArticleController extends Controller
 
 		}
 
-		return new JsonResponse(array(
-			'success' =>true,
-			'message' => $this->get('translator')->transchoice('article.followers', $count, array('%count%' => $count, 'isFollow' => $isFollow))
-		));
+		if($request->isXmlHttpRequest()) // Si c'est de l'ajax
+		{
+			return new JsonResponse(array(
+				'success' => true,
+				'message' => $this->get('translator')->transchoice('article.followers', $count, array('%count%' => $count, 'isFollow' => $isFollow))
+			));
+		}
 
 		return $this->redirectToRoute('app_article_show', array('id' => $article->getId()));
 	}
