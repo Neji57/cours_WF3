@@ -74,13 +74,22 @@ class ArticleController extends Controller
 		$user= $this->get('security.token_storage')->getToken()->getUser();
 		if($request->getMethod() == 'POST' && !is_null($user)) //is_object($user), $user instanceof \App\Entity\User)
 		{
-			$af = new ArticleFollow();
-			$af
-				->setArticle($article)
-				->setUser($user)
-			;
-
 			$em = $this->getDoctrine()->getManager();
+			$af = $em->getRepository(ArticleFollow::class)->findOneByArticleAndUser($article, $user);
+			$af=new ArticleFollow();
+
+			if (is_object($af)) {
+				//utilisateur a déja aimé
+				$em->persist($af);
+				$em->flush();
+			} else {
+				//utilisateur n'a pas encore aimé
+				$af
+					->setArticle($article)
+					->setUser($user)
+				;
+			}
+
 			$em->persist($af);
 			$em->flush();
 		}
