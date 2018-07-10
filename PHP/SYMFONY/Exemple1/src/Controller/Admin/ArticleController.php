@@ -23,20 +23,20 @@ class ArticleController extends Controller
 	{
 		$count = 10;
 
-		$em = $this -> getDoctrine() -> getManager();
+		$em = $this->getDoctrine()->getManager();
 
 		$entities = $em
-			-> getRepository(Article::class)
-			->findByPage($page, $count)
-		;
+			->getRepository(Article::class)
+			->findByPage($page, $count);
 
 		$nbPages = ceil(count($entities) / $count);
-		$nbPages = $nbPages == 0? 1:$nbPages;
+		$nbPages = $nbPages == 0 ? 1 : $nbPages;
 
-		if($nbPages < $page)
-		{
+		if ($nbPages < $page) {
 			$t = $this->get('translator');
-			$this->addFlash('danger', $t->transChoice('page_error', $nbPages,  array('%nbPages%' => $nbPages)));
+
+			$this->addFlash('danger', $t->transChoice('page_error', $nbPages, array('%nbPages%' => $nbPages)));
+
 			return $this->redirectToRoute('app_admin_article_index');
 		}
 
@@ -55,26 +55,23 @@ class ArticleController extends Controller
 		// NOUVELLE ENTITÉE ARTICLE
 		$article = new Article;
 
-		// RECUPERATION DE L'UTILISATEUR CONNECTE
+		// RÉCUPÉRATION DE L'UTILISATEUR CONNECTÉ
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 		$article->setUser($user);
 
 		// CREATION DU FORMULAIRE
-		$form = $this -> createForm(ArticleType::class, $article);
-		//tester le role de l'utilisateur
-		// $this->get('security.authorization_checker')->isGranted('ROLE_SUPER_ADMIN');
-		$form -> handleRequest($request);
+		$form = $this->createForm(ArticleType::class, $article);
+		$form->handleRequest($request);
 
-		if($form -> isSubmitted() && $form -> isValid())
-		{
-			$em = $this -> getDoctrine() -> getManager();
-			$em -> persist($article);
-			$em -> flush();
+		if ($form->isSubmitted() && $form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($article);
+			$em->flush();
 
 			$t = $this->get('translator');
 			$this->addFlash('success', $t->trans('article.add_success', array('%entity%' => $article->getTitle())));
 
-			return $this -> redirectToRoute('app_admin_article_index');
+			return $this->redirectToRoute('app_admin_article_index');
 		}
 
 		return $this->render('admin/article/new.html.twig', array(
@@ -88,20 +85,19 @@ class ArticleController extends Controller
 	public function edit(Request $request, Article $article)
 	{
 		// CREATION DU FORMULAIRE
-		$form = $this -> createForm(ArticleType::class, $article);
-		$form -> handleRequest($request);
+		$form = $this->createForm(ArticleType::class, $article);
+		$form->handleRequest($request);
 
-		if($form -> isSubmitted() && $form -> isValid())
-		{
-			$article -> setDateUpdate(new \DateTime);
-			$em = $this -> getDoctrine() -> getManager();
-			$em -> persist($article);
-			$em -> flush();
+		if ($form->isSubmitted() && $form->isValid()) {
+			$article->setDateUpdate(new \DateTime);
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($article);
+			$em->flush();
 
 			$t = $this->get('translator');
 			$this->addFlash('success', $t->trans('article.edit_success', array('%entity%' => $article->getTitle())));
 
-			return $this -> redirectToRoute('app_admin_article_index');
+			return $this->redirectToRoute('app_admin_article_index');
 		}
 
 		return $this->render('admin/article/edit.html.twig', array(
@@ -115,27 +111,27 @@ class ArticleController extends Controller
 	 */
 	public function delete(Request $request, Article $article)
 	{
-		$formBuilder = $this -> createFormBuilder()
-			-> setAction($this -> generateUrl('app_admin_article_delete', ['id' => $article -> getId()]))
-			-> setMethod('DELETE')
-		;
+		$formBuilder = $this->createFormBuilder()
+			->setAction($this->generateUrl('app_admin_article_delete', ['id' => $article->getId()]))
+			->setMethod('DELETE');
 
-		$form = $formBuilder -> getForm();
-		$form -> handleRequest($request);
+		$form = $formBuilder->getForm();
+		$form->handleRequest($request);
 
-		if($form -> isSubmitted() && $form -> isValid())
-		{
-			$em = $this -> getDoctrine() -> getManager();
-			$em -> remove($article);
-			$em -> flush();
+		if ($form->isSubmitted() && $form->isValid()) {
+			$em = $this->getDoctrine()->getManager();
+			$em->remove($article);
+			$em->flush();
 
 			$t = $this->get('translator');
-			$this->addFlash('success', $t->trans('article.delete_success', array('%entity%' => $article->getTitle())));
+			$this->addFlash('success', $t->trans('article.delete_success', array(
+				'%entity%' => $article->getTitle()
+			)));
 
-			return $this -> redirectToRoute('app_admin_article_index');
+			return $this->redirectToRoute('app_admin_article_index');
 		}
 
-		return $this -> render('admin/article/delete.html.twig', array(
+		return $this->render('admin/article/delete.html.twig', array(
 			'form' => $form->createView(),
 			'entity' => $article
 		));

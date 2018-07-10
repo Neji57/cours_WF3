@@ -8,9 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 use App\Entity\Article;
-use App\Entity\User;
-use App\Form\ArticleType;
 use App\Entity\ArticleFollow;
+use App\Form\ArticleType;
 
 /**
  * @Route("/article")
@@ -25,19 +24,20 @@ class ArticleController extends Controller
 	{
 		$count = 10;
 
-		$em = $this -> getDoctrine() -> getManager();
+		$em = $this->getDoctrine()->getManager();
 
 		$entities = $em
-			-> getRepository(Article::class)
-			->findByPage($page, $count)
-		;
+			->getRepository(Article::class)
+			->findByPage($page, $count);
 
 		$nbPages = ceil(count($entities) / $count);
 		$nbPages = $nbPages == 0 ? 1 : $nbPages;
-		if($nbPages < $page)
-		{
+
+		if ($nbPages < $page) {
 			$t = $this->get('translator');
-			$this->addFlash('danger', $t->transChoice('page_error', $nbPages,  array('%nbPages%' => $nbPages)));
+
+			$this->addFlash('danger', $t->transChoice('page_error', $nbPages, array('%nbPages%' => $nbPages)));
+
 			return $this->redirectToRoute('app_article_index');
 		}
 
@@ -49,10 +49,19 @@ class ArticleController extends Controller
 	}
 
 	/**
-	 * @Route ("/show/{id}", requirements={"id" = "\d+"})
+	 * @Route("/show/{id}", requirements={"id" = "\d+"})
 	 */
-	public function show(request $request, Article $article)
+	public function show(Request $request, Article $article)
 	{
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+
+		//Récupère l'entité ArticleFollow correspondante
+		$em = $this->getDoctrine()->getManager();
+
+		$af = $em->getRepository(ArticleFollow::class)->findOneByArticleAndUser($article, $user);
+
+		$isFollow = !is_null($af); // Actif s'il y a un objet ArticleFollow
+
 		$formBuilder = $this->createFormBuilder()
 			->setAction($this->generateUrl('app_article_follow', ['id' => $article->getId()]))
 			->setMethod('POST');
@@ -63,39 +72,38 @@ class ArticleController extends Controller
 		return $this->render('article/show.html.twig', array(
 			'entity' => $article,
 			'form' => $form->createView(),
+			'isFollow' => $isFollow
 		));
 	}
 
 	/**
-	 * @route("/follow/{id}", requirements={"id" = "\d+"})
-	 *
+	 * @Route("/follow/{id}", requirements={"id" = "\d+"})
 	 */
-	public function follow(request $request, Article $article)
+	public function follow(Request $request, Article $article)
 	{
-		$user= $this->get('security.token_storage')->getToken()->getUser();
-		if($request->getMethod() == 'POST' && !is_null($user)) //is_object($user), $user instanceof \App\Entity\User)
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+
+		if ($request->getMethod() == 'POST' && is_object($user)) //is_object($user), $user instanceof \App\Entity\User
 		{
 			$em = $this->getDoctrine()->getManager();
 			$af = $em->getRepository(ArticleFollow::class)->findOneByArticleAndUser($article, $user);
-			$af=new ArticleFollow();
 
 			if (is_object($af)) {
-				//utilisateur a déja aimé
 				$em->remove($af);
 				$em->flush();
 			} else {
-				//utilisateur n'a pas encore aimé
+				$af = new ArticleFollow();
 				$af
 					->setArticle($article)
-					->setUser($user)
-				;
+					->setUser($user);
 
+				$em = $this->getDoctrine()->getManager();
 				$em->persist($af);
 				$em->flush();
 			}
 
-
 		}
+
 		return $this->redirectToRoute('app_article_show', array('id' => $article->getId()));
 	}
 }

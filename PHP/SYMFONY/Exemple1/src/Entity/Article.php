@@ -7,9 +7,11 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
+
 class Article
 {
 	/**
@@ -23,7 +25,7 @@ class Article
 	 * @ORM\Column(type="string", length=80)
 	 * @Assert\Length(
 	 *      min = 2,
-	 *      max = 80,
+	 *      max = 50
 	 * )
 	 */
 	private $title;
@@ -35,7 +37,7 @@ class Article
 	private $content;
 
 	/**
-	 * @ORM\Column(type="datetime", name="date_create")
+	 * @ORM\Column(type="datetime")
 	 */
 	private $dateCreate;
 
@@ -76,41 +78,21 @@ class Article
 	}
 
 	/**
-	 * Get the value of title
+	 * Get the value of dateUpdate
 	 */
-	public function getTitle()
+	public function getDateUpdate()
 	{
-		return $this->title;
+		return $this->dateUpdate;
 	}
 
 	/**
-	 * Set the value of title
+	 * Set the value of dateUpdate
 	 *
 	 * @return  self
 	 */
-	public function setTitle($title)
+	public function setDateUpdate($dateUpdate)
 	{
-		$this->title = $title;
-
-		return $this;
-	}
-
-	/**
-	 * Get the value of content
-	 */
-	public function getContent()
-	{
-		return $this->content;
-	}
-
-	/**
-	 * Set the value of content
-	 *
-	 * @return  self
-	 */
-	public function setContent($content)
-	{
-		$this->content = $content;
+		$this->dateUpdate = $dateUpdate;
 
 		return $this;
 	}
@@ -136,21 +118,41 @@ class Article
 	}
 
 	/**
-	 * Get the value of dateUpdate
+	 * Get the value of content
 	 */
-	public function getDateUpdate()
+	public function getContent()
 	{
-		return $this->dateUpdate;
+		return $this->content;
 	}
 
 	/**
-	 * Set the value of dateUpdate
+	 * Set the value of content
 	 *
 	 * @return  self
 	 */
-	public function setDateUpdate($dateUpdate)
+	public function setContent($content)
 	{
-		$this->dateUpdate = $dateUpdate;
+		$this->content = $content;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of title
+	 */
+	public function getTitle()
+	{
+		return $this->title;
+	}
+
+	/**
+	 * Set the value of title
+	 *
+	 * @return  self
+	 */
+	public function setTitle($title)
+	{
+		$this->title = $title;
 
 		return $this;
 	}
@@ -182,7 +184,7 @@ class Article
 	/**
 	 * Get the value of categories
 	 */
-	public function getCategories()
+	public function getcategories()
 	{
 		return $this->categories;
 	}
@@ -202,12 +204,12 @@ class Article
 	/**
 	 * @return Collection|ArticleFollow[]
 	 */
-	public function getArticlesFollows() : Collection
+	public function getArticleFollows() : Collection
 	{
 		return $this->articleFollows;
 	}
 
-	public function addArticlesFollow(ArticleFollow $articleFollow) : self
+	public function addArticleFollow(ArticleFollow $articleFollow) : self
 	{
 		if (!$this->articleFollows->contains($articleFollow)) {
 			$this->articleFollows[] = $articleFollow;
@@ -217,7 +219,7 @@ class Article
 		return $this;
 	}
 
-	public function removeArticlesFollow(ArticleFollow $articleFollow) : self
+	public function removeArticleFollow(ArticleFollow $articleFollow) : self
 	{
 		if ($this->articleFollows->contains($articleFollow)) {
 			$this->articleFollows->removeElement($articleFollow);
