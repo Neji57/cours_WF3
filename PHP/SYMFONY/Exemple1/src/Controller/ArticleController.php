@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Article;
 use App\Entity\ArticleFollow;
 use App\Form\ArticleType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/article")
@@ -81,6 +82,7 @@ class ArticleController extends Controller
 	 */
 	public function follow(Request $request, Article $article)
 	{
+		$count = count($article->getArticleFollows());
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 
 		if ($request->getMethod() == 'POST' && is_object($user)) //is_object($user), $user instanceof \App\Entity\User
@@ -91,6 +93,8 @@ class ArticleController extends Controller
 			if (is_object($af)) {
 				$em->remove($af);
 				$em->flush();
+				$count --;
+				$isFollow = false;
 			} else {
 				$af = new ArticleFollow();
 				$af
@@ -103,6 +107,11 @@ class ArticleController extends Controller
 			}
 
 		}
+
+		return new JsonResponse(array(
+			'success' =>true,
+			'message' => $this->get('translator')->transchoice('article.followers', $count, array('%count%' => $count, 'isFollow' => $isFollow))
+		));
 
 		return $this->redirectToRoute('app_article_show', array('id' => $article->getId()));
 	}
