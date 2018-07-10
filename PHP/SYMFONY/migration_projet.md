@@ -30,6 +30,11 @@ php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --force
 ```
 
+- Si la création ou la mise à jour de la base de données ne fonctionne pas, essaye de compiler le projet :
+```
+npm run build
+```
+
 # Compiler le projet
 
 Normalement tu devrais avoir un projet fonctionnel (sans erreurs) cependant, il est possible que les styles et les scripts ne soient pas pris en compte.
