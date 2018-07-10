@@ -238,18 +238,25 @@ Définir une relation
 ```
 
 - *(Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire)*
-// Panier
+
 ```php
+// Panier
 /**
  * @ORM\OneToMany(targetEntity="PanierProduit")
 */
 
+// PanierProduit
 /**
  * @ORM\OneToMany(targetEntity="Panier")
 */
 
 /**
- * @ORM\OneToMany(targetEntity="Panier")
+ * @ORM\OneToMany(targetEntity="Produit")
+*/
+
+// Produit
+/**
+ * @ORM\OneToMany(targetEntity="PanierProduit")
 */
 ```
 
