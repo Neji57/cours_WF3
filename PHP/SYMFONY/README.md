@@ -139,6 +139,14 @@ composer require knplabs/knp-menu-bundle
 ---
 ## MEMO
 
+### Twig
+
+Tester si l'utilisateur est connecté
+```php
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+{% endif %}
+```
+
 ### Installation
 ```
 git add *
