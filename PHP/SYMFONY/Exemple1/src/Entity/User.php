@@ -26,7 +26,7 @@ class User extends BaseUser
 	private $articles;
 
 	/**
-	 * @ORM\OneToMany(targetEntity="App\Entity\ArticleFollow", mappedBy="ManyToOne", orphanRemoval=true)
+	 * @ORM\OneToMany(targetEntity="App\Entity\ArticleFollow", mappedBy="user", orphanRemoval=true)
 	 */
 	private $articleFollows;
 
