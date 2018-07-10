@@ -237,7 +237,7 @@ Définir une relation
 */
 ```
 
-- *(Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire)*
+- Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire
 
 ```php
 // Panier
