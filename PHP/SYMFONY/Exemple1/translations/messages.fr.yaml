@@ -20,7 +20,7 @@ article:
   count_label: Nombre de pokémons
   user: Auteur
   list: .icon-newspaper Liste des Pokémon
-  followers: "{0} Aucune personne suis l'article|{1} %count% personne suis l'article|[2, Inf[ %count% personnes suivent l'article"
+  followers: "{0} Personne n'aime ce pokémon|{1} %count% personne aime ce pokémon |[2, Inf[ %count% personnes aiment ce pokémon"
 category:
   edit: Modifier le type <b> "%entity%" </b>
   edit_success: Le type <b> "%entity%" </b> a bien été modifié
