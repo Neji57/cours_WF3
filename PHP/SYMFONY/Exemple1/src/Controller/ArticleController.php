@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 use App\Entity\Article;
+use App\Entity\User;
 use App\Form\ArticleType;
 use App\Entity\ArticleFollow;
 
@@ -80,7 +81,7 @@ class ArticleController extends Controller
 
 			if (is_object($af)) {
 				//utilisateur a déja aimé
-				$em->persist($af);
+				$em->remove($af);
 				$em->flush();
 			} else {
 				//utilisateur n'a pas encore aimé
@@ -88,10 +89,12 @@ class ArticleController extends Controller
 					->setArticle($article)
 					->setUser($user)
 				;
+
+				$em->persist($af);
+				$em->flush();
 			}
 
-			$em->persist($af);
-			$em->flush();
+
 		}
 		return $this->redirectToRoute('app_article_show', array('id' => $article->getId()));
 	}
