@@ -34,7 +34,7 @@ services:
         tags:
             - { name: knp_menu.menu_builder, method: createAdminMenu, alias: admin }
 
-    app.menu_builder:
+    app.main.menu_builder:
         class: App\Menu\Builder
         arguments: ["@knp_menu.factory"]
         tags:

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block main_content %}
-	{% block body %}
+
 		{% embed 'decorator/_nav.html.twig' with {'class': 'fixed-top navbar-light bg-light', 'brandUrl': '#'} %}
 
 		{% block brand %}
@@ -13,5 +13,7 @@
 		{% endblock %}
 
 	{% endembed %}
+	<h1 class="h4">Pokédex</h1>
+	{% block body %}
 	{% endblock %}
 {% endblock %}
