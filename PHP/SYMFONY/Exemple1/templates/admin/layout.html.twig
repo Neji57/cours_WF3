@@ -1,19 +1,40 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('build/css/admin.css') }}" />
+{% endblock %}
 
 {% block main_content %}
 
-	{% embed 'decorator/_nav.html.twig' with {'class': 'fixed-top navbar-light bg-light', 'brandUrl': '#'} %}
+    <header class="main-header">
+        <div class="logo">
+            {{ 'app_title'|trans }}
+        </div>
+        {% embed 'decorator/_nav.html.twig' with {'class': 'fixed-top navbar-dark bg-dark', 'brandUrl': path('homepage')} %}
 
-		{% block brand %}
-			Admin
-		{% endblock %}
+            {% block brand %}
 
-		{% block menu %}
-			{{ knp_menu_render('admin', {'style': 'horizontal-right'}) }}
-		{% endblock %}
+            {% endblock %}
 
-	{% endembed %}
-	{% block body %}
+            {% block menu %}
 
-	{% endblock %}
-{% endblock %}
+            {% endblock %}
+
+        {% endembed %}
+    </header>
+
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            {{ knp_menu_render('admin', {'style': 'vertical-pills'}) }}
+        </section>
+    </aside>
+
+
+    <div class="content-wrapper">
+        <section class="content">
+        {% block body %}
+
+        {% endblock %}
+        </section>
+    </div>
+{% endblock %} {# /main_content #}
+
