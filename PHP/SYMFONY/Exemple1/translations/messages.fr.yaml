@@ -15,6 +15,7 @@ article:
   delete_message: Confirmer la suppression de l'article <b> "%entity%" </b>
   count_label: Nombre d'articles
   user: Auteur
+  list: .icon-newspaper Liste des Pokémon
 category:
   edit: Modifier la catégorie <b> "%entity%" </b>
   edit_success: La catégorie <b> "%entity%" </b> a bien été modifiée
@@ -23,7 +24,7 @@ category:
   delete: Supprimer la catégorie <b> "%entity%" </b>
   delete_success: La catégorie <b> "%entity%" </b> a bien été supprimée
   count: Catégorie|Catégories
-  list: Liste des catégories
+  list: .icon-newspaper Liste des Types
   name: Catégories
   category: Catégorie
   categories: Catégories

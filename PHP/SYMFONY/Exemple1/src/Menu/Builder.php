@@ -21,6 +21,7 @@ class Builder
 		$menu->addChild('article.add', ['route' => 'app_admin_article_new']);
 		$menu->addChild('category.category', ['route' => 'app_admin_category_index']);
 		$menu->addChild('category.add', ['route' => 'app_admin_category_new']);
+		$menu->addChild('admin.admin', ['route' => 'app_admin_article_index']);
 		return $menu;
 	}
 
