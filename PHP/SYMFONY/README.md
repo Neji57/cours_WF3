@@ -284,8 +284,7 @@ Pour tester si la requête est en Ajax
 if ($request->isXmlHttpRequest()){
     ...
 }
-
-
+```
 
 ---
 ## Liens utiles
