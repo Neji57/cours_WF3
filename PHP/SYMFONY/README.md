@@ -282,6 +282,7 @@ Avant la déclaraton de la classe :
  * @ORM\HasLifecycleCallbacks
  */
 ```
+*Quand ils sont mis au dessus d'une méthode, le fait d'appeler une commande percist va autimatiquement appeler la méthode sur laquelle il y a une des commandes suivantes*
 ```php
 /**
  * @ORM\PrePersist()
