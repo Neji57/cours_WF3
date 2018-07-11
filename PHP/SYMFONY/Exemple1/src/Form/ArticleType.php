@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Doctrine\ORM\EntityRepository;
+use Symfony\ComponentForm\extension\ChoiceType;
 //use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class ArticleType extends AbstractType
@@ -27,6 +28,7 @@ class ArticleType extends AbstractType
 						->orderBy('c.name', 'ASC');
 				},
 			))
+			->add('image', ImageType::class)
 			->add('content', null, array(
 				'label' => 'Contenu',
 				'attr' => array(

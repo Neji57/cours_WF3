@@ -37,9 +37,10 @@ class Image
      * @var UploadedFile
      * @Assert\File(
      *  maxSize = "2M",
-     * mimeTypes = {"image/jpg", "image/png", "image/gif"}
+     * mimeTypes = {"image/jpg", "image/png", "image/gif"},
      * )
      */
+    private $file;
 
     public function getId()
     {
@@ -82,5 +83,49 @@ class Image
         return $this;
     }
 
+
+
+    /**
+     * Get maxSize = "2M",
+     *
+     * @return  UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
+     * Set maxSize = "2M",
+     *
+     * @param  UploadedFile  $file  maxSize = "2M",
+     *
+     * @return  self
+     */
+    public function setFile(UploadedFile $file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    public function generateFileName()
+    {
+        if($this->file instanceof uploadedFile)
+        {
+            $this->path = uniqid('image_') . '.' . $this->file->guessExtension();
+        }
+    }
+
+    public function upload()
+    {
+        if($this->file instanceof uploadedFile)
+        {
+            $this->file->move(
+                '',
+                $this->path
+            )
+        }
+    }
 
 }
