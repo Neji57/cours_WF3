@@ -127,6 +127,10 @@ class Image
         return __DIR__ . '/../..public/uploads';
     }
 
+    /**
+     * @ORM\PostPercist()
+     * @ORM\PostUpdate()
+     */
     public function upload()
     {
         if($this->file instanceof uploadedFile)
