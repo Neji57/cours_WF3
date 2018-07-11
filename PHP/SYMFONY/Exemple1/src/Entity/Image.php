@@ -150,9 +150,9 @@ class Image
      */
     public function removeFile()
     {
-        if (is_file($this->getPublicRootDir() . $this->Path)) // si un fichier existe
+        if (is_file($this->getPublicRootDir() . $this->path)) // si un fichier existe
         {
-            unlink($this->getPublicRootDir() . $this->Path);
+            unlink($this->getPublicRootDir() . $this->path);
         }
     }
 

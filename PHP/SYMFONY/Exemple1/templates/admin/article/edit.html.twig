@@ -1,19 +1,43 @@
 {% extends 'admin/layout.html.twig' %}
 {% block body %}
-{{ form_start(form) }}
-{% embed 'decorator/_card.html.twig' %}
-    {% block header %}
-    {{ 'article.edit'|trans( {'%entity%' : entity.title} )|raw }}
-    {% endblock %}
+    {{ form_start(form) }}
+        {% embed 'decorator/_card.html.twig' %}
+            {% block header %}
+                {{ 'article.edit'|trans( {'%entity%' : entity.title} )|raw }}
+            {% endblock %}
 
-    {% block body %}
-    {{ form(form) }}
-    {% endblock %}
+            {% block body %}
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(form.title) }}
+                    </div>
+                    <div class="col-md-8">
+                        {{ form_row(form.categories) }}
+                    </div>
+                </div>
+                    <div class="col-md-8">
+                        {{ form_row(form.image) }}
+                    </div>
+                    <div class="col-md-6">
+                    </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_row(form.image) }}
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col">
+                            {% if entity.image is not empty %}
+                            <img src="{{ asset('/uploads/' ~ entity.image.path) }}" alt="{{ entity.image.name }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
 
-    {% block footer %}
-        <button type="submit" class="btn btn-warning">Modifier</button>
-        <a class="btn btn-secondary" href="{{ path('app_admin_article_index') }}" role="button">Annuler</a>
-    {% endblock %}
- {% endembed %}
-{{ form_end(form) }}
+            {% block footer %}
+                <button type="submit" class="btn btn-warning">Modifier</button>
+                <a class="btn btn-secondary" href="{{ path('app_admin_article_index') }}" role="button">Annuler</a>
+            {% endblock %}
+        {% endembed %}
+    {{ form_end(form) }}
 {% endblock %}
