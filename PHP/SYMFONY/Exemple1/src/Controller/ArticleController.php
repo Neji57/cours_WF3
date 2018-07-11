@@ -65,6 +65,7 @@ class ArticleController extends Controller
 
 		$formBuilder = $this->createFormBuilder()
 			->setAction($this->generateUrl('app_article_follow', ['id' => $article->getId()]))
+			->setAttribute('id', 'follow-form')
 			->setMethod('POST');
 
 		$form = $formBuilder->getForm();
