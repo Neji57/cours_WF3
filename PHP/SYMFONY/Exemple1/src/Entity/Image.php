@@ -42,6 +42,8 @@ class Image
      */
     private $file;
 
+    private $tmpPath;
+
     public function getId()
     {
         return $this->id;
@@ -102,6 +104,7 @@ class Image
      */
     public function setFile(UploadedFile $file)
     {
+        $this->tmpPath = $this->path;
         $this->path = '';
         $this->file = $file;
 
