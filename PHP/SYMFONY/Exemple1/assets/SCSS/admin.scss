@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-
 @mixin transition($transition...) {
 	-moz-transition: $transition;
 	-o-transition: $transition;
@@ -14,7 +13,7 @@
 	.logo {
 		width: 230px;
 		text-align: center;
-		background-color: darken($info, 5%);
+		background-color: darken($primary, 5%);
 		color: #fff;
 		border-bottom: 0 solid transparent;
 		display: block;
@@ -31,7 +30,7 @@
 		top: 0;
 	}
 	.navbar {
-		background-color: $info;
+		background-color: $primary;
 		margin-left: 230px;
 		border: none;
 		min-height: 54px;
@@ -67,7 +66,7 @@
 			}
 			&.active {
 				>.nav-link {
-					border-left-color: $info;
+					border-left-color: $success;
 					background-color: $dark;
 				}
 			}
