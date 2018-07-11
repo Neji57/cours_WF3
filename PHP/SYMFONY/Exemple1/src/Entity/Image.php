@@ -145,4 +145,15 @@ class Image
         }
     }
 
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeFile()
+    {
+        if (is_file($this->getPublicRootDir() . $this->Path)) // si un fichier existe
+        {
+            unlink($this->getPublicRootDir() . $this->Path);
+        }
+    }
+
 }
