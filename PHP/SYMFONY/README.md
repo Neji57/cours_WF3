@@ -3,6 +3,11 @@
 - [MEMO](https://github.com/Neji57/cours_WF3/tree/master/PHP/SYMFONY#memo)
 - [Liens utiles](https://github.com/Neji57/cours_WF3/tree/master/PHP/SYMFONY#liens-utiles)
 
+## Créer un projet démo de symfony
+````
+composer create-project symfony/symfony-demo
+```
+
 ---
 ## Commandes
 
