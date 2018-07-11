@@ -62,6 +62,12 @@ class Article
 	 */
 	private $articleFollows;
 
+	/**
+	 * @ORM\OneToOne(targetEntity="Image")
+	 * @ORM\JoinColumn(onDelete="SET NULL")
+	 */
+	private $image;
+
 	public function __construct()
 	{
 		$this->dateCreate = new \DateTime;
