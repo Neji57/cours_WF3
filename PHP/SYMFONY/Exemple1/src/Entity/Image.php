@@ -117,14 +117,19 @@ class Image
         }
     }
 
+    public function getPublicRootDir()
+    {
+        return __DIR__ . '/../..public/uploads';
+    }
+
     public function upload()
     {
         if($this->file instanceof uploadedFile)
         {
             $this->file->move(
-                '',
+                $this->getPublicRootDir(),
                 $this->path
-            )
+            );
         }
     }
 
