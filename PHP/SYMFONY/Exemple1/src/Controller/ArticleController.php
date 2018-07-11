@@ -63,9 +63,8 @@ class ArticleController extends Controller
 
 		$isFollow = !is_null($af); // Actif s'il y a un objet ArticleFollow
 
-		$formBuilder = $this->createFormBuilder()
+		$formBuilder = $this->createFormBuilder(null, ['attr' => ['id' => 'follow-form']])
 			->setAction($this->generateUrl('app_article_follow', ['id' => $article->getId()]))
-			->setAttribute('id', 'follow-form')
 			->setMethod('POST');
 
 		$form = $formBuilder->getForm();
@@ -86,7 +85,7 @@ class ArticleController extends Controller
 		$count = count($article->getArticleFollows());
 		$user = $this->get('security.token_storage')->getToken()->getUser();
 
-		$formBuilder = $this->createFormBuilder()
+		$formBuilder = $this->createFormBuilder(null, ['attr'=> ['id' => 'follow-form']])
 			->setAction($this->generateUrl('app_article_follow', ['id' => $article->getId()]))
 			->setMethod('POST');
 

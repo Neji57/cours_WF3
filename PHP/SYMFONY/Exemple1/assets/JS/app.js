@@ -2,7 +2,7 @@ import 'bootstrap';
 
 $(document).ready(function () {
 
-	var $form = $('form[name="form"]');
+	var $form = $('#follox-form');
 
 	$form.submit(function () {
 
