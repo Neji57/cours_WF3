@@ -273,6 +273,32 @@ Définir une relation
 */
 ```
 
+### Lifecycle
+
+Il est possible d'appeler automatiquement les méthodes d'une entité. Par exemple avant de faire un persist
+Avant la déclaraton de la classe :
+```php
+/**
+ * @ORM\HasLifecycleCallbacks
+ */
+```
+```php
+/**
+ * @ORM\PrePersist()
+ * @ORM\PreUpdate()
+ * @ORM\PreRemove()
+ * @ORM\PostPersist()
+ * @ORM\PostUpdate()
+ * @ORM\PostRemove()
+ */
+```
+```php
+/**
+ * @ORM\HasLifecycleCallbacks
+ */
+```
+
+
 ---
 ## Ajax
 
