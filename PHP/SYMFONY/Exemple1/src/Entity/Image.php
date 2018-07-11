@@ -111,7 +111,7 @@ class Image
     }
 
     /**
-     * @ORM\PrePercist()
+     * @ORM\PrePersist()
      *@ORM\PreUpdate
      */
     public function generateFileName()
@@ -128,7 +128,7 @@ class Image
     }
 
     /**
-     * @ORM\PostPercist()
+     * @ORM\PostPersist()
      * @ORM\PostUpdate()
      */
     public function upload()
