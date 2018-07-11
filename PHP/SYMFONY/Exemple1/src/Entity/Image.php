@@ -38,7 +38,6 @@ class Image
      * @var UploadedFile
      * @Assert\File(
      *  maxSize = "2M",
-     * mimeTypes = {"image/jpg", "image/png", "image/gif"},
      * )
      */
     private $file;
@@ -105,6 +104,7 @@ class Image
      */
     public function setFile(UploadedFile $file)
     {
+        $this->path = '';
         $this->file = $file;
 
         return $this;
