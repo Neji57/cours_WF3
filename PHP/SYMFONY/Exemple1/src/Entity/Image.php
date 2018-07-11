@@ -121,7 +121,6 @@ class Image
         {
             unlink($this->getPublicRootDir() . $this->tmpPath);
         }
-
         if ($this->file instanceof UploadedFile) {
             $this->path = uniqid('image_') . '.' . $this->file->guessExtension();
         }
