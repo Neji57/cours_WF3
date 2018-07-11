@@ -111,6 +111,8 @@ class ArticleController extends Controller
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($af);
 				$em->flush();
+
+				$isFollow = true;
 			}
 
 		}
@@ -119,7 +121,8 @@ class ArticleController extends Controller
 		{
 			return new JsonResponse(array(
 				'success' => true,
-				'message' => $this->get('translator')->transchoice('article.followers', $count, array('%count%' => $count, 'isFollow' => $isFollow))
+				'message' => $this->get('translator')->transchoice('article.followers', $count, array('%count%' => $count, )),
+				'isFollow' => $isFollow
 			));
 		}
 
