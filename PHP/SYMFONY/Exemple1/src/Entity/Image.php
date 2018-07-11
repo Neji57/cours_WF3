@@ -8,6 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Image
 {
@@ -109,6 +110,10 @@ class Image
         return $this;
     }
 
+    /**
+     * @ORM\PrePercist()
+     *@ORM\PreUpdate
+     */
     public function generateFileName()
     {
         if($this->file instanceof uploadedFile)
