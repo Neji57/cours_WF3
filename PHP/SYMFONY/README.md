@@ -269,6 +269,25 @@ Définir une relation
 ```
 
 ---
+## Ajax
+
+Pour retourner un JSON dans un controlleur
+```
+use Symfony\component\HttpFoundation\JsonResponse
+.
+.
+return new JsonResponse(array(...))
+```
+
+Pour tester si la requête est en Ajax
+```
+if ($request->isXmlHttpRequest()){
+    ...
+}
+
+
+
+---
 ## Liens utiles
 
 - [OPENCLASSROOMS - Développez votre site web avec le framework Symfony](https://openclassrooms.com/courses/3619856-developpez-votre-site-web-avec-le-framework-symfony)
