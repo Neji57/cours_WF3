@@ -388,9 +388,9 @@ public function findByName($name)
 ```
 Quelques méthodes
 ```php
-		->where('e.value = :value')
-		->andWhere(...)
-		->orWhere(...)
+->where('e.value = :value')
+->andWhere(...)
+->orWhere(...)
 ```
 
 
