@@ -125,12 +125,20 @@ private $category;
 private $articles; // Type ArrayCollection
 ```
 
-- *(Plusieurs objets peuvent être associésà plusieurs autres)*
+- Plusieurs articles peuvent être associésà plusieurs utilisateurs
 ```php
 /**
  * @ORM\ManyToMany(targetEntity="User", inversedBy="articles")
 */
 private $users;
+```
+
+- Relation inverse *(Tous les articles d'un utilisateur)*
+```php
+/**
+ * @ORM\ManyToMany(targetEntity="Article", inversedBy="users")
+*/
+private $articles;
 ```
 
 ### Cycle de vie
