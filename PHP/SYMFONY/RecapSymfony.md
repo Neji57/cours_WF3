@@ -519,8 +519,10 @@ $builder->add('gallery', CollectionType::class, array(
 
 -  Pour créer un nouveau formulaire dans le controller
 ```php
-$form = $this->createForm(ArticleType::class, $article); // $article = ebtité article
-$form->handleRequest($request);
+$form = $this -> createForm(ArticleType::class, $article); // $article = entité Article
+$form -> handleRequest($request);
+
+if($form -> isSubmitted() && $form -> isValid()) { /*...*/ }
 ```
 
 ---
@@ -554,34 +556,45 @@ Vide...
 ```
 ---
 ## Twig
-Twig est un moteur de template
+
+- [DOC OFFICIELLE](https://twig.symfony.com/doc/2.x/)
+- [DOC `{{ loop }}`](https://twig.symfony.com/doc/2.x/tags/for.html)
+
+Twig est un moteur de templates. Il propose un language simplifié spécialement pour faire du front.
 
 ### Commandes de base
 ```twig
-// Condition
+{# Condition #}
+
 {% if var == 1 %}
 {% else %}
 {% endif %}
 
-// Test si une variable est définie
-{% if var is defined %}
+{# Test si une variable est définie #}
+{% if is var is defined %}
 {% endif %}
 
-// Negation
+{# Négation #}
 {% if var is not defined %}
 {% endif %}
 
-//boucle
-{% for entity in entities if entity.active %} // Foreach
-	{{ loop.first }}
-	{{ loop.last }}
-	{{ loop.index }}
-	{{ loop.index0 }}
+{# Boucle (foreach) #}
+{% for entity in entities %}
 {% endfor %}
 
-{% for 0..10 %} // For 10 fois
+{% for entity in entities if entity.active %}
+    {# Permet de selectionner le 1er ou dernier item #}
+    {{ loop.first }}
+    {{ loop.last }}
+    {# Donne l'index à partir de 1 #}
+    {{ loop.index }}
+    {# Donne l'index à partir de 0 #}
+    {{ loop.index0 }}
 {% endfor %}
 
+{# Faire une boucle de 0 à 10 #}
+{% for 0..10 %}
+{% endfor %}
 ```
 
 Débogger une variable
@@ -620,17 +633,17 @@ Les blocks permettent de faire de l'héritage de vue et de surcharger des partie
 ### Les formulaires
 
 ```twig
-{{ form(nomDuForm) }}{# Affiche tout le formulaire #}
+{{ form(nomDuForm) }}
 
-{{ form_start(nomDuForm) }}{# <form> #}
-{{ form_errors(nomDuForm) }}{# Affiche les erreurs #}
+{{ form_start(nomDuForm) }}
 
-{{ form_row(nomDuForm.name) }}{# Affiche seulement un champ #}
+    {{ form_errors(nomDuChamp) }} {# affiche les erreurs globales (évite qu'elles soient en bas) #}
+    {{ form_row(nomDuForm.name) }} {# affiche juste le champ name #}
 
-{{ form_end(nomDuForm) }}{# Affiche tout le reste du formulaire et le </form> #}
+{{ form_end(nomDuForm) } {# affiche tous les autres champs et le </form> #}
 ```
 
-**Mettre le bouton sublit directement en HTML**
+**Mettre le bouton submit directement en HTML**
 ---
 ### Les filtres
 
