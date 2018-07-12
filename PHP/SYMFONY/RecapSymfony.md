@@ -31,7 +31,7 @@
 - [Twig](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#twig)
 	- [Commandes de base](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#commandes-de-base)
 	- [Les blocks](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-blocks)
-	- [Les formulaires]()
+	- [Les formulaires](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-formulaires)
 	- [Lien]()
 - [Lien]()
 	- [Lien]()
@@ -560,6 +560,20 @@ Twig est un moteur de template
 // Test si une variable est définie
 {% if var is defined %}
 {% endif %}
+
+// Negation
+{% if var is not defined %}
+{% endif %}
+
+//boucle
+{% for entity in entities %} // Foreach
+	{{ loop.first }}
+	{{ loop.last }}
+{% endfor %}
+
+{% for 0..10 %} // For 10 fois
+{% endfor %}
+
 ```
 
 ### Les blocks
