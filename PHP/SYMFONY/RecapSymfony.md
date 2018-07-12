@@ -148,20 +148,24 @@ private $articles;
 /**
  * @ORM\OneToMany(targetEntity="PanierProduit")
 */
+private $panierProduits
 
 // PanierProduit
 /**
  * @ORM\OneToMany(targetEntity="Panier")
 */
+private $panier
 
 /**
  * @ORM\OneToMany(targetEntity="Produit")
 */
+private $roduit
 
 // Produit
 /**
  * @ORM\OneToMany(targetEntity="PanierProduit")
 */
+private $panierProduits
 ```
 
 - Plusieurs produits dans plusieurs paniers avec des paramètres
