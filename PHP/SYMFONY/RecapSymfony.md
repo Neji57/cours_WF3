@@ -16,8 +16,8 @@
 	- [Les objets Response](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-objets-response)
 - [Repository](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#repository)
 	- [Ecrire une requête](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#ecrire-une-requête)
-	- [Lien]()
-	- [Lien]()
+	- [L'objet Paginator](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#lobjet-paginator)
+	- [Appel dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#appel-dans-un-controller)
 	- [Lien]()
 	- [Lien]()
 - [Lien]()
@@ -352,7 +352,13 @@ Une action d'un controller doit toujours retourner un objet de type Response
 return $this->render('chemin/de/la/vue.html.twig', array(
 	'param1' => $param1,
 	'param2' => $param2,
-))
+));
+```
+
+*Retourner une redirection*
+```php
+return $this->redirectToRoute('nom_de_la_route');
+return $this->redirect('lien');
 ```
 
 ## Repository
