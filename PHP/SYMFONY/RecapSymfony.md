@@ -74,6 +74,13 @@ Les entités *(Entity)* sont des objets stockés dans la BDD, ces fichiers se tr
 php bin/console make:entity
 ```
 
+ - Pour créer la base de données
+    ```
+    php bin/console doctrine:database:create
+    ```
+
+La BDD est définie par des annotations *(Instructions dans les commentaires)*
+
 - Pour définir une colonne
 ```php
 use Doctrine\ORM\Mapping as ORM;
@@ -85,8 +92,42 @@ use Doctrine\ORM\Mapping as ORM;
 private $nomDuChamp;
 ```
 
+- Mettre à jour la base de données :
+```
+php bin/console doctrine:schema:update --force
+```
 
 ### Relations
+
+Les relations permettent de faire des clés étrangères dans le BDD
+
+- Une seule image peut être associé à un seul article
+```php
+/**
+ * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade="all", orphanRemoval=true)
+*/
+```
+
+- *(Plusieurs objets peuvent être associés à un seul autre)*
+```php
+/**
+ * @ORM\ManyToOne(targetEntity="namespace\de\la\classe")
+*/
+```
+
+- *(Un seul objet peut être associé à unplusieurs autres)*
+```php
+/**
+ * @ORM\OneToMany(targetEntity="namespace\de\la\classe")
+*/
+```
+
+- *(Plusieurs objets peuvent être associésà plusieurs autres)*
+```php
+/**
+ * @ORM\ManyToMany(targetEntity="namespace\de\la\classe")
+*/
+```
 
 ### Cycle de vie
 
