@@ -112,7 +112,7 @@ private $image
 - Plusieurs articles peuvent être associés à une seule catégorie
 ```php
 /**
- * @ORM\ManyToOne(targetEntity="Category" inversedBy="articles")
+ * @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
 */
 private $category
 ```
@@ -120,22 +120,15 @@ private $category
 - Relation inverse *(Obtenir les articles d'une catégorie)*
 ```php
 /**
- * @ORM\OneToMany(targetEntity="Article" mappedBy="Category")
+ * @ORM\OneToMany(targetEntity="Article", mappedBy="Category")
 */
 private $articles // Type ArrayCollection
-```
-
-- *(Un seul objet peut être associé à unplusieurs autres)*
-```php
-/**
- * @ORM\OneToMany(targetEntity="namespace\de\la\classe")
-*/
 ```
 
 - *(Plusieurs objets peuvent être associésà plusieurs autres)*
 ```php
 /**
- * @ORM\ManyToMany(targetEntity="namespace\de\la\classe")
+ * @ORM\ManyToMany(targetEntity="User", inversedBy="articles")
 */
 ```
 
