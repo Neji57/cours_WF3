@@ -472,6 +472,17 @@ $builder->('status', ChoiceType::class, array(
 	'expanded' => true, // Affichage bouton radio ou select
 ));
 ```
+
+*Type entité, pour une relation ManyToOne*
+```php
+$builder->('categorie', Entity::class, array(
+	'class' => 'category.class',
+	'choice.label' => 'name', // Attribut de ma catégorie à afficher
+	'query_builder' => function (EntityRepository $er) {
+		return $er->createBuilder('c')
+			->orderBy('c.name', 'ASC');
+	}
+));
 ---
 ### Types de champs
 
