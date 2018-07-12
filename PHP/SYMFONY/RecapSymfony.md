@@ -576,7 +576,24 @@ Twig est un moteur de template
 ```
 ---
 ### Les blocks
-Les blocks définissent une partie d'une vue qui peut  être
+Les blocks permettent de faire de l'héritage de vue et de surcharger des parties de la vue parente.
+```html
+{# base.html.twig #}
+<header>
+</header>
+<div class="content">
+	{% block content %}
+	{% endblock %}
+</div>
+<footer>
+</footer>
+
+{# accueil.html.twig #}
+{% extends 'base.html.twig' %}
+{% block content %}
+	Contenu de la page
+{% endblock %}
+```
 
 ---
 ### Les formulaires
