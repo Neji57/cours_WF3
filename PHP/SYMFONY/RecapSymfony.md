@@ -141,6 +141,14 @@ private $users;
 private $articles;
 ```
 
+- Plusieurs produits dans plusieurs paniers avec des paramètres
+```php
+/**
+ * @ORM\ManyToMany(targetEntity="Article", inversedBy="users")
+*/
+private $articles;
+```
+
 ### Cycle de vie
 
 ## Controller
