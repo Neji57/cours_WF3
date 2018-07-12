@@ -169,6 +169,7 @@ private $panierProduits
 ```
 
 - Comportement de l'article lors de la suppression d'une categorie
+	*Mets l'attribut à `null` si la catégorie est supprimée*
 ```php
 // Entity Article
 /**
