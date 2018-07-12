@@ -620,6 +620,11 @@ Mettre le bouton sublit directement en HTML
 ---
 ### Les filtres
 
+```twig
+{{ 'MAChaine' |lower }}{{# 'machaine' #}}
+{{ entity.date|date('d/m/Y') }}
+```
+
 ### Traduction
 
 ---
