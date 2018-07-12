@@ -539,10 +539,19 @@ $form = $formBuilder->getForm();
 
 ---
 ## Les services
-
+```
+Vide...
+```
+---
 ### Principe
-
+```
+Vide...
+```
+---
 ### Quelques services utiles
+```
+Vide...
+```
 ---
 ## Twig
 Twig est un moteur de template
@@ -573,6 +582,11 @@ Twig est un moteur de template
 {% for 0..10 %} // For 10 fois
 {% endfor %}
 
+```
+
+Débogger une variable
+```twig
+{{ dump(variable) }}
 ```
 ---
 ### Les blocks
@@ -616,10 +630,11 @@ Les blocks permettent de faire de l'héritage de vue et de surcharger des partie
 {{ form_end(nomDuForm) }}{# Affiche tout le reste du formulaire et le </form> #}
 ```
 
-Mettre le bouton sublit directement en HTML
+*Mettre le bouton sublit directement en HTML*
 ---
 ### Les filtres
 
+Les filtres permettent de transformer une chaîne ou une valeur
 ```twig
 {{ 'MAChaine'|lower }}{{# 'machaine' #}}
 {{ entity.date|date('d/m/Y') }}
@@ -627,7 +642,37 @@ Mettre le bouton sublit directement en HTML
 ```
 
 ### Traduction
+```twig
+{#
+article:
+	name: Nom de l'article
+#}
+{{ 'article.name'|trans }}
 
+{#
+article:
+	msg: l'article "%name%" est ajouté
+#}
+{{ 'article.msg'|trans({"%name%" : entity.name}) }}
+
+{#
+article:
+	counter: Il y a zero ou un article | Il y a plusieurs articles
+#}
+{{ 'article.counter'|transChoice({count, { "%counter%" : count }) }}
+
+{#
+article:
+	counter: Il y a  %counter% article | Il y a %counter% articles
+#}
+{{ 'article.counter'|transChoice({count, { "%counter%" : count }) }}
+
+{#
+article:
+	counter: "{0} Il n'y a  pas d'article | {1} Il y a 1 article | [2, inf[ Il y a %counter% articles"
+#}
+{{ 'article.counter'|transChoice({count, { "%count%" : count }) }}
+```
 ---
 ### Extensions
 
