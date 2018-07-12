@@ -483,6 +483,7 @@ $builder->('categorie', Entity::class, array(
 			->orderBy('c.name', 'ASC');
 	}
 ));
+```
 ---
 ### Types de champs
 
