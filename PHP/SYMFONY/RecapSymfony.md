@@ -467,7 +467,7 @@ $builder->add('name', null, array(
 ---
 ### Types de champs
 
-*Type select*
+1. Select
 ```php
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -482,7 +482,7 @@ $builder->('status', ChoiceType::class, array(
 ));
 ```
 
-*Type entité, pour une relation ManyToOne*
+2. Entité pour une relation `ManyToOne`:
 ```php
 $builder->('categorie', Entity::class, array(
 	'class' => 'category.class',
