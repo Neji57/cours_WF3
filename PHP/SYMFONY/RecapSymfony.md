@@ -520,6 +520,7 @@ $builder->add('gallery', CollectionType::class, array(
 ```
 
 -  Pour créer un nouveau formulaire dans le controller
+**Pour créer un nouveau formulaire dans un controller:**
 ```php
 $form = $this -> createForm(ArticleType::class, $article); // $article = entité Article
 $form -> handleRequest($request);
