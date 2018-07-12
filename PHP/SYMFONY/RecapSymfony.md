@@ -2,7 +2,7 @@
 
 - [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
-- [Installation]()
+- [Projet]()
 
 ## Installation
 
@@ -29,6 +29,15 @@ composer update
 npm install
 ```
 
+## Projet
 
+### Dossiers
+
+Contenu des dossiers:
+
+- *assets* contient tous les fichiers SCSS/JS du projet
+- *bin* contient la console
+- *config* contient les fichiers *yaml* de configuration du projet, le dossier contient également les configs de bibliothèques externes
+- `node_modules` contient toutes les bibliothèques CSS/JS
 
 ## Entité
