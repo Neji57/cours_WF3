@@ -210,7 +210,9 @@ Les controllers sont les classes qui vont être utilisées lors de l'appel d'une
 
 ### Routes
 
-pour définir
+pour définir un préfixe pour toutes les routes d'un controller :
+
+*mettre avant la déclaration de la class :*
 ```php
 use Symfony\Component\Routing\Annotation\Route;
 /**
@@ -219,6 +221,41 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends Controller
 ```
 
+*Avant la déclaration d'une méthode :*
+```php
+/**
+ * @Route("/new")
+ */
+public function new()
+{
+	// code ...
+}
+```
+
+*Pour définir des paramètres :*
+```php
+/**
+ * @Route("/edit{id}", requirements={"id" = "/d+"})
+ */
+public function edit($id)
+{
+	// code ...
+}
+```
+
+*Valeur par défaut :*
+```php
+/**
+ * @Route("/list/{page}", requirements={"page" = "/d+"}, defaults={"page=1"})
+ */
+public function liste($page)
+{
+	// code ...
+}
+```
+
+Pour définir des paramètres,
+
 ### Routes
 
 
@@ -227,3 +264,4 @@ class ArticleController extends Controller
 
 ### Routes
 
+##
