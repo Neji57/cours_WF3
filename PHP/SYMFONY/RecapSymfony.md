@@ -18,12 +18,13 @@
 	- [Ecrire une requête](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#ecrire-une-requête)
 	- [L'objet Paginator](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#lobjet-paginator)
 	- [Appel dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#appel-dans-un-controller)
-- [Formulaire]()
--	 [Form builder]()
--	 [Types de champs]()
--	 [Lien]()
--	 [Lien]()
-- [Lien]()
+- [Formulaire](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#formulaire)
+-	 [Form builder](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#form-builder)
+-	 [Types de champs](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#types-de-champs)
+-	 [Formulaires imbriqués]()
+-	 [Les collections]()
+-	 [Création dans un controller]()
+- [Les services]()
 	- [Lien]()
 	- [Lien]()
 	- [Lien]()
@@ -370,6 +371,8 @@ return new JsonResponse(array(
 
 ## Repository
 
+Le repository contient les requêtes d'une entité (1 entité = 1 repository)
+
 ### Ecrire une requête
 
 
@@ -382,3 +385,11 @@ return new JsonResponse(array(
 ### Form builder
 
 ### Types de champs
+
+### Formulaires imbriqués
+
+### Les collections
+
+### Création dans un controller
+
+## Les services
