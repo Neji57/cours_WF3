@@ -449,9 +449,28 @@ public function buildForm(FormBuilderInterface $builder, array $option)
 	# code ...
 }
 ```
+
 On ajoute avec la méthode `add`de l'objet builder
 ```php
-$builder->add('name');
+$builder->add('name', null, array(
+	'label' => 'label.traduction',
+	'required' => false,
+));
+```
+
+*Type select*
+```php
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
+$builder->('status', ChoiceType::class, array(
+	'label' => 'article.status',
+	'choices' => array(
+		'article.status_actif' => 'active',
+		'article_status_draft' => 'inactive',
+	)
+	'multiple' => false,
+	'expanded' => true, // Affichage bouton radio ou select
+));
 ```
 ---
 ### Types de champs
