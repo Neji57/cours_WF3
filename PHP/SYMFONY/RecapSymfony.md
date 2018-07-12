@@ -18,6 +18,7 @@
 	- [Ecrire une requête](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#ecrire-une-requête)
 	- [L'objet Paginator](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#lobjet-paginator)
 	- [Appel dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#appel-dans-un-controller)
+	- [Sauvegarder et supprimer des entités]()
 - [Formulaire](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#formulaire)
 -	 [Form builder](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#form-builder)
 -	 [Types de champs](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#types-de-champs)
@@ -25,7 +26,6 @@
 -	 [Les collections](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-collections)
 -	 [Création dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#création-dans-un-controller)
 - [Les services](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-services)
-	- [Lien]()
 	- [Lien]()
 	- [Lien]()
 	- [Lien]()
@@ -408,7 +408,25 @@ Quelques méthodes
 
 ### L'objet Paginator
 
+Objet pour gérer une pagination,  retourne les entités d'une page et le nombre total d'entités.
+```php
+use Doctrine\ORM\Tools\Pagination\Paginator;
+
+return new Paginator($querybuilder)
+```
+
 ### Appel dans un controller
+
+Il faut  d'abord récupérer l'entity manager puis appeler le repository de l'entité
+```php
+$em = $this->getDoctrine()->getManager();
+$articleRepository = $em->getRepository(Article::class);
+$aricles = $articleRepository->findByName('nom');
+```
+### Sauvegarder et supprimer des entités
+```php
+$em->persist($article) // Persist d'une entité
+```
 
 ## Formulaire
 
