@@ -65,8 +65,20 @@ npm run watch           (analyse les changements à chaque sauvegarde de fichier
 
 Les entités *(Entity)* sont des objets stockés dans la BDD, ces fichiers se trouvent dans src/entity
 
+*1 table = 1 entité*
+
 ### Création
+
+- Pour créer une nouvelle entité:
+```
+php bin/console make:entity
+```
+
 
 ### Relations
 
 ### Cycle de vie
+
+## controller
+
+### Routes
