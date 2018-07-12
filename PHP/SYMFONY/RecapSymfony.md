@@ -13,7 +13,7 @@
 	- [Routes](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#routes)
 	- [Param converter](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#param-converter)
 	- [L'objet Request](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#lobjet-request)
-	- [Réponses](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#r%C3%A9ponses)
+	- [Réponses](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#réponses)
 - [Repository](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#repository)
 	- [Ecrire une requête]()
 	- [Lien]()
@@ -323,6 +323,18 @@ public function new(Request $request)
 	// code ...
 }
 ```
+
+- Pour hydrater un formulaire à partir des données `$_POST`
+```php
+$form->handleRequest($request);
+```
+
+- Pour hydrater un formulaire à partir des données `$_POST`
+```php
+$post = $request
+```
+
+
 
 ### Réponses
 
