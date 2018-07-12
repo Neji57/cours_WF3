@@ -347,6 +347,19 @@ if ($request->isXmlHttpRequest) {
 
 Une action d'un controller doit toujours retourner un objet de type Response
 
+*Retourner une réponse qui contient une vue `Twig`*
+```php
+return $this->render('chemin/de/la/vue.html.twig', array(
+	'param1' => $param1,
+	'param2' => $param2,
+))
+```
+
 ## Repository
 
 ### Ecrire une requête
+
+
+### L'objet Paginator
+
+### Appel dans un controller
