@@ -630,7 +630,7 @@ Les blocks permettent de faire de l'héritage de vue et de surcharger des partie
 {{ form_end(nomDuForm) }}{# Affiche tout le reste du formulaire et le </form> #}
 ```
 
-*Mettre le bouton sublit directement en HTML*
+**Mettre le bouton sublit directement en HTML**
 ---
 ### Les filtres
 
@@ -684,3 +684,4 @@ php bin/console make:twig-extension
 - `Must be an instance of` : soit il vous manque un **`use`** soit l'**espace de nom** à mal été écrit
 - `Not contains valid YAML` : l'**indentation** n'est sûrement pas bonne ou deux paramètres ont un **nom identique**
 - `Could not convert to string` : on essaie d'afficher un objet, il **manque** la méthode magique `__toString()`
+
