@@ -106,7 +106,7 @@ Les relations permettent de faire des clés étrangères dans le BDD
 /**
  * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade="all", orphanRemoval=true)
 */
-private $image
+private $image;
 ```
 
 - Plusieurs articles peuvent être associés à une seule catégorie
@@ -114,7 +114,7 @@ private $image
 /**
  * @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
 */
-private $category
+private $category;
 ```
 
 - Relation inverse *(Obtenir les articles d'une catégorie)*
@@ -122,7 +122,7 @@ private $category
 /**
  * @ORM\OneToMany(targetEntity="Article", mappedBy="Category")
 */
-private $articles // Type ArrayCollection
+private $articles; // Type ArrayCollection
 ```
 
 - *(Plusieurs objets peuvent être associésà plusieurs autres)*
@@ -130,6 +130,7 @@ private $articles // Type ArrayCollection
 /**
  * @ORM\ManyToMany(targetEntity="User", inversedBy="articles")
 */
+private $users;
 ```
 
 ### Cycle de vie
