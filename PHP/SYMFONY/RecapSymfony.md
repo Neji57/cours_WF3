@@ -39,6 +39,8 @@ Contenu des dossiers:
 - `bin` contient la console
 - `config` contient les fichiers *yaml* de configuration du projet, le dossier contient également les configs de bibliothèques externes
 - `node_modules` contient toutes les bibliothèques CSS/JS
-- `public` contient le fichier *index.php*
+- `public` contient le fichier *index.php* (dossier web Sf V < 4)
+- `src` contient tous les fichiers sources *php* de l'application
+- `templates` contient toutes les vues *twig*
 
 ## Entité
