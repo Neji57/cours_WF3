@@ -51,6 +51,7 @@ Contenu des dossiers:
 ### WebPack Encore
 
 Encore est un module de Symfony pour faciliter l'intégration de WebPack dans un projet.
+
 WebPack est une bibliothèque qui va interpréter et *minifier* automatiquement les fchiers SCSS et JS. Il assemble plusieurs fichiers *assets* en un seul
 
 ## Entité
