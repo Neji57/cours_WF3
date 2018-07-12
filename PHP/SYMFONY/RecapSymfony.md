@@ -606,14 +606,17 @@ Les blocks permettent de faire de l'héritage de vue et de surcharger des partie
 ### Les formulaires
 
 ```twig
-{{ form(nomDuForm) }}
+{{ form(nomDuForm) }}{# Affiche tout le formulaire #}
 
-{{ form_start(nomDuForm) }}
+{{ form_start(nomDuForm) }}{# <form> #}
+{{ form_errors(nomDuForm) }}{# Affiche les erreurs #}
 
-{{ form_row(nomDuForm.name) }}
+{{ form_row(nomDuForm.name) }}{# Affiche seulement un champ #}
 
-{{ form_end(nomDuForm) }}
+{{ form_end(nomDuForm) }}{# Affiche tout le reste du formulaire et le </form> #}
 ```
+
+Mettre le bouton sublit directement en HTML
 ---
 ### Les filtres
 
