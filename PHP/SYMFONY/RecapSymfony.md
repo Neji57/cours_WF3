@@ -391,6 +391,10 @@ Quelques méthodes
 ->where('e.value = :value')
 ->andWhere(...)
 ->orWhere(...)
+->orderBy('e.id', 'ASC|DESC')
+->setMaxResults(10) // LIMIT
+->setFirstResults(0) // OFFSET
+->leftJoin('e.objet', 'o')
 ```
 
 
