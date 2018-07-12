@@ -506,8 +506,37 @@ Ne pas oublier l'attribut cascade dans la relation
 ---
 ### Les collections
 
+```php
+$builder->add('gallery', CollectionType::class, array(
+	'entry_type' => image::class,
+));
+```
+
+-  Pour créer un nouveau formulaire dans le controller
+```php
+$form = $this->createForm(ArticleType::class, $article); // $article = ebtité article
+$form->handleRequest($request);
+```
+
 ---
 ### Création dans un controller
 
+-  Pour créer un nouveau formulaire dans le controller
+```php
+$formBuilder = $this->createFormBuilder()
+	->setAction('action')
+	->setMethod('POST') // DELETE|PUT
+	->add('champ', TextType::class)
+;
+$form = $formBuilder->getForm();
+));
+```
+
 ---
 ## Les services
+
+### Principe
+
+### Quelques services utiles
+
+## Twig
