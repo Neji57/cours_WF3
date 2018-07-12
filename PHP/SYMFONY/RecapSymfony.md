@@ -182,6 +182,8 @@ private $category;
 
 ### Cycle de vie
 
+Permet à Doctrine d'appeler automatiquement des méthodes de l'entité lors d'une action (`persist` ou `remove`)
+
 ## Controller
 
 ### Routes
