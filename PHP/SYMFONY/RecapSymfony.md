@@ -54,4 +54,17 @@ Encore est un module de Symfony pour faciliter l'intégration de WebPack dans un
 
 WebPack est une bibliothèque qui va interpréter et *minifier* automatiquement les fchiers SCSS et JS. Il assemble plusieurs fichiers *assets* en un seul
 
+- Commandes pour créer les fichiers publiques
+```
+npm run dev             (Plus rapide et ne minifie pas les fichiers CSS/JS)
+npm run build           (Plus complet et minifie les fichiers pour la fin du projet)
+npm run watch           (analyse les changements à chaque sauvegarde de fichier)
+```
+
 ## Entité
+
+Les entités *(Entity)* sont des objets stockés dans la BDD, ces fichiers se trouvent dans src/entity
+
+### Création
+### Création
+### Création

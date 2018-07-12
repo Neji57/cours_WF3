@@ -74,8 +74,8 @@ php bin/console server:run
 
 - Compiler son projet:
 ```
-npm run dev             (Plus rapide)
-npm run build           (Plus complet pour la fin du projet)
+npm run dev             (Plus rapide et ne minifie pas les fichiers)
+npm run build           (Plus complet et minifie les fichiers pour la fin du projet)
 npm run watch           (analyse les changements à chaque sauvegarde de fichier)
 ```
 
