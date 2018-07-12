@@ -3,15 +3,15 @@
 - [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
 	- [Nouveau projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#nouveau-projet)
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
-	- [Dossiers]()
-	- [WebPack Encore]()
+	- [Dossiers](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#dossiers)
+	- [WebPack Encore](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#webpack-encore)
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
-	- [Création]()
-	- [Relations]()
-	- [Cycle de vie]()
+	- [Création](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#cr%C3%A9ation)
+	- [Relations](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#relations)
+	- [Cycle de vie](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#cycle-de-vie)
 - [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
-	- [Routes]()
-	- [Param converter]()
+	- [Routes](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#routes)
+	- [Param converter](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#param-converter)
 	- [L'objet Request]()
 	- [Réponses]()
 - [Repository](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#repository)
@@ -313,6 +313,8 @@ public function show(Article $article, Comment $comment)
 
 
 ### L'objet Request
+
+L'objet Request permet d'obtenir des informations sur la requête client `(POST/GET ...`
 
 
 ### Réponses
