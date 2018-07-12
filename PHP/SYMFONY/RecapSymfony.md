@@ -595,7 +595,7 @@ Les blocks permettent de faire de l'héritage de vue et de surcharger des partie
 {% endblock %}
 ```
 
-Pour afficher le contenu d'un bloc parent
+- Pour afficher le contenu d'un bloc parent
 ```twig
 {% block content %}
 	{{ parent() }}
@@ -605,6 +605,15 @@ Pour afficher le contenu d'un bloc parent
 ---
 ### Les formulaires
 
+```twig
+{{ form(nomDuForm) }}
+
+{{ form_start(nomDuForm) }}
+
+{{ form_row(nomDuForm.name) }}
+
+{{ form_end(nomDuForm) }}
+```
 ---
 ### Les filtres
 
