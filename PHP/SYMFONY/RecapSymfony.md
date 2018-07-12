@@ -29,7 +29,7 @@ composer update
 npm install
 ```
 
-## Projet
+## Structure du projet
 
 ### Dossiers
 
