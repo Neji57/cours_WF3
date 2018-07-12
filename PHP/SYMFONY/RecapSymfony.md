@@ -381,8 +381,18 @@ public function findByName($name)
 	$qb = $this->createQueryBuilder('a') // Alias de l'objet
 		->where('a.name = :name')
 		->setParameter('name' = $name)
+	;
+
+	return $qb->getQuery()->getResult();
 }
 ```
+Quelques méthodes
+```php
+		->where('e.value = :value')
+		->andWhere(...)
+		->orWhere(...)
+```
+
 
 ### L'objet Paginator
 
