@@ -402,7 +402,7 @@ Quelques méthodes
 ->getResult();
 ->getOneResult();
 ->getOneOrNullResult();
-->getOneOrNullResult();
+->getScalarResult(); // ->select('COUNT(e)')
 ```
 
 
