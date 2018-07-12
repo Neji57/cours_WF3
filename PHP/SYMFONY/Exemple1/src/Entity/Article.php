@@ -275,6 +275,9 @@ class Article
 	 */
 	public function setDeleteImage($deleteImage)
 	{
+		if ($deleteImage) {
+			$this->deleteImage = null;
+		}
 		$this->deleteImage = $deleteImage;
 
 		return $this;
