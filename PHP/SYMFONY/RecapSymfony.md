@@ -141,7 +141,7 @@ private $users;
 private $articles;
 ```
 
-- Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire
+- Plusieurs produits dans plusieurs paniers avec des paramètres
 
 ```php
 // Entity Panier
@@ -168,13 +168,6 @@ private $roduit
 private $panierProduits
 ```
 
-- Plusieurs produits dans plusieurs paniers avec des paramètres
-```php
-/**
- * @ORM\ManyToMany(targetEntity="Article", inversedBy="users")
-*/
-private $articles;
-```
 
 ### Cycle de vie
 
