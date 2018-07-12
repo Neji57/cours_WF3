@@ -12,8 +12,8 @@
 - [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
 	- [Routes](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#routes)
 	- [Param converter](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#param-converter)
-	- [L'objet Request]()
-	- [Réponses]()
+	- [L'objet Request](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#lobjet-request)
+	- [Réponses](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#r%C3%A9ponses)
 - [Repository](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#repository)
 	- [Ecrire une requête]()
 	- [Lien]()
@@ -314,8 +314,15 @@ public function show(Article $article, Comment $comment)
 
 ### L'objet Request
 
-L'objet Request permet d'obtenir des informations sur la requête client `(POST/GET ...`
+L'objet Request permet d'obtenir des informations sur la requête client `(POST/GET ...)`
+```php
+use Symfony\Component\HttpFoundation\Request;
 
+public function new(Request $request)
+{
+	// code ...
+}
+```
 
 ### Réponses
 
