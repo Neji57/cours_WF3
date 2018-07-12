@@ -144,7 +144,7 @@ private $articles;
 - Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire
 
 ```php
-// Panier
+// Entity Panier
 /**
  * @ORM\OneToMany(targetEntity="PanierProduit")
 */

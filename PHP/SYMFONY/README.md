@@ -252,25 +252,31 @@ Définir une relation
 
 - Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire
 
+- Pour faire une relation ManyToMany avec paramètres, il faut créer une entité intermédiaire
+
 ```php
 // Panier
 /**
  * @ORM\OneToMany(targetEntity="PanierProduit")
 */
+private $panierProduits
 
 // PanierProduit
 /**
  * @ORM\OneToMany(targetEntity="Panier")
 */
+private $panier
 
 /**
  * @ORM\OneToMany(targetEntity="Produit")
 */
+private $roduit
 
 // Produit
 /**
  * @ORM\OneToMany(targetEntity="PanierProduit")
 */
+private $panierProduits
 ```
 
 ### Lifecycle
