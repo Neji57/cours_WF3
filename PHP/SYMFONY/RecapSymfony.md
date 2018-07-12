@@ -634,44 +634,36 @@ Les blocks permettent de faire de l'héritage de vue et de surcharger des partie
 ---
 ### Les filtres
 
-Les filtres permettent de transformer une chaîne ou une valeur
+Permettent de transformer une chaîne ou une valeur
+
 ```twig
-{{ 'MAChaine'|lower }}{{# 'machaine' #}}
-{{ entity.date|date('d/m/Y') }}
-{{ '<b>Texte</b>'|raw }}{{# Permet d'interpréter l'HTML #}}
+{{ 'MaChaine'|lower }} {# 'machaine' #}
+{{ entity.date|date('d/m/Y') }} {# 01/01/2001 #}
+{{ '<b>Texte</b>'|raw }} {# permet d'interpréter l'HTML #}
+```
+### Traduction
+
+**Dans notre Vue:**
+```twig
+{{ 'article.name'|trans }}
+{{ 'article.msg'|trans({"%name%" : entity.name}) }}
+{{ 'article.counter'|transchoice(count, {"%counter%" : count}) }}
+```
+**Dans le fichier `messages.fr.yaml`:**
+
+```yaml
+article:
+    name: Nom de l'article
+    msg: L'article %name% est ajouté
+    counter: Il y a %counter% article|Il y a %counter% articles # 1ère version
+    counter: Il y a zero ou un article|Il y a plusieurs articles # 2nd version
+    counter: "{0} Il n'y a pas d'article|{1} Il y a 1 article|[2, Inf[ Il y a %counter% articles" # 3ème version
 ```
 
-### Traduction
-```twig
-{#
-article:
-	name: Nom de l'article
-#}
-{{ 'article.name'|trans }}
-
-{#
-article:
-	msg: l'article "%name%" est ajouté
-#}
-{{ 'article.msg'|trans({"%name%" : entity.name}) }}
-
-{#
-article:
-	counter: Il y a zero ou un article | Il y a plusieurs articles
-#}
-{{ 'article.counter'|transChoice({count, { "%counter%" : count }) }}
-
-{#
-article:
-	counter: Il y a  %counter% article | Il y a %counter% articles
-#}
-{{ 'article.counter'|transChoice({count, { "%counter%" : count }) }}
-
-{#
-article:
-	counter: "{0} Il n'y a  pas d'article | {1} Il y a 1 article | [2, inf[ Il y a %counter% articles"
-#}
-{{ 'article.counter'|transChoice({count, { "%count%" : count }) }}
+```php
+$t = $this -> get('translator');
+$t -> trans('chaine', array());
+$t -> transChoice('chaine', $count, array());
 ```
 
 Dans le PHP
@@ -682,6 +674,7 @@ $t->transChoice('chaine', $count, array());
 ```
 ---
 ### Extensions
+**Faire une exension :**
 ```
 php bin/console make:twig-extension
 ```
