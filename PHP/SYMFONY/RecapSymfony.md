@@ -20,11 +20,11 @@
 	- [Appel dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#appel-dans-un-controller)
 	- [Sauvegarder et supprimer des entités]()
 - [Formulaire](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#formulaire)
--	 [Form builder](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#form-builder)
--	 [Types de champs](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#types-de-champs)
--	 [Formulaires imbriqués](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#formulaires-imbriqu%C3%A9s)
--	 [Les collections](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-collections)
--	 [Création dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#création-dans-un-controller)
+	- [Form builder](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#form-builder)
+	- [Types de champs](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#types-de-champs)
+	- [Formulaires imbriqués](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#formulaires-imbriqu%C3%A9s)
+	- [Les collections](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-collections)
+	- [Création dans un controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#création-dans-un-controller)
 - [Les services](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-services)
 	- [Principe](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#principe)
 	- [Quelques services utiles](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#quelques-services-utiles)
@@ -563,7 +563,7 @@ Twig est un moteur de template
 {% endif %}
 
 //boucle
-{% for entity in entities %} // Foreach
+{% for entity in entities if entity.active %} // Foreach
 	{{ loop.first }}
 	{{ loop.last }}
 	{{ loop.index }}
