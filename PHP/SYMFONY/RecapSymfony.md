@@ -558,6 +558,8 @@ Twig est un moteur de template
 {% endif %}
 
 // Test si une variable est définie
+{% if var is defined %}
+{% endif %}
 ```
 
 ### Les blocks
