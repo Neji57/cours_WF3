@@ -437,7 +437,19 @@ Les formulaires d'entité sont dans des classes à part dans le dossier `src/for
 
 ### Form builder
 
+- Pour c'éer un formulaire :
+```
+php bin/console make:form
+```
+
 Dans une classe de formulaire, une méthode buildForm doit être implémentée.
+```php
+public function buildForm(FormBuilderInterface $builder, array $option)
+{
+	# code ...
+}
+```
+On ajoute avec la méthode `add`de l'objet builder
 ---
 ### Types de champs
 
