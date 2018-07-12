@@ -66,5 +66,7 @@ npm run watch           (analyse les changements à chaque sauvegarde de fichier
 Les entités *(Entity)* sont des objets stockés dans la BDD, ces fichiers se trouvent dans src/entity
 
 ### Création
-### Création
-### Création
+
+### Relations
+
+### Cycle de vie
