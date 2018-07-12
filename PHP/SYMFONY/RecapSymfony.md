@@ -3,7 +3,7 @@
 - [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
-- [Controller]()
+- [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
 - [Projet]()
 
 ## Installation
@@ -72,6 +72,17 @@ Les entités *(Entity)* sont des objets stockés dans la BDD, ces fichiers se tr
 - Pour créer une nouvelle entité:
 ```
 php bin/console make:entity
+```
+
+- Pour définir une colonne
+```php
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Column(name="nom_du_champ", type="string | text | integer | float | datetime | json_array", nullable=true length=255)
+*/
+
+private $nomDuChamp;
 ```
 
 
