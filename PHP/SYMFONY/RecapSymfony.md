@@ -577,7 +577,7 @@ Twig est un moteur de template
 ---
 ### Les blocks
 Les blocks permettent de faire de l'héritage de vue et de surcharger des parties de la vue parente.
-```html
+```twig
 {# base.html.twig #}
 <header>
 </header>
