@@ -184,6 +184,13 @@ private $category;
 
 Permet à Doctrine d'appeler automatiquement des méthodes de l'entité lors d'une action (`persist` ou `remove`)
 
+- Avant la déclaration de la classe :
+```php
+/**
+ * @ORM\HasLifecycleCallbacks
+*/
+```
+
 ## Controller
 
 ### Routes
