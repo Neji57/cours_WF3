@@ -548,7 +548,7 @@ $form = $formBuilder->getForm();
 Twig est un moteur de template
 
 ### Commandes de base
-```php
+```twig
 // Condition
 {% if var == 1 %}
 {% else %}
