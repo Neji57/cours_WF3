@@ -32,13 +32,10 @@
 	- [Commandes de base](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#commandes-de-base)
 	- [Les blocks](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-blocks)
 	- [Les formulaires](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-formulaires)
-	- [Lien]()
-- [Lien]()
-	- [Lien]()
-	- [Lien]()
-	- [Lien]()
-- [Lien]()
-- [Lien]()
+	- [Filtres](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-filtres)
+	- [Traduction](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#traduction)
+	- [Extensions](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#extensions)
+- [Quelques erreurs](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#quelques-erreurs)
 
 ## Installation
 
@@ -569,6 +566,8 @@ Twig est un moteur de template
 {% for entity in entities %} // Foreach
 	{{ loop.first }}
 	{{ loop.last }}
+	{{ loop.index }}
+	{{ loop.index0 }}
 {% endfor %}
 
 {% for 0..10 %} // For 10 fois
