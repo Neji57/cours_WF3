@@ -502,7 +502,7 @@ Pour ajouter un formulaire dans un autre (modifier deux entités), par exemple u
 $builder->add('address', AddressType::class);
 ```
 
-Ne pas oublier l'attribut cascade dans la relation
+**Ne pas oublier l'attribut cascade dans la relation**
 ```php
 /**
  * @ORM\OneToOne(targetEntity="Address", cascade="all")
@@ -513,14 +513,14 @@ Ne pas oublier l'attribut cascade dans la relation
 
 [DOC SYMFONY](http://symfony.com/doc/current/reference/constraints/Collection.html)
 
+**Pour créer un nouveau formulaire dans un controller:**
 ```php
 $builder->add('gallery', CollectionType::class, array(
 	'entry_type' => image::class,
 ));
 ```
 
--  Pour créer un nouveau formulaire dans le controller
-**Pour créer un nouveau formulaire dans un controller:**
+**Pour créer un formulaire sans objet Type:**
 ```php
 $form = $this -> createForm(ArticleType::class, $article); // $article = entité Article
 $form -> handleRequest($request);
