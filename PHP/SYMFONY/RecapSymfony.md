@@ -1,7 +1,7 @@
 # Recap Symfony
 
-- [Installation]()
-- [Entité]()
+- [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
+- [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
 - [Installation]()
 
 ## Installation
@@ -18,13 +18,9 @@ composer create-project symfony/website-skeleton NomDuProjet
 git clone http://github.com/projet
 ```
 
-- Pour installer les bibliothèques PHP
+- Pour installer et mettre à jour les bibliothèques PHP
 ```
 composer install
-```
-
-- Pour mettre à jour les bibliothèques PHP
-```
 composer update
 ```
 
