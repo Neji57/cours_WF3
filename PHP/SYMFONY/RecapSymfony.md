@@ -395,6 +395,14 @@ Quelques méthodes
 ->setMaxResults(10) // LIMIT
 ->setFirstResults(0) // OFFSET
 ->leftJoin('e.objet', 'o')
+->distinct()
+->groupBy('e.val')
+
+// Resultats
+->getResult();
+->getOneResult();
+->getOneOrNullResult();
+->getOneOrNullResult();
 ```
 
 
