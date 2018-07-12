@@ -361,6 +361,15 @@ return $this->redirectToRoute('nom_de_la_route');
 return $this->redirect('lien');
 ```
 
+*Retourner une reponse `JSON`*
+```php
+use Symfony\Component\HttpFoundation\JsonResponse;
+return new JsonResponse(array(
+	'donnee1' => $donnee1,
+	'donnee2' => $donnee2,
+))
+```
+
 ## Repository
 
 ### Ecrire une requête
