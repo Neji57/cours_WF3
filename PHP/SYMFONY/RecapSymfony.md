@@ -190,7 +190,7 @@ Permet à Doctrine d'appeler automatiquement des méthodes de l'entité lors d'u
  * @ORM\HasLifecycleCallbacks
 */
 ```
-*Quand ils sont mis au dessus d'une méthode, le fait d'appeler une commande percist va autimatiquement appeler la méthode sur laquelle il y a une des commandes suivantes*
+*Quand ils sont mis au dessus d'une méthode, le fait d'appeler une commande percist va autimatiquement appeler la méthode sur laquelle il y a une des commandes suivantes :*
 ```php
 /**
  * @ORM\PrePersist()
@@ -200,6 +200,7 @@ Permet à Doctrine d'appeler automatiquement des méthodes de l'entité lors d'u
  * @ORM\PostUpdate()
  * @ORM\PostRemove()
  */
+public function prePercist() {...}
 ```
 
 ## Controller
