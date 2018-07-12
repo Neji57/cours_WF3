@@ -426,6 +426,9 @@ $aricles = $articleRepository->findByName('nom');
 ### Sauvegarder et supprimer des entités
 ```php
 $em->persist($article) // Persist d'une entité
+//Persist = prépare une requête
+$em->remove($article); // Supprime
+$em->flush(); // Execute les requêtes
 ```
 
 ## Formulaire
