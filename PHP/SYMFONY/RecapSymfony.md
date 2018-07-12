@@ -106,13 +106,23 @@ Les relations permettent de faire des clés étrangères dans le BDD
 /**
  * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade="all", orphanRemoval=true)
 */
+private $image
 ```
 
-- *(Plusieurs objets peuvent être associés à un seul autre)*
+- Plusieurs articles peuvent être associés à une seule catégorie
 ```php
 /**
- * @ORM\ManyToOne(targetEntity="namespace\de\la\classe")
+ * @ORM\ManyToOne(targetEntity="Category" inversedBy="articles")
 */
+private $category
+```
+
+- Relation inverse *(Obtenir les articles d'une catégorie)*
+```php
+/**
+ * @ORM\OneToMany(targetEntity="Article" mappedBy="Category")
+*/
+private $articles // Type ArrayCollection
 ```
 
 - *(Un seul objet peut être associé à unplusieurs autres)*
