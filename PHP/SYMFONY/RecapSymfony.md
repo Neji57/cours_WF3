@@ -458,6 +458,10 @@ $builder->add('name', null, array(
 ));
 ```
 
+
+---
+### Types de champs
+
 *Type select*
 ```php
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -485,11 +489,20 @@ $builder->('categorie', Entity::class, array(
 ));
 ```
 ---
-### Types de champs
-
----
 ### Formulaires imbriqués
 
+Pour ajouter un formulaire dans un autre (modifier deux entités), par exemple un formulaire adresse dans un formulaire client.
+
+```php
+$builder->add('address', AddressType::class);
+```
+
+Ne pas oublier l'attribut cascade dans la relation
+```php
+/**
+ * @ORM\OneToOne(targetEntity="Address", cascade="all")
+*/
+```
 ---
 ### Les collections
 
