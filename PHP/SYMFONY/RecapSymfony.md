@@ -511,6 +511,8 @@ Ne pas oublier l'attribut cascade dans la relation
 ---
 ### Les collections
 
+[DOC SYMFONY](http://symfony.com/doc/current/reference/constraints/Collection.html)
+
 ```php
 $builder->add('gallery', CollectionType::class, array(
 	'entry_type' => image::class,
