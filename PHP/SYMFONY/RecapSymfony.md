@@ -5,8 +5,8 @@
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
 	- [Dossiers](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#dossiers)
 	- [WebPack Encore](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#webpack-encore)
-- [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
-	- [Création](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#cr%C3%A9ation)
+- [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entité)
+	- [Création](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#création)
 	- [Relations](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#relations)
 	- [Cycle de vie](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#cycle-de-vie)
 - [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
@@ -15,7 +15,7 @@
 	- [L'objet Request](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#lobjet-request)
 	- [Réponses](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#réponses)
 - [Repository](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#repository)
-	- [Ecrire une requête]()
+	- [Ecrire une requête](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#ecrire-une-requête)
 	- [Lien]()
 	- [Lien]()
 	- [Lien]()
@@ -254,7 +254,7 @@ class ArticleController extends Controller
  */
 public function new()
 {
-	// code ...
+	# code ...
 }
 ```
 
@@ -265,7 +265,7 @@ public function new()
  */
 public function edit($id)
 {
-	// code ...
+	# code ...
 }
 ```
 
@@ -276,7 +276,7 @@ public function edit($id)
  */
 public function liste($page)
 {
-	// code ...
+	# code ...
 }
 ```
 
@@ -294,7 +294,7 @@ Il permet de nous envoyer les types demandés dans une méthode d'un controller
  */
 public function edit(Article $article)
 {
-	// code ...
+	# code ...
 }
 ```
 
@@ -307,7 +307,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
  */
 public function show(Article $article, Comment $comment)
 {
-	// code ...
+	# code ...
 }
 ```
 
@@ -320,7 +320,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 public function new(Request $request)
 {
-	// code ...
+	# code ...
 }
 ```
 
@@ -329,14 +329,23 @@ public function new(Request $request)
 $form->handleRequest($request);
 ```
 
-- Pour hydrater un formulaire à partir des données `$_POST`
+- Pour récupérer les valeure de la requête`
 ```php
-$post = $request
+$post = $request->request->get('nom', 'valeur par defaut'); // $_POST['nom']
+$get = $request->query->get('nom'); // $_GET['nom']
+```
+
+- Tester si la requête est en `AJAX`
+```php
+if ($request->isXmlHttpRequest) {
+	# Code ...
+}
 ```
 
 
+### Les objets Response
 
-### Réponses
+Une action d'un controller doit toujours retourner un objet de type Response
 
 ## Repository
 
