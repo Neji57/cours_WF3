@@ -5,6 +5,9 @@
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
 - [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
+- [Repository]()
+- [Projet]()
+- [Projet]()
 - [Projet]()
 
 ## Installation
@@ -254,14 +257,19 @@ public function liste($page)
 }
 ```
 
-Pour définir des paramètres,
+- Afficher la liste des routes de l'application :
+```
+php bin/console debug:router
+```
 
-### Routes
+### Param converter
 
 
-### Routes
+### L'objet Request
 
 
-### Routes
+### Réponses
 
-##
+## Repository
+
+### Ecrire une requête
