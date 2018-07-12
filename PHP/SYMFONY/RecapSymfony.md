@@ -56,7 +56,7 @@ composer update
 ```
 npm install
 ```
-
+---
 ## Structure du projet
 
 ### Dossiers
@@ -73,7 +73,7 @@ Contenu des dossiers:
 - `tests` contient les fichiers de tests *PHPUnit*
 - `translations` contient les traductions de l'application
 - `vendor` Contient les bibliothèques *php* externes
-
+---
 ### WebPack Encore
 
 Encore est un module de Symfony pour faciliter l'intégration de WebPack dans un projet.
@@ -86,7 +86,7 @@ npm run dev             (Plus rapide et ne minifie pas les fichiers CSS/JS)
 npm run build           (Plus complet et minifie les fichiers pour la fin du projet)
 npm run watch           (analyse les changements à chaque sauvegarde de fichier)
 ```
-
+---
 ## Entité
 
 Les entités *(Entity)* sont des objets stockés dans la BDD, ces fichiers se trouvent dans src/entity
@@ -122,7 +122,7 @@ private $nomDuChamp;
 ```
 php bin/console doctrine:schema:update --force
 ```
-
+---
 ### Relations
 
 Les relations permettent de faire des clés étrangères dans le BDD
@@ -205,7 +205,7 @@ private $panierProduits
 */
 private $category;
 ```
-
+---
 ### Cycle de vie
 
 Permet à Doctrine d'appeler automatiquement des méthodes de l'entité lors d'une action (`persist` ou `remove`)
@@ -228,7 +228,7 @@ Permet à Doctrine d'appeler automatiquement des méthodes de l'entité lors d'u
  */
 public function prePercist() {...}
 ```
-
+---
 ## Controller
 
 Les controllers sont les classes qui vont être utilisées lors de l'appel d'une route, ils sont stockés dans le dossier `src/controller`
@@ -283,7 +283,7 @@ public function liste($page)
 ```
 php bin/console debug:router
 ```
-
+---
 ### Param converter
 
 Il permet de nous envoyer les types demandés dans une méthode d'un controller
@@ -309,7 +309,7 @@ public function show(Article $article, Comment $comment)
 	# code ...
 }
 ```
-
+---
 
 ### L'objet Request
 
@@ -340,7 +340,7 @@ if ($request->isXmlHttpRequest) {
 	# Code ...
 }
 ```
-
+---
 
 ### Les objets Response
 
@@ -368,7 +368,7 @@ return new JsonResponse(array(
 	'donnee2' => $donnee2,
 ))
 ```
-
+---
 ## Repository
 
 Le repository contient les requêtes d'une entité (1 entité = 1 repository)
@@ -404,7 +404,7 @@ Quelques méthodes
 ->getOneOrNullResult();
 ->getScalarResult(); // ->select('COUNT(e)')
 ```
-
+---
 
 ### L'objet Paginator
 
@@ -414,7 +414,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 
 return new Paginator($querybuilder)
 ```
-
+---
 ### Appel dans un controller
 
 Il faut  d'abord récupérer l'entity manager puis appeler le repository de l'entité
@@ -430,17 +430,22 @@ $em->persist($article) // Persist d'une entité
 $em->remove($article); // Supprime
 $em->flush(); // Execute les requêtes
 ```
-
+---
 ## Formulaire
 
 ### Form builder
 
+---
 ### Types de champs
 
+---
 ### Formulaires imbriqués
 
+---
 ### Les collections
 
+---
 ### Création dans un controller
 
+---
 ## Les services
