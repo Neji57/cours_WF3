@@ -29,8 +29,8 @@
 	- [Principe](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#principe)
 	- [Quelques services utiles](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#quelques-services-utiles)
 - [Twig](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#twig)
-	- [Commandes de base]()
-	- [Les blocks]()
+	- [Commandes de base](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#commandes-de-base)
+	- [Les blocks](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#les-blocks)
 	- [Les formulaires]()
 	- [Lien]()
 - [Lien]()
@@ -546,11 +546,28 @@ $form = $formBuilder->getForm();
 ### Principe
 
 ### Quelques services utiles
-
+---
 ## Twig
+Twig est un moteur de template
 
 ### Commandes de base
+```php
+// Condition
+{% if var == 1 %}
+{% else %}
+{% endif %}
+
+// Test si une variable est définie
+```
 
 ### Les blocks
 
 ### Les formulaires
+
+### Les filtres
+
+### Traduction
+
+### Extensions
+
+## Quelques erreurs
