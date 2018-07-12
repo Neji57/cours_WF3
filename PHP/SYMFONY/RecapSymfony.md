@@ -450,6 +450,9 @@ public function buildForm(FormBuilderInterface $builder, array $option)
 }
 ```
 On ajoute avec la méthode `add`de l'objet builder
+```php
+$builder->add('name');
+```
 ---
 ### Types de champs
 
