@@ -1,14 +1,25 @@
 # Recap Symfony
 
 - [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
-	- [Nouveau projet]()
+	- [Nouveau projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#nouveau-projet)
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
+	- [Lien]()
+	- [Lien]()
+	- [Lien]()
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
+	- [Lien]()
+	- [Lien]()
+	- [Lien]()
 - [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
-- [Repository]()
-- [Projet]()
-- [Projet]()
-- [Projet]()
+	- [Lien]()
+	- [Lien]()
+	- [Lien]()
+- [Repository](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#repository)
+- [Lien]()
+- [Lien]()
+- [Lien]()
+- [Lien]()
+- [Lien]()
 
 ## Installation
 
@@ -263,6 +274,30 @@ php bin/console debug:router
 ```
 
 ### Param converter
+
+Il permet de nous envoyer les types demandés dans une méthode d'un controller
+```php
+/**
+ * @Route("/edit{id}", requirements={"id" = "/d+"})
+ */
+public function edit(Article $article)
+{
+	// code ...
+}
+```
+
+*Le param converter retourne automatiquement un objet Article en fonction de son id.*
+```php
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
+/**
+ * @Route("/show{id}", requirements={"id" = "/d+", "comment" = "/d+"})
+ * @Entity("comment", expr="repository.find(comment_id)")
+ */
+public function show(Article $article, Comment $comment)
+{
+	// code ...
+}
+```
 
 
 ### L'objet Request
