@@ -146,28 +146,37 @@ private $articles;
 ```php
 // Entity Panier
 /**
- * @ORM\OneToMany(targetEntity="PanierProduit")
+ * @ORM\OneToMany(targetEntity="PanierProduit", mappedBy="panier")
 */
 private $panierProduits
 
 // PanierProduit
 /**
- * @ORM\OneToMany(targetEntity="Panier")
+ * @ORM\OneToMany(targetEntity="Panier", inversedBy="panierProduits")
 */
 private $panier
 
 /**
- * @ORM\OneToMany(targetEntity="Produit")
+ * @ORM\OneToMany(targetEntity="Produit", inversedBy="panierProduits")
 */
 private $roduit
 
 // Produit
 /**
- * @ORM\OneToMany(targetEntity="PanierProduit")
+ * @ORM\OneToMany(targetEntity="PanierProduit", mappedBy="produit")
 */
 private $panierProduits
 ```
 
+- Comportement de l'article lors de la suppression d'une categorie
+```php
+// Entity Article
+/**
+ * @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
+ * @ORM\JoinColumn(onDelete="SET NULL")
+*/
+private $category;
+```
 
 ### Cycle de vie
 
