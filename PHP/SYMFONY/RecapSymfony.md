@@ -574,15 +574,20 @@ Twig est un moteur de template
 {% endfor %}
 
 ```
-
+---
 ### Les blocks
+Les blocks définissent une partie d'une vue qui peut  être
 
+---
 ### Les formulaires
 
+---
 ### Les filtres
 
 ### Traduction
 
+---
 ### Extensions
 
+---
 ## Quelques erreurs
