@@ -3,7 +3,7 @@
 - [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
-- [Projet]()
+- [Controller]()
 - [Projet]()
 
 ## Installation
@@ -79,6 +79,6 @@ php bin/console make:entity
 
 ### Cycle de vie
 
-## controller
+## Controller
 
 ### Routes
