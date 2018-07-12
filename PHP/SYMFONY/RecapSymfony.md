@@ -623,6 +623,7 @@ Mettre le bouton sublit directement en HTML
 ```twig
 {{ 'MAChaine'|lower }}{{# 'machaine' #}}
 {{ entity.date|date('d/m/Y') }}
+{{ '<b>Texte</b>'|raw }}{{# Permet d'interpréter l'HTML #}}
 ```
 
 ### Traduction
