@@ -35,9 +35,10 @@ npm install
 
 Contenu des dossiers:
 
-- *assets* contient tous les fichiers SCSS/JS du projet
-- *bin* contient la console
-- *config* contient les fichiers *yaml* de configuration du projet, le dossier contient également les configs de bibliothèques externes
+- `assets` contient tous les fichiers SCSS/JS du projet
+- `bin` contient la console
+- `config` contient les fichiers *yaml* de configuration du projet, le dossier contient également les configs de bibliothèques externes
 - `node_modules` contient toutes les bibliothèques CSS/JS
+- `public` contient le fichier *index.php*
 
 ## Entité
