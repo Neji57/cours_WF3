@@ -42,5 +42,8 @@ Contenu des dossiers:
 - `public` contient le fichier *index.php* (dossier web Sf V < 4)
 - `src` contient tous les fichiers sources *php* de l'application
 - `templates` contient toutes les vues *twig*
+- `tests` contient les fichiers de tests *PHPUnit*
+- `translations` contient les traductions de l'application
+- `vendor` Contient les bibliothèques *php* externes
 
 ## Entité
