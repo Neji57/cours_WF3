@@ -1,6 +1,7 @@
 # Recap Symfony
 
 - [Installation](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#installation)
+	- [Nouveau projet]()
 - [Structure du projet](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#structure-du-projet)
 - [Entité](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#entit%C3%A9)
 - [Controller](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#controller)
@@ -205,4 +206,24 @@ public function prePercist() {...}
 
 ## Controller
 
+Les controllers sont les classes qui vont être utilisées lors de l'appel d'une route, ils sont stockés dans le dossier `src/controller`
+
 ### Routes
+
+pour définir
+```php
+use Symfony\Component\Routing\Annotation\Route;
+/**
+ * @Route("/prefixe/article/")
+ */
+class ArticleController extends Controller
+```
+
+### Routes
+
+
+### Routes
+
+
+### Routes
+
