@@ -36,6 +36,7 @@
 	- [Traduction](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#traduction)
 	- [Extensions](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#extensions)
 - [Quelques erreurs](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#quelques-erreurs)
+- [Plus](https://github.com/Neji57/cours_WF3/blob/master/PHP/SYMFONY/RecapSymfony.md#plus)
 
 ## Installation
 
