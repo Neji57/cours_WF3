@@ -1,17 +1,19 @@
 # PHP Orienté Objet
 
+**Merci beaucoup à Mazarine Hajduk pour son travail**
+
 ## Sommaire
 
-- [Liens de cours](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#liens-de-cours)
-- [Résumé des explications du prof](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#r%C3%A9sum%C3%A9-des-explications-du-prof)
-- [Petites explications maison](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#petites-explications-maison)
-    - [Les Attributs](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#les-attributs)
-        - [`Public`](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#lattribut-public)
-        - [`Private`](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#lattribut-private-)
-        - [`Protected`](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#lattribut-protected-)
-    - [Les Méthodes](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#les-m%C3%A9thodes)
-    - [Utiliser une classe](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#utiliser-une-classe)
-- [Mémo](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#m%C3%A9mo)
+- [Liens de cours](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#liens-de-cours)
+- [Résumé des explications du prof](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#r%C3%A9sum%C3%A9-des-explications-du-prof)
+- [Petites explications maison](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#petites-explications-maison)
+    - [Les Attributs](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#les-attributs)
+        - [`Public`](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#lattribut-public)
+        - [`Private`](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#lattribut-private-)
+        - [`Protected`](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#lattribut-protected-)
+    - [Les Méthodes](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#les-m%C3%A9thodes)
+    - [Utiliser une classe](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#utiliser-une-classe)
+- [Mémo](hhttps://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#m%C3%A9mo)
 
 ---
 ## Liens de cours
