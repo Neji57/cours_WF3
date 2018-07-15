@@ -4,7 +4,7 @@
 
 > Tout d'abord, remerciez Steve, c'est grâce à lui que vous avez ce petit tuto ! ʕ•͡ᴥ•ʔ
 
-[Les snippets de Steve](https://github.com/Piotezaza/CoursNumericall/blob/master/Cr%C3%A9ation%20raccourcis%20VS%20Code.md#petite-liste-avec-les-snippets-php-de-steve-%EF%BE%9F-%E3%83%BD%E3%83%AE%E3%83%BD)
+[Les snippets de Steve](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/Cr%C3%A9ation%20raccourcis%20VS%20Code.md#petite-liste-avec-les-snippets-php-de-steve-%EF%BE%9F-%E3%83%BD%E3%83%AE%E3%83%BD)
 
 Les raccourcis *appellés `snippet`* sont utilisés pour gagner du temps. Par exemple, si tu commences à écrire `html` tu vas avoir l'auto-complétion avec des portions de code pré-enregistrées qui vont apparaître et tu auras juste à faire `TAB` ou `ENTRER` pour que ça s'affiche. Je vais donc vous expliquer comment créer tout ça pour gagner du temps lors de vos séances de codage.
 
