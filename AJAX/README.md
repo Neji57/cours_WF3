@@ -1,7 +1,7 @@
 # Mémo
 
-- [AJAX](https://github.com/Piotezaza/CoursNumericall/tree/master/AJAX#AJAX)
-- [PHP](https://github.com/Piotezaza/CoursNumericall/tree/master/AJAX#PHP)
+- [AJAX](https://github.com/Neji57/cours_WF3/blob/master/AJAX/README.md#ajax)
+- [PHP](https://github.com/Neji57/cours_WF3/blob/master/AJAX/README.md#php)
 
 ## Cours
 
