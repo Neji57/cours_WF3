@@ -1,3 +1,5 @@
+**Merci beaucoup à `Mazarine Hajduk` pour son travail**
+
 # Tuto GIT
 
 Tu veux utiliser Git mais tu comprends rien ? Ce tuto est pour toi !
