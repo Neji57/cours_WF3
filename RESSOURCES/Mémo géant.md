@@ -1,3 +1,5 @@
+**Merci beaucoup à `Mazarine Hajduk` pour son travail**
+
 # Mémo géant
 
 Plutôt que de fouiller dans TOUS les dossiers pour retrouver TOUS mes mémos, tout sera écrit ici.
@@ -25,16 +27,16 @@ La structure de ce fichier sera la suivante :
 
 ## SOMMAIRE
 
-- [AJAX](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#ajax)
-- [BOOTSTRAP](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#bootstrap)
-- [CSS](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#css)
-- [HTML](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#html)
-- [JAVASCRIPT](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#javascript)
-- [JQUERY](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#jquery)
-- [PHP](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#php)
-- [SQL](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#sql)
-- [SYMPHONY](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#symphony)
-- [AUTRES LIENS UTILES](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#autres-liens-utiles)
+- [AJAX](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#ajax)
+- [BOOTSTRAP](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#bootstrap)
+- [CSS](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#css)
+- [HTML](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#html)
+- [JAVASCRIPT](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#javascriptt)
+- [JQUERY](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#jquery)
+- [PHP](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#php)
+- [SQL](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#sql)
+- [SYMPHONY](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#symphony)
+- [AUTRES LIENS UTILES](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#autres-liens-utiles)
 
 ---
 ---
@@ -44,11 +46,11 @@ La structure de ce fichier sera la suivante :
 
 ### SOMMAIRE
 
-- [COURS](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#cours)
-- [AVEC JAVASCRIPT](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#avec-javascript)
-    - [CODE TYPE](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#code-type)
-- [AVEC JQUERY](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#avec-jquery)
-    - [CODE TYPE](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#code-type-1)
+- [COURS](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#cours)
+- [AVEC JAVASCRIPT](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#avec-javascript)
+    - [CODE TYPE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#code-type)
+- [AVEC JQUERY](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#avec-jquery)
+    - [CODE TYPE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#code-type-1)
 
 ### COURS
 
@@ -150,8 +152,8 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 ### SOMMAIRE
 
-- [STARTER TEMPLATE](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#starter-template)
-- [FORMULAIRE TEMPLATE](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#formulaire-template)
+- [STARTER TEMPLATE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#starter-template)
+- [FORMULAIRE TEMPLATE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#formulaire-template)
 
 ### STARTER TEMPLATE
 
@@ -262,14 +264,14 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 ### SOMMAIRE
 
-- [FONCTIONS DE BASE](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#fonctions-de-base)
-- [BASIQUE]()
-    - [Enregistrer des informations dans un fichier](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#enregistrer-des-informations-dans-un-fichier)
-- [POO](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#orient%C3%89-objet)
-    - [AUTOLOAD](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#autoload)
-    - [ESPACE DE NOM / NAMESPACE](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#espace-de-nom--namespace)
-    - [STARTER TEMPLATE CRÉATION OBJET](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#starter-template-cr%C3%89ation-objet)
-    - [TESTER LE TYPE D'ATTRIBUT (string, array, ...)](https://github.com/Piotezaza/CoursNumericall/blob/master/M%C3%A9mo%20g%C3%A9ant.md#tester-le-type-dattribut-string-array-)
+- [FONCTIONS DE BASE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#fonctions-de-base)
+- [BASIQUE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#basique)
+    - [Enregistrer des informations dans un fichier](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#enregistrer-des-informations-dans-un-fichier)
+- [POO](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#orient%C3%89-objet)
+    - [AUTOLOAD](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#autoload)
+    - [ESPACE DE NOM / NAMESPACE](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#espace-de-nom--namespace)
+    - [STARTER TEMPLATE CRÉATION OBJET](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#starter-template-cr%C3%89ation-objet)
+    - [TESTER LE TYPE D'ATTRIBUT (string, array, ...)](https://github.com/Neji57/cours_WF3/blob/master/RESSOURCES/M%C3%A9mo%20g%C3%A9ant.md#tester-le-type-dattribut-string-array-)
 
 ### FONCTIONS DE BASE
 
@@ -328,7 +330,7 @@ $.post(URL, DATA, function(data){}, 'json'); // Requête GET type JSON
 
 - `$this`
 - `self::` représente l'objet depuis lequel il est appelé. Peut également s'écrire de la manière suivante (pas trop recommandée) > `::objet`. À utiliser **uniquement** sur les `const` et les `static`.
-- [COURS MADE IN MAZA](https://github.com/Piotezaza/CoursNumericall/tree/master/PHP/POO#petites-explications-maison)
+- [COURS MADE IN MAZA](https://github.com/Neji57/cours_WF3/blob/master/PHP/PHP-Objet/README.md#petites-explications-maison)
 
 #### **AUTOLOAD**
 

@@ -1,3 +1,5 @@
+**Merci beaucoup à `Mazarine Hajduk` pour son travail**
+
 # Créer des snippets sur Visual Studio Code
 
 > Tout d'abord, remerciez Steve, c'est grâce à lui que vous avez ce petit tuto ! ʕ•͡ᴥ•ʔ
