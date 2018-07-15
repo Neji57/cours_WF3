@@ -1,6 +1,6 @@
 # PHP Orienté Objet
 
-**Merci beaucoup à Mazarine Hajduk pour son travail**
+**Merci beaucoup à `Mazarine Hajduk` pour son travail**
 
 ## Sommaire
 
