@@ -1,3 +1,5 @@
+**Merci beaucoup à `Mazarine Hajduk` pour son travail**
+
 # L'architecture MVC
 
 MVC signifie **Modèle Vue Contrôleur**, c'est une manière d'organiser un programme en séparant les couches présentation, traitement et accès aux données.
