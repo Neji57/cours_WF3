@@ -239,6 +239,13 @@ Permet à **Doctrine** d'appeler automatiquement des méthodes de l'entité lors
 	public function prePersist() {/*...*/}
 	```
 ---
+
+## Crud
+pour créer un crud rapidement:
+```
+php bin/console make:crud
+```
+---
 ## Controller
 
 Les `controllers` sont les classes qui vont être utilisées lors de l'appel d'une route, ils sont stockés dans le dossier `src/Controller`.
