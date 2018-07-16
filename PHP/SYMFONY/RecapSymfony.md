@@ -729,6 +729,33 @@ php bin/console make:twig-extension
 - `Cannot fount "variable" in template` : il faut envoyer cette valeur
 
 ---
+## Friends of Symfony
+
+- Installer le bundle friendsofsymfony
+```
+composer require friendsofsymfony/user-bundle
+```
+
+- Créer un utilisateur en base de données
+```
+php bin/console fos:user:create
+```
+
+- Créer un utilisateur qui as déjà les droits super admin
+```
+php bin/console fos:user:create --super-admin
+```
+
+- upgrade d'un utilisateur en super admin
+```
+php bin/console fos:user:promote
+
+    ensuite choisir l'utilisateur et entrer son role
+
+    Please choose a username:Picobuu
+    Please choose a role:ROLE_SUPER_ADMIN
+```
+---
 ## Plus
 
 - [SoftDelete](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/softdeleteable.md)
